@@ -380,9 +380,13 @@ document.write(`
 <h1>Monter Carlo demonstration<a class="headerlink" href="#monter-carlo-demonstration" title="Link to this heading">#</a></h1>
 <section id="hit-or-miss">
 <h2>Hit-or-miss<a class="headerlink" href="#hit-or-miss" title="Link to this heading">#</a></h2>
-<p>Find the area of a quarter circle.
-$<span class="math notranslate nohighlight">\(A=\frac{\pi r^2}{4}\sim \frac{3.1415926535897932384626433}{4} = 0.7853981633974483.\)</span><span class="math notranslate nohighlight">\(
-Here, we set \)</span>r=1<span class="math notranslate nohighlight">\(. The ratio of hitting rate will be the area of circle fan versus the area of square: \)</span><span class="math notranslate nohighlight">\(\frac{\pi/4}{1}.\)</span>$</p>
+<p>Find the area of a quarter circle.</p>
+<div class="math notranslate nohighlight">
+\[A=\frac{\pi r^2}{4}\sim \frac{3.1415926535897932384626433}{4} = 0.7853981633974483.\]</div>
+<p>Here, we set <span class="math notranslate nohighlight">\(r=1.\)</span></p>
+<p>The ratio of hitting rate will be the area of circle fan versus the area of square:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\pi/4}{1}.\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -481,8 +485,9 @@ relative error = 0.005599915561837868
 \[f(x) = \exp \bigg(-\frac{x}{2}\bigg).\]</div>
 <div class="math notranslate nohighlight">
 \[I = \int_0^1 \exp \bigg(-\frac{x}{2}\bigg) dx = -2 \exp \bigg(-\frac{x}{2}\bigg) \bigg|_0^1 = 2e^{-1/2} + 2e^{-0/2} \sim 0.7893986805.\]</div>
-<p>Using Monte Carlo:
-$<span class="math notranslate nohighlight">\(I = (1-0) \frac{1}{N} \sum_1^N f(x_i)\)</span>$</p>
+<p>Using Monte Carlo:</p>
+<div class="math notranslate nohighlight">
+\[I = (1-0) \frac{1}{N} \sum_1^N f(x_i)\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -545,9 +550,12 @@ $<span class="math notranslate nohighlight">\(I = (1-0) \frac{1}{N} \sum_1^N f(x
 <h2>Importance samping<a class="headerlink" href="#importance-samping" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[\int_0^1 \exp\bigg(-\frac{x}{2}\bigg) = \int_0^{3/4} \frac{\exp\big(-1+\sqrt{1-y}\big)}{\sqrt{1-y}} dy\]</div>
-<p>Monte Carlo weighted samping:
-$<span class="math notranslate nohighlight">\(I = \bigg(\frac{3}{4}-0\bigg) &lt;g(y)&gt; = \bigg(\frac{3}{4}-0\bigg) \frac{1}{N} \sum_1^N g(y_i),\)</span><span class="math notranslate nohighlight">\(
-where \)</span><span class="math notranslate nohighlight">\(g(y) = \frac{\exp\big(-1+\sqrt{1-y}\big)}{\sqrt{1-y}}.\)</span>$</p>
+<p>Monte Carlo weighted samping:</p>
+<div class="math notranslate nohighlight">
+\[I = \bigg(\frac{3}{4}-0\bigg) &lt;g(y)&gt; = \bigg(\frac{3}{4}-0\bigg) \frac{1}{N} \sum_1^N g(y_i),\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[g(y) = \frac{\exp\big(-1+\sqrt{1-y}\big)}{\sqrt{1-y}}.\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># x values from 0 to 10</span>
