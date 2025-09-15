@@ -59,12 +59,12 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'daily/Day-04/MolecularDynamics_singlePhase_student';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'daily/Day-04/MolecularDynamics_twoPhase_student';</script>
     <link rel="icon" href="../../_static/Spartan_2.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Molecular dynamics hands-on Python coding practices" href="MolecularDynamics_twoPhase_student.html" />
-    <link rel="prev" title="Day 4" href="../../section_files/day_4.html" />
+    <link rel="next" title="Day 5" href="../../section_files/day_5.html" />
+    <link rel="prev" title="Molecular dynamics hands-on Python coding practices" href="MolecularDynamics_singlePhase_student.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -202,8 +202,8 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../../section_files/day_4.html">Day 4</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="MolecularDynamics_singlePhase_student.html">Molecular dynamics hands-on Python coding practices</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Molecular dynamics hands-on Python coding practices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MolecularDynamics_twoPhase_student.html">Molecular dynamics hands-on Python coding practices</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_5.html">Day 5</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
@@ -268,7 +268,7 @@
       
       
       
-      <li><a href="../../_sources/daily/Day-04/MolecularDynamics_singlePhase_student.ipynb" target="_blank"
+      <li><a href="../../_sources/daily/Day-04/MolecularDynamics_twoPhase_student.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -362,13 +362,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#put-your-name-here"><p style="text-align: right;"> ✅ <strong>Put your name here</strong> </p></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-build-containers-to-store-data">Part 1: build containers to store data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-1-initial-atomic-positions-velocities-and-accelerations">Part 1.1: Initial atomic positions, velocities, and accelerations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-2-calculate-and-store-relative-vectors-and-distances-between-every-atom-pair">Part 1.2: Calculate and store relative vectors and distances between every atom pair.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-3-build-arrays-to-store-interatomic-forces-and-calculate-the-quantities">Part 1.3: Build arrays to store interatomic forces and calculate the quantities</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-modify-the-single-phase-code-and-a-two-phase-code">Part 1: Modify the single phase code and a two phase code</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-time-stepping">Part 2: Time stepping</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-1">Part 2.1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-2">Part 2.2</a></li>
@@ -390,21 +384,14 @@ document.write(`
 <p>This Jupyter Notebook file serves as a gateway to enter the realm of Python programming and molecular dynamics. We’ll break down the basic MD loop to several code cells, step-by-step. The main purpose of this coding assignment is to horn your Python programming skills. The first part will be creating multiple arrays, as containers, to store atoms’ information such as positions, velocity, acceleration, interatomic relative position vector, forces, etc. The second part will be run time iterations to calculate atomic foreces, accelerations, and update atomic positions. Note that the material parameters are arbitrarily set up. You’ll need to use realistic parameters if you want to simulate a real system.</p>
 <p>by Hui-Chia Yu, 2025</p>
 <hr class="docutils" />
-<section id="put-your-name-here">
-<h2><p style="text-align: right;"> ✅ <strong>Put your name here</strong> </p><a class="headerlink" href="#put-your-name-here" title="Link to this heading">#</a></h2>
-<hr class="docutils" />
-</section>
-<section id="part-1-build-containers-to-store-data">
-<h2>Part 1: build containers to store data<a class="headerlink" href="#part-1-build-containers-to-store-data" title="Link to this heading">#</a></h2>
-<section id="part-1-1-initial-atomic-positions-velocities-and-accelerations">
-<h3>Part 1.1: Initial atomic positions, velocities, and accelerations<a class="headerlink" href="#part-1-1-initial-atomic-positions-velocities-and-accelerations" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>First, we’ll create three containers to store atoms’ postion vectors, velocity vectors, and acceleration vectors. See the illustraion below. We’ll use numpy array for these containers. (Python has many different contrainers; for example, list, dictionary, tuple, set, etc. They have diferent properties and usages. We’re not going over them today.) Numpy arrays are created to mimic the arrays in Matlab and they could be used in a similar way.</p></li>
-<li><p>Python is an open-source software package. There are tons of libraries that are created by other developers and they are shared openly via PyPI system. Those libraries are made following standard software sturcture and documentation practices. New users can go to resspective git site and git page to get familiar with the software libraries. For example, <a class="reference external" href="https://numpy.org">https://numpy.org.</a></p></li>
-</ul>
-<div align="center">
-<img src="https://i.ibb.co/HDcbFjKm/arrays.png" width="260">
-</div><div class="cell docutils container">
+<section id="part-1-modify-the-single-phase-code-and-a-two-phase-code">
+<h2>Part 1: Modify the single phase code and a two phase code<a class="headerlink" href="#part-1-modify-the-single-phase-code-and-a-two-phase-code" title="Link to this heading">#</a></h2>
+<p>In this practice, we distinguish atoms to A-type and B-type. B-type has a mass twice that of A. Now we have three types of interatomic bonding:
+<span class="math notranslate nohighlight">\(\varepsilon_{AA}\)</span>, <span class="math notranslate nohighlight">\(\varepsilon_{AB}\)</span>, and <span class="math notranslate nohighlight">\(\varepsilon_{BB}\)</span>.
+In the first test run, we have
+<span class="math notranslate nohighlight">\(\varepsilon_{AA} = 0.25\)</span>, <span class="math notranslate nohighlight">\(\varepsilon_{AB}= 2.5\)</span>, and <span class="math notranslate nohighlight">\(\varepsilon_{BB}= 0.5.\)</span></p>
+<p>What we need is to create a <code class="docutils literal notranslate"><span class="pre">Mas[i]</span></code> array to store different mass for atoms. Let’s set the first 40 atoms are A-type, and the rest are B-type.</p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s set up materials parameters, such as atomic mass, epsilon, etc.</span>
 <span class="c1"># These parameters are set up arbitrarily. For real MD simulations,</span>
@@ -412,9 +399,14 @@ document.write(`
 
 <span class="n">ma</span> <span class="o">=</span> <span class="mf">0.5</span>         <span class="c1"># &lt;-- mass</span>
 <span class="n">rm</span> <span class="o">=</span> <span class="mf">0.1</span>         <span class="c1"># &lt;-- reference radius</span>
-<span class="n">eps</span> <span class="o">=</span> <span class="mf">0.25</span>       <span class="c1"># &lt;-- coefficient for energy well</span>
+<span class="c1"># eps = 0.25       # &lt;-- coefficient for energy well</span>
 <span class="n">r0</span> <span class="o">=</span> <span class="n">rm</span><span class="o">*</span><span class="mf">1.12246</span>  <span class="c1"># &lt;-- equilibrium radius</span>
 
+<span class="n">epsAA</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">;</span>     
+<span class="n">epsAB</span> <span class="o">=</span> <span class="mf">2.5</span><span class="p">;</span> 
+<span class="c1"># epsAB = 0.1; </span>
+<span class="n">epsBB</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">;</span>
+<span class="n">mb</span> <span class="o">=</span> <span class="mf">1.0</span>
 
 <span class="c1"># compuational box size</span>
 <span class="n">Lx</span> <span class="o">=</span> <span class="mf">1.0</span>
@@ -426,7 +418,7 @@ document.write(`
 <span class="kn">import</span> <span class="nn">random</span>
 
 <span class="c1"># set up the number of atoms</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">64</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">80</span>
 
 <span class="c1"># create position, velocity, and acceleration arrays</span>
 <span class="n">Pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
@@ -435,17 +427,27 @@ document.write(`
 <span class="n">Acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># &lt;-- random initial acceleration </span>
 <span class="n">Acc</span> <span class="o">*=</span> <span class="mf">0.0001</span> 
 
+<span class="n">Mas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">at</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">at</span> <span class="o">&lt;</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">Mas</span><span class="p">[</span><span class="n">at</span><span class="p">]</span> <span class="o">=</span> <span class="n">ma</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">Mas</span><span class="p">[</span><span class="n">at</span><span class="p">]</span> <span class="o">=</span> <span class="n">mb</span>
+        
+
 <span class="c1"># set up initial atom positions. Let&#39;s make a 8x8 configuration</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>           <span class="c1"># &lt;-- note that default Python loop goes from 0 to n-1</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>       <span class="c1"># &lt;-- note indent is what Python recognizes nest loop</span>
-        <span class="n">Pos</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">8</span><span class="o">+</span><span class="n">j</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span><span class="o">*</span><span class="n">r0</span> <span class="o">+</span> <span class="mf">0.75</span><span class="o">*</span><span class="n">r0</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span> <span class="c1"># &lt;-- add some randomness</span>
-        <span class="n">Pos</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">8</span><span class="o">+</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="n">r0</span> <span class="o">+</span> <span class="mf">0.75</span><span class="o">*</span><span class="n">r0</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>           <span class="c1"># &lt;-- note that default Python loop goes from 0 to n-1</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>        <span class="c1"># &lt;-- note indent is what Python recognizes nest loop</span>
+        <span class="n">Pos</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">8</span><span class="o">+</span><span class="n">j</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span><span class="o">*</span><span class="n">r0</span><span class="o">*</span><span class="mf">1.0</span> <span class="o">+</span> <span class="mf">0.75</span><span class="o">*</span><span class="n">r0</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span> <span class="c1"># &lt;-- add some randomness</span>
+        <span class="n">Pos</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">8</span><span class="o">+</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="n">r0</span><span class="o">*</span><span class="mf">0.8</span> <span class="o">+</span> <span class="mf">0.75</span><span class="o">*</span><span class="n">r0</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
 
 
 <span class="c1"># save the initial atomic positions</span>
 <span class="n">Pos_pr</span> <span class="o">=</span> <span class="n">Pos</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">Vel_pr</span> <span class="o">=</span> <span class="n">Vel</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">Acc_pr</span> <span class="o">=</span> <span class="n">Acc</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1"># Mas</span>
 </pre></div>
 </div>
 </div>
@@ -459,8 +461,9 @@ document.write(`
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>  
 
 <span class="c1"># Plot results</span>
-<span class="c1"># plt.scatter(Pos[:, 0], Pos[:, 1], c=&#39;b&#39;)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Pos</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">Pos</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;bo&#39;</span><span class="p">)</span>
+<span class="c1"># plt.scatter(Pos[0:40, 0], Pos[0:40, 1], c=&#39;b&#39;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Pos</span><span class="p">[:</span><span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">Pos</span><span class="p">[:</span><span class="mi">40</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;bo&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Pos</span><span class="p">[</span><span class="mi">40</span><span class="p">:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">Pos</span><span class="p">[</span><span class="mi">40</span><span class="p">:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x Position&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y Position&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Particle Positions&quot;</span><span class="p">)</span>
@@ -470,141 +473,38 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="part-1-2-calculate-and-store-relative-vectors-and-distances-between-every-atom-pair">
-<h3>Part 1.2: Calculate and store relative vectors and distances between every atom pair.<a class="headerlink" href="#part-1-2-calculate-and-store-relative-vectors-and-distances-between-every-atom-pair" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Let’s create a 3d array to store the relative position vectors between atom pairs.</strong> Since we have N atoms, we’ll make a NxNx3 array; for instance, a <code class="docutils literal notranslate"><span class="pre">dst[i,j,k]</span></code> array, where we use index i for the atom of interest, index j for the neighboring atoms, k = 0 and 1 for the <span class="math notranslate nohighlight">\(x\)</span> component (<span class="math notranslate nohighlight">\(\Delta x_{ij}\)</span>) and <span class="math notranslate nohighlight">\(y\)</span> component (<span class="math notranslate nohighlight">\(\Delta y_{ij}\)</span>) of the relative vector, respectively, and k = 2 for the distance between two atoms (<span class="math notranslate nohighlight">\(r_{ij}\)</span>).
-$<span class="math notranslate nohighlight">\(\Delta x_{ij} = x_j - x_i,~~~~\Delta x_{ji} = -\Delta x_{ij}\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(\Delta y_{ij} = y_j - y_i,~~~~\Delta y_{ji} = -\Delta y_{ij}\)</span>$</p></li>
-<li><p>For periodic cells, we need to consider the mirroring neighbor atoms from the neighboring cell. See the figure below for illustration.</p></li>
-</ul>
-<div align="center">
-<img src="https://i.ibb.co/60vv5VJ8/MD-Instruction-Note1-A.jpg" width="280">
-</div>
-Along the $x$ direction, we'll pick the closest neighboring atom using $$\Delta x_{ij} = \min(|\Delta x_{ij}|, |\Delta x_{ij}+L_x|, |\Delta x_{ij}-L_x|).$$
-Similarly, in the $y$ direction, we'll take $$\Delta y _{ij} = \min(|\Delta y_{ij}|, |\Delta y_{ij}+L_y|, |\Delta y_{ij}-L_y|)$$ for the closest atom (in the surrounding repeated cell).
-<ul class="simple">
-<li><p>The distance between two atoms is calculated using:
-$<span class="math notranslate nohighlight">\(r_{ij} = \sqrt{\Delta x_{ij}^2 + \Delta y_{ij}^2},~~~~r_{ji} =r_{ij}.\)</span>$</p></li>
-<li><p>Since atoms are relative to each other in opposite direction. Thus, we only need to calculate half of the number of atom pairs. For example, calculate the upper right triagnle of the whole data set and mirror the values, with a negative sign, to the lower left triangle. See the figure below for illustration.</p></li>
-</ul>
-<div align="center">
-<img src="https://i.ibb.co/hSW4t4Z/MD-Instruction-Note-array1-A.jpg" width="800">
-</div>
-<p><strong>Create the distance array as described above in the code cell below.</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a 3d array to store relative positions between atom pairs.</span>
-<span class="kn">import</span> <span class="nn">math</span>
-
-<span class="c1"># fill the ?? in the code</span>
-<span class="n">dst</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="err">??</span><span class="p">,</span><span class="err">??</span><span class="p">,</span><span class="err">??</span><span class="p">))</span>
-
-<span class="c1"># loop over atoms and neighbors to calculate interatomic distances</span>
-<span class="k">for</span> <span class="n">at</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">ne</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">at</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>  <span class="c1"># &lt;-- calculate only the upper right triangle</span>
-        <span class="n">dx_c</span> <span class="o">=</span> <span class="o">??</span>
-        <span class="n">dx_w</span> <span class="o">=</span> <span class="n">dx_c</span> <span class="o">-</span> <span class="n">Lx</span>
-        <span class="n">dx_e</span> <span class="o">=</span> <span class="n">dx_c</span> <span class="o">+</span> <span class="n">Lx</span>
-        <span class="c1"># x component</span>
-        <span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">([</span><span class="n">dx_c</span><span class="p">,</span> <span class="n">dx_w</span><span class="p">,</span> <span class="n">dx_e</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="nb">abs</span><span class="p">)</span>
-
-        <span class="n">dy_c</span> <span class="o">=</span> <span class="o">??</span>
-        <span class="n">dy_s</span> <span class="o">=</span> <span class="o">??</span>
-        <span class="n">dy_n</span> <span class="o">=</span> <span class="o">??</span>
-        <span class="c1"># y component</span>
-        <span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">([</span><span class="n">dy_c</span><span class="p">,</span> <span class="n">dy_s</span><span class="p">,</span> <span class="n">dy_n</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="nb">abs</span><span class="p">)</span>
-
-        <span class="c1"># distance between 2 atoms</span>
-        <span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dst</span><span class="p">[</span><span class="err">??</span><span class="p">,</span><span class="err">??</span><span class="p">,</span><span class="err">??</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dst</span><span class="p">[</span><span class="err">??</span><span class="p">,</span><span class="err">??</span><span class="p">,</span><span class="err">??</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-
-        <span class="c1"># lower left triangle</span>
-        <span class="n">dst</span><span class="p">[</span><span class="n">ne</span><span class="p">,</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">dst</span><span class="p">[</span><span class="err">??</span><span class="p">,</span><span class="err">??</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">dst</span><span class="p">[</span><span class="n">ne</span><span class="p">,</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">dst</span><span class="p">[</span><span class="err">??</span><span class="p">,</span><span class="err">??</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
-        <span class="n">dst</span><span class="p">[</span><span class="n">ne</span><span class="p">,</span><span class="n">at</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span>  <span class="n">dst</span><span class="p">[</span><span class="err">??</span><span class="p">,</span><span class="err">??</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>            
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="part-1-3-build-arrays-to-store-interatomic-forces-and-calculate-the-quantities">
-<h3>Part 1.3: Build arrays to store interatomic forces and calculate the quantities<a class="headerlink" href="#part-1-3-build-arrays-to-store-interatomic-forces-and-calculate-the-quantities" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>We then make another 3d array, with the size of NxNx2, to store interatomic forces between atom pairs. Let’s use <code class="docutils literal notranslate"><span class="pre">Fij[i,j,k]</span></code>, where k = 0 and 1 are for the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> components of the forces. See the illustraion below.</p></li>
-</ul>
-<div align="center">
-<img src="https://i.ibb.co/HLdnWWpf/MD-Instruction-Note-Fij.jpg" width="580">
-</div>
-<ul class="simple">
-<li><p>The interatomic forces are calculated using $<span class="math notranslate nohighlight">\(\vec{f}_{ij} = -\frac{\vec{r}_{ij}}{r_{ij}}  \frac{24 \varepsilon}{r_m} \bigg[2 \bigg(\frac{r_m}{r_{ij}}\bigg)^{13} - \bigg(\frac{r_m}{r_{ij}}\bigg)^7 \bigg],\)</span><span class="math notranslate nohighlight">\( where \)</span>\vec{r}<em>{ij} = (\Delta x</em>{ij}, \Delta y_{ij}).$</p></li>
-<li><p>We will create anthor 2d array of Nx2 size to store the vector of the total force on each atom. This array will be similar to the position-vector array created earlier. Let’s use <code class="docutils literal notranslate"><span class="pre">Fi_v[i,j]</span></code>, where i is the label of atoms, and j is the index for <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(y\)</span> components. The total force vector is obtained by summing the respective row in the <span class="math notranslate nohighlight">\(\vec{f}_{ij}\)</span> array:
-$<span class="math notranslate nohighlight">\(\vec{f}_i = \sum_{j}^N\vec{f}_{ij}.\)</span>$ See the figure below for illustration.</p></li>
-<li><p>Here, we also set a cutoff radius to be <span class="math notranslate nohighlight">\(r_{cut} = 3r_0\)</span>, outside the cutoff range, the interatomic forces are ignored.</p></li>
-<li><p>Again, we only need to calculate the upper right triangle and mirror the values to the low triangle of the data array.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build Fij and Fi_v array, and calculate the values of the entries.</span>
-
-<span class="c1"># fill the ?? in the code</span>
-
-<span class="n">Fij</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="err">??</span><span class="p">))</span>
-<span class="n">r_cut</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">r0</span>
-
-<span class="c1"># loop over atoms and neighbors to calculate interatomic forecs</span>
-<span class="n">Fij</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">at</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">ne</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">at</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
-        <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="err">??</span> <span class="o">&lt;</span> <span class="n">r_cut</span><span class="p">:</span>
-
-            <span class="n">dUdr</span> <span class="o">=</span> <span class="p">(</span><span class="mi">24</span><span class="o">*</span><span class="n">eps</span><span class="o">/</span><span class="n">rm</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="err">??</span><span class="p">)</span><span class="o">**</span><span class="mi">13</span> <span class="o">-</span> <span class="p">(</span><span class="err">??</span><span class="p">)</span><span class="o">**</span><span class="mi">7</span><span class="p">)</span>
-            <span class="c1"># x component</span>
-            <span class="n">Fij</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">dUdr</span>
-            <span class="n">Fij</span><span class="p">[</span><span class="n">ne</span><span class="p">,</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">Fij</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
-            
-            <span class="c1"># y component</span>
-            <span class="n">Fij</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">??</span>
-            <span class="n">Fij</span><span class="p">[</span><span class="n">ne</span><span class="p">,</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">??</span>            
-
-
-<span class="c1"># sum up the interatomic forces to get the total force on the atom of interest.</span>
-<span class="n">Fi_v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-<span class="n">Fi_v</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">at</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-    <span class="n">Fi_v</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">??</span>
-    <span class="n">Fi_v</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">??</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>When you arrive this part of the code, all the necessary containers should be successfully created.</p>
 <hr class="docutils" />
-</section>
 </section>
 <section id="part-2-time-stepping">
 <h2>Part 2: Time stepping<a class="headerlink" href="#part-2-time-stepping" title="Link to this heading">#</a></h2>
 <section id="part-2-1">
 <h3>Part 2.1<a class="headerlink" href="#part-2-1" title="Link to this heading">#</a></h3>
-<p>In this part, we’ll put those arrays above to make the time stepping simulations to update atoms’ positions iteratively. Following the procedure,</p>
+<p>The main difference between the two-phase model and single-phase model is that we will different interaction forces $<span class="math notranslate nohighlight">\(\vec{f}_{ij} = -\frac{\vec{r}_{ij}}{r_{ij}}  \frac{24 \varepsilon_{AA}}{r_m} \bigg[2 \bigg(\frac{r_m}{r_{ij}}\bigg)^{13} - \bigg(\frac{r_m}{r_{ij}}\bigg)^7 \bigg]\)</span><span class="math notranslate nohighlight">\( between A-A atoms.
+\)</span><span class="math notranslate nohighlight">\(\vec{f}_{ij} = -\frac{\vec{r}_{ij}}{r_{ij}}  \frac{24 \varepsilon_{BB}}{r_m} \bigg[2 \bigg(\frac{r_m}{r_{ij}}\bigg)^{13} - \bigg(\frac{r_m}{r_{ij}}\bigg)^7 \bigg]\)</span><span class="math notranslate nohighlight">\( between B-B atoms.
+\)</span><span class="math notranslate nohighlight">\(\vec{f}_{ij} = -\frac{\vec{r}_{ij}}{r_{ij}}  \frac{24 \varepsilon_{AB}}{r_m} \bigg[2 \bigg(\frac{r_m}{r_{ij}}\bigg)^{13} - \bigg(\frac{r_m}{r_{ij}}\bigg)^7 \bigg]\)</span><span class="math notranslate nohighlight">\( between A-B atoms.
+So, we can simply set conditions in the previous code when calculate interatomic forces:
+\)</span><span class="math notranslate nohighlight">\(\text{if}~~at&lt; 40 ~~\text{and}~~ne&lt;40,~~\varepsilon = \varepsilon_{AA}\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\text{if}~~at&gt; 40 ~~\text{and}~~ne&gt;40,~~\varepsilon = \varepsilon_{BB}\)</span><span class="math notranslate nohighlight">\(
+Other than these two cases:
+\)</span><span class="math notranslate nohighlight">\(\varepsilon = \varepsilon_{AB}\)</span>$</p>
 <ul class="simple">
-<li><p>Calculate interatomic distances between pairs.</p></li>
-<li><p>Calculate interatomic forces between pairs. Note we only calculate those atoms within the cutoff radius (<span class="math notranslate nohighlight">\(r_{cut}\)</span>). We keep the cutoff radius to be three times equilibrium distance (<span class="math notranslate nohighlight">\(r_{cut} = 3r_0 = 3\times 1.12246 \cdot r_m\)</span>). For neighbors outside that range, the interaction forces are zero.</p></li>
-<li><p>Calculate total force (<code class="docutils literal notranslate"><span class="pre">Fi_v</span></code>) of each atom by summing each row of the <code class="docutils literal notranslate"><span class="pre">Fij</span></code> array.</p></li>
-<li><p>Use Newton’s law to calculate acceleration of each atom: $<span class="math notranslate nohighlight">\(\vec{a}_i = \frac{\vec{f}_i}{m}.\)</span>$</p></li>
-<li><p>We will try a simple time method first. Use Euler method:
-$<span class="math notranslate nohighlight">\(\vec{r}(t_{n+1}) = \vec{r}(t_{n})+ \vec{v}(t_{n})\cdot \Delta t\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(\vec{v}(t_{n+1}) = \vec{v}(t_{n})+ \vec{a}(t_{n})\cdot \Delta t\)</span>$ to update atoms positions and velocities.</p></li>
-<li><p>Consider the periodic boundary conditions: If an atom leaves the computational box from one boundary, it must re-enter the box from the opposite boundary. See the figure below for illustration.</p></li>
+<li><p>Copy the single-phase code to here.</p></li>
+<li><p>Implement the conditions above to where the interatomic forces are calculated.</p></li>
+<li><p>Calculate interatomic forces between pairs. Note we only calculate those atoms</p></li>
+<li><p>Calculate total force as before.</p></li>
+<li><p>Use Newton’s law to calculate acceleration of each atom: $<span class="math notranslate nohighlight">\(\vec{a}_i = \frac{\vec{f}_i}{m_i}.\)</span>$ Note that the two types of atoms have different mass.</p></li>
+<li><p>Update the atom positions and impose periodic boundary conditions as before.</p></li>
 </ul>
-<div align="center">
-<img src="https://i.ibb.co/gbHx7PMs/MD-Instruction-Note7.jpg" width="260">
-</div>
-$$\text{if} ~~ x_{i}(t+\Delta t) < 0, ~~\text{then} ~~x_{i}(t+\Delta t) = x_{i}(t+\Delta t)  + L_x$$
-$$\text{if} ~~ x_{i}(t+\Delta t) > L_x, ~~\text{then} ~~x_{i}(t+\Delta t) = x_{i}(t+\Delta t) - L_x$$
-$$\text{if} ~~ y_{i}(t+\Delta t) < 0, ~~\text{then} ~~y_{i}(t+\Delta t) = y_{i}(t+\Delta t)  + L_y$$
-$$\text{if} ~~ y_{i}(t+\Delta t) > L_y, ~~\text{then} ~~y_{i}(t+\Delta t) = y_{i}(t+\Delta t) - L_y$$
 <p><strong>Use the code cell to make the time simulation.</strong></p>
+<ul class="simple">
+<li><p>Test the first case that
+$<span class="math notranslate nohighlight">\(\varepsilon_{AA} = 0.25, \varepsilon_{AB} = 2.5, \varepsilon_{BB} = 0.5,\)</span>$
+where the A-B interaction force is much larger. Do you expect A and B will mix?</p></li>
+<li><p>Test the second case that
+$<span class="math notranslate nohighlight">\(\varepsilon_{AA} = 0.25, \varepsilon_{AB} = 0.1, \varepsilon_{BB} = 0.5,\)</span>$
+where the A-B interaction force is much lower. Do you expect A and B will mix?</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import libraries for plotting</span>
@@ -617,8 +517,9 @@ $$\text{if} ~~ y_{i}(t+\Delta t) > L_y, ~~\text{then} ~~y_{i}(t+\Delta t) = y_{i
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Lx</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Ly</span><span class="p">)</span>
 
+
 <span class="c1"># set up number of time steps and time step size</span>
-<span class="n">nstep</span> <span class="o">=</span> <span class="mi">10001</span>
+<span class="n">nstep</span> <span class="o">=</span> <span class="mi">2001</span>
 <span class="n">dt</span> <span class="o">=</span> <span class="mf">0.00005</span>
 <span class="n">r_cut</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">r0</span>
 
@@ -627,11 +528,7 @@ $$\text{if} ~~ y_{i}(t+\Delta t) > L_y, ~~\text{then} ~~y_{i}(t+\Delta t) = y_{i
 <span class="n">Pos</span> <span class="o">=</span> <span class="n">Pos_pr</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> 
 <span class="n">Vel</span> <span class="o">=</span> <span class="n">Vel_pr</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">Acc</span> <span class="o">=</span> <span class="n">Acc_pr</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-
-<span class="c1"># fill the ?? in the code below</span>
-
-
+   
 <span class="n">tm</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">cnt</span> <span class="o">=</span> <span class="mi">1</span>
 
@@ -639,41 +536,11 @@ $$\text{if} ~~ y_{i}(t+\Delta t) > L_y, ~~\text{then} ~~y_{i}(t+\Delta t) = y_{i
 <span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">nstep</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
 
     <span class="c1"># Periodic boundary conditions</span>
-    <span class="k">for</span> <span class="n">at</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-        <span class="c1"># in x direction</span>
-        <span class="k">if</span> <span class="n">Pos</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">Pos</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">Pos</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">Lx</span>
-        <span class="k">if</span> <span class="n">Pos</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">Lx</span><span class="p">:</span>
-            <span class="n">Pos</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">??</span>
-
-        <span class="c1"># in y direction</span>
-        <span class="k">if</span> <span class="n">Pos</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">Pos</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">??</span>
-        <span class="k">if</span> <span class="n">Pos</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">Lx</span><span class="p">:</span>
-            <span class="n">Pos</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">??</span>
+    <span class="o">??</span>
             
     <span class="c1"># Calculate inter-atom distances with periodic boundaries</span>
-    <span class="k">for</span> <span class="n">at</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">ne</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">at</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
-            <span class="n">dx_c</span> <span class="o">=</span> <span class="o">??</span>
-            <span class="n">dx_w</span> <span class="o">=</span> <span class="o">??</span>
-            <span class="n">dx_e</span> <span class="o">=</span> <span class="o">??</span>
+    <span class="o">??</span>
 
-            <span class="n">dy_c</span> <span class="o">=</span> <span class="o">??</span>
-            <span class="n">dy_s</span> <span class="o">=</span> <span class="o">??</span>
-            <span class="n">dy_n</span> <span class="o">=</span> <span class="o">??</span>
-
-            <span class="c1"># X component</span>
-            <span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">([</span><span class="n">dx_c</span><span class="p">,</span> <span class="n">dx_w</span><span class="p">,</span> <span class="n">dx_e</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="nb">abs</span><span class="p">)</span>
-            <span class="n">dst</span><span class="p">[</span><span class="n">ne</span><span class="p">,</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
-
-            <span class="c1"># Y component</span>
-            <span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">([</span><span class="n">dy_c</span><span class="p">,</span> <span class="n">dy_s</span><span class="p">,</span> <span class="n">dy_n</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="nb">abs</span><span class="p">)</span>
-            <span class="n">dst</span><span class="p">[</span><span class="n">ne</span><span class="p">,</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
-
-            <span class="c1"># Inter-atom distance</span>
-            <span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="err">??</span><span class="p">)</span>
-            <span class="n">dst</span><span class="p">[</span><span class="n">ne</span><span class="p">,</span><span class="n">at</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
 
     <span class="c1"># Calculate force</span>
     <span class="n">Fij</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -681,6 +548,14 @@ $$\text{if} ~~ y_{i}(t+\Delta t) > L_y, ~~\text{then} ~~y_{i}(t+\Delta t) = y_{i
     <span class="k">for</span> <span class="n">at</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">ne</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">at</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
             <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">r_cut</span><span class="p">:</span>
+                
+                <span class="k">if</span> <span class="err">??</span><span class="p">:</span>
+                    <span class="n">eps</span> <span class="o">=</span> <span class="n">epsAA</span>
+                <span class="k">elif</span> <span class="err">??</span><span class="p">:</span>
+                    <span class="n">esp</span> <span class="o">=</span> <span class="n">epsBB</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">eps</span> <span class="o">=</span> <span class="n">epsAB</span>
+                
                 <span class="n">dUdr</span> <span class="o">=</span> <span class="o">??</span>
                 
                 <span class="n">Fij</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">??</span>
@@ -691,14 +566,13 @@ $$\text{if} ~~ y_{i}(t+\Delta t) > L_y, ~~\text{then} ~~y_{i}(t+\Delta t) = y_{i
 
     <span class="c1"># Calculate total force of each atom</span>
     <span class="k">for</span> <span class="n">at</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-        <span class="n">Fi_v</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">??</span>
-        <span class="n">Fi_v</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">??</span>
+
     
     <span class="c1"># calculate acceleration of each atom</span>
     <span class="c1"># Acc = Fi_v/ma</span>
     <span class="k">for</span> <span class="n">at</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span> 
-        <span class="n">Acc</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">Fi_v</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">ma</span>
-        <span class="n">Acc</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">Fi_v</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">ma</span>   
+        <span class="n">Acc</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">Fi_v</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">Mas</span><span class="p">[</span><span class="n">at</span><span class="p">]</span>
+        <span class="n">Acc</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">Fi_v</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">Mas</span><span class="p">[</span><span class="n">at</span><span class="p">]</span>
         
     <span class="c1"># Update positions</span>
     <span class="k">for</span> <span class="n">at</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span> 
@@ -717,8 +591,9 @@ $$\text{if} ~~ y_{i}(t+\Delta t) > L_y, ~~\text{then} ~~y_{i}(t+\Delta t) = y_{i
     <span class="n">tm</span> <span class="o">+=</span> <span class="n">dt</span>
 
     <span class="c1"># Visualization</span>
-    <span class="k">if</span> <span class="n">it</span> <span class="o">%</span> <span class="mi">50</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Pos</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">Pos</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;bo&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">it</span> <span class="o">%</span> <span class="mi">250</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Pos</span><span class="p">[:</span><span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">Pos</span><span class="p">[:</span><span class="mi">40</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;bo&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Pos</span><span class="p">[</span><span class="mi">40</span><span class="p">:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">Pos</span><span class="p">[</span><span class="mi">40</span><span class="p">:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span>       
         <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">Lx</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Ly</span><span class="p">])</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
    
@@ -737,11 +612,7 @@ $$\text{if} ~~ y_{i}(t+\Delta t) > L_y, ~~\text{then} ~~y_{i}(t+\Delta t) = y_{i
 <h3>Part 2.2<a class="headerlink" href="#part-2-2" title="Link to this heading">#</a></h3>
 <p>Now, <strong>let’s use Verlet time scheme.</strong></p>
 <ul class="simple">
-<li><p>At the initial step: $<span class="math notranslate nohighlight">\(\vec{r}(t_1) = \vec{r}(t_0) + \vec{v}(t_0)\cdot \Delta t + \frac{1}{2}\vec{a}(t_0)\cdot \Delta t^2.\)</span><span class="math notranslate nohighlight">\( Now, since there are position arrays: one for \)</span>t_1<span class="math notranslate nohighlight">\( and the other for \)</span>t_0$, we’ll need to create another position vector to store the position in the previous time step.</p></li>
-<li><ul>
-<li><p>Use Verlet’s method to update atomic positions: $<span class="math notranslate nohighlight">\(\vec{r}(t_{n+1}) = 2\vec{r}(t_{n}) - \vec{r}(t_{n-1}) + \vec{a}(t_{n})\cdot \Delta t^2  \)</span>$</p></li>
-</ul>
-</li>
+<li><p>Modify the preivous Verlet method code to run two-phase simulations.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -776,51 +647,23 @@ $$\text{if} ~~ y_{i}(t+\Delta t) > L_y, ~~\text{then} ~~y_{i}(t+\Delta t) = y_{i
 <span class="n">tm</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">cnt</span> <span class="o">=</span> <span class="mi">1</span>
 
-<span class="c1"># copy your functioning code in the cell above to the respective part of </span>
-<span class="c1"># this code.</span>
 <span class="c1"># Simulation loop</span>
 <span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">nstep</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
 
-    <span class="c1"># Periodic boundary conditions</span>
- 
-            
-    <span class="c1"># Calculate inter-atom distances with periodic boundaries</span>
- 
+    <span class="c1"># copy your working single-phase code here and modify it to</span>
+    <span class="c1"># a two-phase code.</span>
+    
 
-    <span class="c1"># Calculate force</span>
-    <span class="n">Fij</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">at</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">ne</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">at</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
-            <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">r_cut</span><span class="p">:</span>
-
-
-    <span class="c1"># Calculate total force of each atom</span>
-    <span class="k">for</span> <span class="n">at</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
 
     
-    <span class="c1"># calculate acceleration of each atom</span>
-    <span class="c1"># Acc = Fi_v/ma</span>
-    <span class="k">for</span> <span class="n">at</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span> 
-        <span class="n">Acc</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">Fi_v</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">ma</span>
-        <span class="n">Acc</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">Fi_v</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">ma</span>   
-        
-    <span class="c1"># Update positions</span>
-    <span class="k">for</span> <span class="n">at</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span> 
-        <span class="n">Pos</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="err">??</span> <span class="o">-</span> <span class="err">??</span> <span class="o">+</span> <span class="n">Acc</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">dt</span><span class="o">**</span><span class="mi">2</span>
-        <span class="n">Pos</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="err">??</span> <span class="o">-</span> <span class="err">??</span> <span class="o">+</span> <span class="n">Acc</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">dt</span><span class="o">**</span><span class="mi">2</span>
-
-    <span class="n">Pos_p</span> <span class="o">=</span> <span class="n">Pos_c</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    <span class="n">Pos_c</span> <span class="o">=</span> <span class="n">Pos</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-    <span class="c1"># print(X_Y)</span>
 
     <span class="c1"># Elapsed time</span>
     <span class="n">tm</span> <span class="o">+=</span> <span class="n">dt</span>
 
     <span class="c1"># Visualization</span>
-    <span class="k">if</span> <span class="n">it</span> <span class="o">%</span> <span class="mi">50</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Pos</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">Pos</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;bo&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">it</span> <span class="o">%</span> <span class="mi">250</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Pos</span><span class="p">[:</span><span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">Pos</span><span class="p">[:</span><span class="mi">40</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;bo&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Pos</span><span class="p">[</span><span class="mi">40</span><span class="p">:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">Pos</span><span class="p">[</span><span class="mi">40</span><span class="p">:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">Lx</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Ly</span><span class="p">])</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
 
@@ -834,8 +677,7 @@ $$\text{if} ~~ y_{i}(t+\Delta t) > L_y, ~~\text{then} ~~y_{i}(t+\Delta t) = y_{i
 </div>
 </div>
 </div>
-<p><strong>Upload you final copy to the drop box on the course website. Lab 1 coding assignment.</strong>
-DO NOT forget adding your name to the file name.</p>
+<p>Upload you final copy to the drop box on the course website. Coding Lab 1.</p>
 </section>
 </section>
 </section>
@@ -871,20 +713,20 @@ DO NOT forget adding your name to the file name.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../../section_files/day_4.html"
+       href="MolecularDynamics_singlePhase_student.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Day 4</p>
+        <p class="prev-next-title">Molecular dynamics hands-on Python coding practices</p>
       </div>
     </a>
     <a class="right-next"
-       href="MolecularDynamics_twoPhase_student.html"
+       href="../../section_files/day_5.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Molecular dynamics hands-on Python coding practices</p>
+        <p class="prev-next-title">Day 5</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -904,13 +746,7 @@ DO NOT forget adding your name to the file name.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#put-your-name-here"><p style="text-align: right;"> ✅ <strong>Put your name here</strong> </p></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-build-containers-to-store-data">Part 1: build containers to store data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-1-initial-atomic-positions-velocities-and-accelerations">Part 1.1: Initial atomic positions, velocities, and accelerations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-2-calculate-and-store-relative-vectors-and-distances-between-every-atom-pair">Part 1.2: Calculate and store relative vectors and distances between every atom pair.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-3-build-arrays-to-store-interatomic-forces-and-calculate-the-quantities">Part 1.3: Build arrays to store interatomic forces and calculate the quantities</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-modify-the-single-phase-code-and-a-two-phase-code">Part 1: Modify the single phase code and a two phase code</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-time-stepping">Part 2: Time stepping</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-1">Part 2.1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-2">Part 2.2</a></li>
