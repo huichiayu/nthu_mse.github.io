@@ -9,9 +9,13 @@ Download MolecularDynamics_singlePhase_student.ipynb file: {Download}`MolecularD
 
 
 
-<!--
+
 [MolecularDynamics_twoPhase_student.ipynb](../daily/Day-04/MolecularDynamics_twoPhase_student.ipynb)
 
+Download MolecularDynamics_twoPhase_student.ipynb file: {Download}`MolecularDynamics_twoPhase_student.ipynb<../daily/Day-04/MolecularDynamics_twoPhase_student.ipynb>`
+
+
+<!--
 <a href="https://raw.githubusercontent.com/huichiayu/cmse_202_802/main/MSE590/JPNB/MolecularDynamics_singlePhase_student.ipynb" download>Download MolecularDynamics_singlePhase_student.ipynb</a>
 -->
 
