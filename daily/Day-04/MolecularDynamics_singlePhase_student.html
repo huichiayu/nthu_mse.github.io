@@ -538,7 +538,12 @@ $<span class="math notranslate nohighlight">\(r_{ij} = \sqrt{\Delta x_{ij}^2 + \
 <img src="https://i.ibb.co/HLdnWWpf/MD-Instruction-Note-Fij.jpg" width="580">
 </div>
 <ul class="simple">
-<li><p>The interatomic forces are calculated using $<span class="math notranslate nohighlight">\(\vec{f}_{ij} = -\frac{\vec{r}_{ij}}{r_{ij}}  \frac{24 \varepsilon}{r_m} \bigg[2 \bigg(\frac{r_m}{r_{ij}}\bigg)^{13} - \bigg(\frac{r_m}{r_{ij}}\bigg)^7 \bigg],\)</span><span class="math notranslate nohighlight">\( where \)</span>\vec{r}<em>{ij} = (\Delta x</em>{ij}, \Delta y_{ij}).$</p></li>
+<li><p>The interatomic forces are calculated using</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\vec{f}_{ij} = -\frac{\vec{r}_{ij}}{r_{ij}}  \frac{24 \varepsilon}{r_m} \bigg[2 \bigg(\frac{r_m}{r_{ij}}\bigg)^{13} - \bigg(\frac{r_m}{r_{ij}}\bigg)^7 \bigg],\]</div>
+<p>where <span class="math notranslate nohighlight">\(\vec{r}_{ij} = (\Delta x_{ij}, \Delta y_{ij}).\)</span></p>
+<ul class="simple">
 <li><p>We will create anthor 2d array of Nx2 size to store the vector of the total force on each atom. This array will be similar to the position-vector array created earlier. Let’s use <code class="docutils literal notranslate"><span class="pre">Fi_v[i,j]</span></code>, where i is the label of atoms, and j is the index for <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(y\)</span> components. The total force vector is obtained by summing the respective row in the <span class="math notranslate nohighlight">\(\vec{f}_{ij}\)</span> array:
 $<span class="math notranslate nohighlight">\(\vec{f}_i = \sum_{j}^N\vec{f}_{ij}.\)</span>$ See the figure below for illustration.</p></li>
 <li><p>Here, we also set a cutoff radius to be <span class="math notranslate nohighlight">\(r_{cut} = 3r_0\)</span>, outside the cutoff range, the interatomic forces are ignored.</p></li>
