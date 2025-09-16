@@ -56,7 +56,14 @@ parts:
         sections: 
         - file: daily/Day-05/MonteCarlo_example.ipynb         
 #         - file: placeholder/placeholder.md
-        
+
+      - file: section_files/day_6
+        sections: 
+#         - file: daily/Day-05/MonteCarlo_example.ipynb         
+#         - file: placeholder/placeholder.md
+
+
+
 ### DO NOT USE THE HOMEWORK ASSIGNMENTS FROM THE PREVIOUS SEMESTER
 ### CREATE NEW ONES THAT ASSESS SIMILAR SKILLS/CONTENT
   - caption: Homework
