@@ -48,8 +48,8 @@ parts:
 
       - file: section_files/day_4
         sections: 
-        - file: daily/Day-04/MolecularDynamics_singlePhase_student.ipynb 
-        - file: daily/Day-04/MolecularDynamics_twoPhase_student.ipynb         
+        - file: daily/Day-04/MolecularDynamics_singlePhase_Student_v3.ipynb 
+        - file: daily/Day-04/MolecularDynamics_twoPhase_Student_v2.ipynb         
         
         
       - file: section_files/day_5
