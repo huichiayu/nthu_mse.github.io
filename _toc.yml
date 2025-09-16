@@ -60,7 +60,7 @@ parts:
       - file: section_files/day_6
         sections: 
 #         - file: daily/Day-05/MonteCarlo_example.ipynb         
-#         - file: placeholder/placeholder.md
+        - file: placeholder/placeholder.md
 
 
 
