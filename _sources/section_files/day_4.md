@@ -2,21 +2,15 @@ Day 4
 =======================
 This section contains the course materials for day 4.
 
-[MolecularDynamics_singlePhase_student.ipynb](../daily/Day-04/MolecularDynamics_singlePhase_student.ipynb)
+[MolecularDynamics_singlePhase_Student_v3.ipyn](../daily/Day-04/MolecularDynamics_singlePhase_Student_v3.ipyn)
 
 
-Download MolecularDynamics_singlePhase_student.ipynb file: {Download}`MolecularDynamics_singlePhase_student.ipynb<../daily/Day-04/MolecularDynamics_singlePhase_student.ipynb>`
+Download MolecularDynamics_singlePhase_Student_v3_.ipynb file: {Download}`MolecularDynamics_singlePhase_Student_v3.ipyn<../daily/Day-04/MolecularDynamics_singlePhase_Student_v3.ipyn>`
 
 
+[MolecularDynamics_twoPhase_Student_v2.ipynb](../daily/Day-04/MolecularDynamics_twoPhase_Student_v2.ipynb)
 
+Download MolecularDynamics_twoPhase_Student_v2.ipynb file: {Download}`MolecularDynamics_twoPhase_Student_v2.ipynb<../daily/Day-04/MolecularDynamics_twoPhase_Student_v2.ipynb>`
 
-[MolecularDynamics_twoPhase_student.ipynb](../daily/Day-04/MolecularDynamics_twoPhase_student.ipynb)
-
-Download MolecularDynamics_twoPhase_student.ipynb file: {Download}`MolecularDynamics_twoPhase_student.ipynb<../daily/Day-04/MolecularDynamics_twoPhase_student.ipynb>`
-
-
-<!--
-<a href="https://raw.githubusercontent.com/huichiayu/cmse_202_802/main/MSE590/JPNB/MolecularDynamics_singlePhase_student.ipynb" download>Download MolecularDynamics_singlePhase_student.ipynb</a>
--->
 
 [Upload your completed Lab 1 assignment (Dropbox file request)](https://www.dropbox.com/request/THSmmoQhSzJIg6xnEeSF)
