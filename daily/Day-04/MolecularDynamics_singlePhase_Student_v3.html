@@ -482,19 +482,30 @@ document.write(`
 <section id="part-1-2-calculate-and-store-relative-vectors-and-distances-between-every-atom-pair">
 <h3>Part 1.2: Calculate and store relative vectors and distances between every atom pair.<a class="headerlink" href="#part-1-2-calculate-and-store-relative-vectors-and-distances-between-every-atom-pair" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>Let’s create a 3d array to store the relative position vectors between atom pairs.</strong> Since we have N atoms, we’ll make a NxNx3 array; for instance, a <code class="docutils literal notranslate"><span class="pre">dst[i,j,k]</span></code> array, where we use index i for the atom of interest, index j for the neighboring atoms, k = 0 and 1 for the <span class="math notranslate nohighlight">\(x\)</span> component (<span class="math notranslate nohighlight">\(\Delta x_{ij}\)</span>) and <span class="math notranslate nohighlight">\(y\)</span> component (<span class="math notranslate nohighlight">\(\Delta y_{ij}\)</span>) of the relative vector, respectively, and k = 2 for the distance between two atoms (<span class="math notranslate nohighlight">\(r_{ij}\)</span>).
-$<span class="math notranslate nohighlight">\(\Delta x_{ij} = x_j - x_i,~~~~\Delta x_{ji} = -\Delta x_{ij}\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(\Delta y_{ij} = y_j - y_i,~~~~\Delta y_{ji} = -\Delta y_{ij}\)</span>$</p></li>
+<li><p><strong>Let’s create a 3d array to store the relative position vectors between atom pairs.</strong> Since we have N atoms, we’ll make a NxNx3 array; for instance, a <code class="docutils literal notranslate"><span class="pre">dst[i,j,k]</span></code> array, where we use index i for the atom of interest, index j for the neighboring atoms, k = 0 and 1 for the <span class="math notranslate nohighlight">\(x\)</span> component (<span class="math notranslate nohighlight">\(\Delta x_{ij}\)</span>) and <span class="math notranslate nohighlight">\(y\)</span> component (<span class="math notranslate nohighlight">\(\Delta y_{ij}\)</span>) of the relative vector, respectively, and k = 2 for the distance between two atoms (<span class="math notranslate nohighlight">\(r_{ij}\)</span>).</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\Delta x_{ij} = x_j - x_i,~~~~\Delta x_{ji} = -\Delta x_{ij}\]</div>
+<div class="math notranslate nohighlight">
+\[\Delta y_{ij} = y_j - y_i,~~~~\Delta y_{ji} = -\Delta y_{ij}\]</div>
+<ul class="simple">
 <li><p>For periodic cells, we need to consider the mirroring neighbor atoms from the neighboring cell. See the figure below for illustration.</p></li>
 </ul>
 <div align="center">
 <img src="https://i.ibb.co/60vv5VJ8/MD-Instruction-Note1-A.jpg" width="280">
 </div>
-Along the $x$ direction, we'll pick the closest neighboring atom using $$\Delta x_{ij} = \min(|\Delta x_{ij}|, |\Delta x_{ij}+L_x|, |\Delta x_{ij}-L_x|).$$
-Similarly, in the $y$ direction, we'll take $$\Delta y _{ij} = \min(|\Delta y_{ij}|, |\Delta y_{ij}+L_y|, |\Delta y_{ij}-L_y|)$$ for the closest atom (in the surrounding repeated cell).
+Along the $x$ direction, we'll pick the closest neighboring atom using 
+<div class="math notranslate nohighlight">
+\[\Delta x_{ij} = \min(|\Delta x_{ij}|, |\Delta x_{ij}+L_x|, |\Delta x_{ij}-L_x|).\]</div>
+<p>Similarly, in the <span class="math notranslate nohighlight">\(y\)</span> direction, we’ll take
+$<span class="math notranslate nohighlight">\(\Delta y _{ij} = \min(|\Delta y_{ij}|, |\Delta y_{ij}+L_y|, |\Delta y_{ij}-L_y|)\)</span>$</p>
+<p>for the closest atom (in the surrounding repeated cell).</p>
 <ul class="simple">
-<li><p>The distance between two atoms is calculated using:
-$<span class="math notranslate nohighlight">\(r_{ij} = \sqrt{\Delta x_{ij}^2 + \Delta y_{ij}^2},~~~~r_{ji} =r_{ij}.\)</span>$</p></li>
+<li><p>The distance between two atoms is calculated using:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[r_{ij} = \sqrt{\Delta x_{ij}^2 + \Delta y_{ij}^2},~~~~r_{ji} =r_{ij}.\]</div>
+<ul class="simple">
 <li><p>Since atoms are relative to each other in opposite direction. Thus, we only need to calculate half of the number of atom pairs. For example, calculate the upper right triagnle of the whole data set and mirror the values, with a negative sign, to the lower left triangle. See the figure below for illustration.</p></li>
 </ul>
 <div align="center">
@@ -546,9 +557,18 @@ $<span class="math notranslate nohighlight">\(r_{ij} = \sqrt{\Delta x_{ij}^2 + \
 <img src="https://i.ibb.co/HLdnWWpf/MD-Instruction-Note-Fij.jpg" width="580">
 </div>
 <ul class="simple">
-<li><p>The interatomic forces are calculated using $<span class="math notranslate nohighlight">\(\vec{f}_{ij} = -\frac{\vec{r}_{ij}}{r_{ij}}  \frac{24 \varepsilon}{r_m} \bigg[2 \bigg(\frac{r_m}{r_{ij}}\bigg)^{13} - \bigg(\frac{r_m}{r_{ij}}\bigg)^7 \bigg],\)</span><span class="math notranslate nohighlight">\( where \)</span>\vec{r}<em>{ij} = (\Delta x</em>{ij}, \Delta y_{ij}).$</p></li>
-<li><p>We will create anthor 2d array of Nx2 size to store the vector of the total force on each atom. This array will be similar to the position-vector array created earlier. Let’s use <code class="docutils literal notranslate"><span class="pre">Fi_v[i,j]</span></code>, where i is the label of atoms, and j is the index for <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(y\)</span> components. The total force vector is obtained by summing the respective row in the <span class="math notranslate nohighlight">\(\vec{f}_{ij}\)</span> array:
-$<span class="math notranslate nohighlight">\(\vec{f}_i = \sum_{j}^N\vec{f}_{ij}.\)</span>$ See the figure below for illustration.</p></li>
+<li><p>The interatomic forces are calculated using</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\vec{f}_{ij} = -\frac{\vec{r}_{ij}}{r_{ij}}  \frac{24 \varepsilon}{r_m} \bigg[2 \bigg(\frac{r_m}{r_{ij}}\bigg)^{13} - \bigg(\frac{r_m}{r_{ij}}\bigg)^7 \bigg],\]</div>
+<p>where <span class="math notranslate nohighlight">\(\vec{r}_{ij} = (\Delta x_{ij}, \Delta y_{ij}).\)</span></p>
+<ul class="simple">
+<li><p>We will create anthor 2d array of Nx2 size to store the vector of the total force on each atom. This array will be similar to the position-vector array created earlier. Let’s use <code class="docutils literal notranslate"><span class="pre">Fi_v[i,j]</span></code>, where i is the label of atoms, and j is the index for <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(y\)</span> components. The total force vector is obtained by summing the respective row in the <span class="math notranslate nohighlight">\(\vec{f}_{ij}\)</span> array:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\vec{f}_i = \sum_{j}^N\vec{f}_{ij}.\]</div>
+<p>See the figure below for illustration.</p>
+<ul class="simple">
 <li><p>Here, we also set a cutoff radius to be <span class="math notranslate nohighlight">\(r_{cut} = 3r_0\)</span>, outside the cutoff range, the interatomic forces are ignored.</p></li>
 <li><p>Again, we only need to calculate the upper right triangle and mirror the values to the low triangle of the data array.</p></li>
 </ul>
@@ -598,7 +618,11 @@ $<span class="math notranslate nohighlight">\(\vec{f}_i = \sum_{j}^N\vec{f}_{ij}
 <li><p>Calculate interatomic distances between pairs.</p></li>
 <li><p>Calculate interatomic forces between pairs. Note we only calculate those atoms within the cutoff radius (<span class="math notranslate nohighlight">\(r_{cut}\)</span>). We keep the cutoff radius to be three times equilibrium distance (<span class="math notranslate nohighlight">\(r_{cut} = 3r_0 = 3\times 1.12246 \cdot r_m\)</span>). For neighbors outside that range, the interaction forces are zero.</p></li>
 <li><p>Calculate total force (<code class="docutils literal notranslate"><span class="pre">Fi_v</span></code>) of each atom by summing each row of the <code class="docutils literal notranslate"><span class="pre">Fij</span></code> array.</p></li>
-<li><p>Use Newton’s law to calculate acceleration of each atom: $<span class="math notranslate nohighlight">\(\vec{a}_i = \frac{\vec{f}_i}{m}.\)</span>$</p></li>
+<li><p>Use Newton’s law to calculate acceleration of each atom:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\vec{a}_i = \frac{\vec{f}_i}{m}.\]</div>
+<ul class="simple">
 <li><p>We will try a simple time method first. Use Euler method:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
@@ -612,10 +636,14 @@ $<span class="math notranslate nohighlight">\(\vec{f}_i = \sum_{j}^N\vec{f}_{ij}
 <div align="center">
 <img src="https://i.ibb.co/gbHx7PMs/MD-Instruction-Note7.jpg" width="260">
 </div>
-$$\text{if} ~~ x_{i}(t+\Delta t) < 0, ~~\text{then} ~~x_{i}(t+\Delta t) = x_{i}(t+\Delta t)  + L_x$$
-$$\text{if} ~~ x_{i}(t+\Delta t) > L_x, ~~\text{then} ~~x_{i}(t+\Delta t) = x_{i}(t+\Delta t) - L_x$$
-$$\text{if} ~~ y_{i}(t+\Delta t) < 0, ~~\text{then} ~~y_{i}(t+\Delta t) = y_{i}(t+\Delta t)  + L_y$$
-$$\text{if} ~~ y_{i}(t+\Delta t) > L_y, ~~\text{then} ~~y_{i}(t+\Delta t) = y_{i}(t+\Delta t) - L_y$$
+<div class="math notranslate nohighlight">
+\[\text{if} ~~ x_{i}(t+\Delta t) &lt; 0, ~~\text{then} ~~x_{i}(t+\Delta t) = x_{i}(t+\Delta t)  + L_x\]</div>
+<div class="math notranslate nohighlight">
+\[\text{if} ~~ x_{i}(t+\Delta t) &gt; L_x, ~~\text{then} ~~x_{i}(t+\Delta t) = x_{i}(t+\Delta t) - L_x\]</div>
+<div class="math notranslate nohighlight">
+\[\text{if} ~~ y_{i}(t+\Delta t) &lt; 0, ~~\text{then} ~~y_{i}(t+\Delta t) = y_{i}(t+\Delta t)  + L_y\]</div>
+<div class="math notranslate nohighlight">
+\[\text{if} ~~ y_{i}(t+\Delta t) &gt; L_y, ~~\text{then} ~~y_{i}(t+\Delta t) = y_{i}(t+\Delta t) - L_y\]</div>
 <p><strong>Use the code cell to make the time simulation.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -746,8 +774,17 @@ $$\text{if} ~~ y_{i}(t+\Delta t) > L_y, ~~\text{then} ~~y_{i}(t+\Delta t) = y_{i
 <h3>Part 2.2<a class="headerlink" href="#part-2-2" title="Link to this heading">#</a></h3>
 <p>Now, <strong>let’s use Verlet time scheme.</strong></p>
 <ul class="simple">
-<li><p>At the initial step: $<span class="math notranslate nohighlight">\(\vec{r}(t_1) = \vec{r}(t_0) + \vec{v}(t_0)\cdot \Delta t + \frac{1}{2}\vec{a}(t_0)\cdot \Delta t^2.\)</span><span class="math notranslate nohighlight">\( Now, since there are position arrays: one for \)</span>t_1<span class="math notranslate nohighlight">\( and the other for \)</span>t_0$, we’ll need to create another position vector to store the position in the previous time step.</p></li>
-<li><p>Use Verlet’s method to update atomic positions: $<span class="math notranslate nohighlight">\(\vec{r}(t_{n+1}) = 2\vec{r}(t_{n}) - \vec{r}(t_{n-1}) + \vec{a}(t_{n})\cdot \Delta t^2.\)</span>$</p></li>
+<li><p>At the initial step:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\vec{r}(t_1) = \vec{r}(t_0) + \vec{v}(t_0)\cdot \Delta t + \frac{1}{2}\vec{a}(t_0)\cdot \Delta t^2.\]</div>
+<p>Now, since there are position arrays: one for <span class="math notranslate nohighlight">\(t_1\)</span> and the other for <span class="math notranslate nohighlight">\(t_0\)</span>, we’ll need to create another position vector to store the position in the previous time step.</p>
+<ul class="simple">
+<li><p>Use Verlet’s method to update atomic positions:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\vec{r}(t_{n+1}) = 2\vec{r}(t_{n}) - \vec{r}(t_{n-1}) + \vec{a}(t_{n})\cdot \Delta t^2.\]</div>
+<ul class="simple">
 <li><p>As you can see, we need to store two position vectors: one for <span class="math notranslate nohighlight">\(n\)</span> step and the other for <span class="math notranslate nohighlight">\(n-1\)</span> step. In the code below, we use <code class="docutils literal notranslate"><span class="pre">Pos_p</span></code> to store <span class="math notranslate nohighlight">\( \vec{r}(t_{n-1})\)</span> and <code class="docutils literal notranslate"><span class="pre">Pos_c</span></code> to store <span class="math notranslate nohighlight">\(\vec{r}(t_{n})\)</span>.</p></li>
 <li><p>Note you need to update atomic position at the beginning of the time stepping (before calculating acceleration).</p></li>
 <li><p>Fill up the <code class="docutils literal notranslate"><span class="pre">??</span></code> to complete the code below.</p></li>

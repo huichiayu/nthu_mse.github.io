@@ -484,20 +484,35 @@ In the first test run, we have
 <h2>Part 2: Time stepping<a class="headerlink" href="#part-2-time-stepping" title="Link to this heading">#</a></h2>
 <section id="part-2-1">
 <h3>Part 2.1<a class="headerlink" href="#part-2-1" title="Link to this heading">#</a></h3>
-<p>The main difference between the two-phase model and single-phase model is that we will different interaction forces $<span class="math notranslate nohighlight">\(\vec{f}_{ij} = -\frac{\vec{r}_{ij}}{r_{ij}}  \frac{24 \varepsilon_{AA}}{r_m} \bigg[2 \bigg(\frac{r_m}{r_{ij}}\bigg)^{13} - \bigg(\frac{r_m}{r_{ij}}\bigg)^7 \bigg]\)</span><span class="math notranslate nohighlight">\( between A-A atoms.
-\)</span><span class="math notranslate nohighlight">\(\vec{f}_{ij} = -\frac{\vec{r}_{ij}}{r_{ij}}  \frac{24 \varepsilon_{BB}}{r_m} \bigg[2 \bigg(\frac{r_m}{r_{ij}}\bigg)^{13} - \bigg(\frac{r_m}{r_{ij}}\bigg)^7 \bigg]\)</span><span class="math notranslate nohighlight">\( between B-B atoms.
-\)</span><span class="math notranslate nohighlight">\(\vec{f}_{ij} = -\frac{\vec{r}_{ij}}{r_{ij}}  \frac{24 \varepsilon_{AB}}{r_m} \bigg[2 \bigg(\frac{r_m}{r_{ij}}\bigg)^{13} - \bigg(\frac{r_m}{r_{ij}}\bigg)^7 \bigg]\)</span><span class="math notranslate nohighlight">\( between A-B atoms.
-So, we can simply set conditions in the previous code when calculate interatomic forces:
-\)</span><span class="math notranslate nohighlight">\(\text{if}~~at&lt; 40 ~~\text{and}~~ne&lt;40,~~\varepsilon = \varepsilon_{AA}\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(\text{if}~~at&gt; 40 ~~\text{and}~~ne&gt;40,~~\varepsilon = \varepsilon_{BB}\)</span><span class="math notranslate nohighlight">\(
-Other than these two cases:
-\)</span><span class="math notranslate nohighlight">\(\varepsilon = \varepsilon_{AB}\)</span>$</p>
+<p>The main difference between the two-phase model and single-phase model is that we will different interaction forces</p>
+<div class="math notranslate nohighlight">
+\[\vec{f}_{ij} = -\frac{\vec{r}_{ij}}{r_{ij}}  \frac{24 \varepsilon_{AA}}{r_m} \bigg[2 \bigg(\frac{r_m}{r_{ij}}\bigg)^{13} - \bigg(\frac{r_m}{r_{ij}}\bigg)^7 \bigg]\]</div>
+<p>between A-A atoms.</p>
+<div class="math notranslate nohighlight">
+\[\vec{f}_{ij} = -\frac{\vec{r}_{ij}}{r_{ij}}  \frac{24 \varepsilon_{BB}}{r_m} \bigg[2 \bigg(\frac{r_m}{r_{ij}}\bigg)^{13} - \bigg(\frac{r_m}{r_{ij}}\bigg)^7 \bigg]\]</div>
+<p>between B-B atoms.</p>
+<div class="math notranslate nohighlight">
+\[\vec{f}_{ij} = -\frac{\vec{r}_{ij}}{r_{ij}}  \frac{24 \varepsilon_{AB}}{r_m} \bigg[2 \bigg(\frac{r_m}{r_{ij}}\bigg)^{13} - \bigg(\frac{r_m}{r_{ij}}\bigg)^7 \bigg]\]</div>
+<p>between A-B atoms.
+So, we can simply set conditions in the previous code when calculate interatomic forces:</p>
+<div class="math notranslate nohighlight">
+\[\text{if}~~at&lt; 40 ~~\text{and}~~ne&lt;40,~~\varepsilon = \varepsilon_{AA}\]</div>
+<div class="math notranslate nohighlight">
+\[\text{if}~~at&gt; 40 ~~\text{and}~~ne&gt;40,~~\varepsilon = \varepsilon_{BB}\]</div>
+<p>Other than these two cases:</p>
+<div class="math notranslate nohighlight">
+\[\varepsilon = \varepsilon_{AB}\]</div>
 <ul class="simple">
 <li><p>Copy the single-phase code to here.</p></li>
 <li><p>Implement the conditions above to where the interatomic forces are calculated.</p></li>
 <li><p>Calculate interatomic forces between pairs. Note we only calculate those atoms</p></li>
 <li><p>Calculate total force as before.</p></li>
-<li><p>Use Newton’s law to calculate acceleration of each atom: $<span class="math notranslate nohighlight">\(\vec{a}_i = \frac{\vec{f}_i}{m_i}.\)</span>$ Note that the two types of atoms have different mass.</p></li>
+<li><p>Use Newton’s law to calculate acceleration of each atom:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\vec{a}_i = \frac{\vec{f}_i}{m_i}.\]</div>
+<p>Note that the two types of atoms have different mass.</p>
+<ul class="simple">
 <li><p>Update the atom positions and impose periodic boundary conditions as before.</p></li>
 </ul>
 <p><strong>Use the code cell to make the time simulation.</strong></p>
