@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Monter Carlo demonstration &#8212; MSE 590400 Course Website</title>
+    <title>Monte Carlo demonstration &#8212; MSE 590400 Course Website</title>
   
   
   
@@ -207,7 +207,7 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../../section_files/day_5.html">Day 5</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Monter Carlo demonstration</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Monte Carlo demonstration</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_6.html">Day 6</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
@@ -356,7 +356,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Monter Carlo demonstration</h1>
+    <h1>Monte Carlo demonstration</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -380,8 +380,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="monter-carlo-demonstration">
-<h1>Monter Carlo demonstration<a class="headerlink" href="#monter-carlo-demonstration" title="Link to this heading">#</a></h1>
+  <section id="monte-carlo-demonstration">
+<h1>Monte Carlo demonstration<a class="headerlink" href="#monte-carlo-demonstration" title="Link to this heading">#</a></h1>
 <section id="hit-or-miss">
 <h2>Hit-or-miss<a class="headerlink" href="#hit-or-miss" title="Link to this heading">#</a></h2>
 <p>Find the area of a quarter circle.</p>
@@ -437,12 +437,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>val = 0.781
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>val = 0.787
 pi/4 = 0.7853981633974483
-relative error = 0.005599915561837868
+relative error = 0.002039521706573115
 </pre></div>
 </div>
-<img alt="../../_images/6ef4ea37c0787717ec09e815838311af7d9f89e852b7439b111069bfb448bb85.png" src="../../_images/6ef4ea37c0787717ec09e815838311af7d9f89e852b7439b111069bfb448bb85.png" />
+<img alt="../../_images/fbb403d85ae2f392836a18e4edb3bb99a8d51f96aa069f1e51904f94df001497.png" src="../../_images/fbb403d85ae2f392836a18e4edb3bb99a8d51f96aa069f1e51904f94df001497.png" />
 </div>
 </div>
 <p>Run more Monte Carlo with different <span class="math notranslate nohighlight">\(N\)</span> and plot the error with number of sampling.</p>
@@ -475,10 +475,10 @@ relative error = 0.005599915561837868
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.05460183660255169, 0.0003981633974482479, 0.008201836602551693, 0.0003981633974482479, 0.0014481633974482433]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.0653981633974483, 0.0013981633974482488, 0.0028018366025517327, 0.0043018366025516785, 0.005298163397448263]
 </pre></div>
 </div>
-<img alt="../../_images/690986278a64626bed24395390b8cc15d0cf2582b90b7231842dc96dcfcaf498.png" src="../../_images/690986278a64626bed24395390b8cc15d0cf2582b90b7231842dc96dcfcaf498.png" />
+<img alt="../../_images/f0ceaae487e535193d38978e9be831701d5b387f93e0cba093cc2e89f6044a2b.png" src="../../_images/f0ceaae487e535193d38978e9be831701d5b387f93e0cba093cc2e89f6044a2b.png" />
 </div>
 </div>
 </section>
@@ -513,9 +513,6 @@ relative error = 0.005599915561837868
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/24ea0cf0af4f4d6c6b31e3e96b985c45addf6ec398a6946630e7cf25690968b5.png" src="../../_images/24ea0cf0af4f4d6c6b31e3e96b985c45addf6ec398a6946630e7cf25690968b5.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -541,12 +538,6 @@ relative error = 0.005599915561837868
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>     
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.014483854709184008, 0.00024182191011090648, 0.003606775552471464, 0.003554821771483807, 0.0020401640296451307]
-</pre></div>
-</div>
-<img alt="../../_images/f5552ee8f1fbc42051e96a92229efbc42c641585309eb99aa0acdfdf26a26461.png" src="../../_images/f5552ee8f1fbc42051e96a92229efbc42c641585309eb99aa0acdfdf26a26461.png" />
 </div>
 </div>
 </section>
@@ -578,9 +569,6 @@ relative error = 0.005599915561837868
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/8104020f9adc4cb8b5ea4b154456fe0d3affdf6216ec1fb81ae3b2e76d7ab60a.png" src="../../_images/8104020f9adc4cb8b5ea4b154456fe0d3affdf6216ec1fb81ae3b2e76d7ab60a.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -606,13 +594,6 @@ relative error = 0.005599915561837868
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span> 
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.7961964620806404, 0.7867155398542458, 0.7863699282819631, 0.7865943270776822, 0.7869910954977374]
-[0.006797781580640483, 0.002683140645754145, 0.0030287522180368898, 0.0028043534223177735, 0.002407585002262569]
-</pre></div>
-</div>
-<img alt="../../_images/a5e67a7161e70a82b8a54f468672dc00020286ecc8464228a85c8401217088bc.png" src="../../_images/a5e67a7161e70a82b8a54f468672dc00020286ecc8464228a85c8401217088bc.png" />
 </div>
 </div>
 </section>
