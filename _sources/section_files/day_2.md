@@ -6,6 +6,9 @@ This section contains the course materials for day 2.
 
 [Demo_EnergyFunctional.ipynb](../daily/Day-02/Demo_EnergyFunctional.ipynb)
 
+
+{Download}`Demo_EnergyFunctional.ipynb<../daily/Day-02/Demo_EnergyFunctional.ipynb>`
+
+<!--
 Download Demo_EnergyFunctional.ipynb file: {Download}`Demo_EnergyFunctional.ipynb<../daily/Day-02/Demo_EnergyFunctional.ipynb>`
-
-
+-->
