@@ -1,0 +1,794 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>More molecular dynamics coding practice &#8212; MSE 590400 Course Website</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'homework/MSE590/HW2_Simple_MD_Student_v1';</script>
+    <link rel="icon" href="../../_static/Spartan_2.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Random Walk coding practice" href="../../daily/Day-06/RandomWalk_Student_v1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Spartan_2.png" class="logo__image only-light" alt="MSE 590400 Course Website - Home"/>
+    <script>document.write(`<img src="../../_static/Spartan_2.png" class="logo__image only-dark" alt="MSE 590400 Course Website - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Materials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../course_materials/MSE590400_Syllabus.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course_materials/MSE590400_Calendar.html">Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course_materials/SoftwareSetupGuide_NTHU.html">Software Setup Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course_materials/MSE590400_AI_policy.html">Generative AI Policy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../course_materials/SemesterProjectDetails_NTHU.html">Semester Project Details</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quiz/Exam</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../course_materials/Quiz_NTHU.html">MSE 590400 - Quiz/Exam Details</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Daily Content</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../section_files/day_1.html">Day 1</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_2.html">Day 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../daily/Day-02/Demo_EnergyFunctional.html">Demonstration of energy functional</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_3.html">Day 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../daily/Day-03/LJ_potent.html">Lennard-Jones potential</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_4.html">Day 4</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../daily/Day-04/MolecularDynamics_singlePhase_Student_v3.html">Molecular dynamics hands-on Python coding practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../daily/Day-04/MolecularDynamics_twoPhase_Student_v2.html">Molecular dynamics hands-on Python coding practices</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_5.html">Day 5</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../daily/Day-05/MonteCarlo_example.html">Monte Carlo demonstration</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_6.html">Day 6</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../daily/Day-06/RandomWalk_Student_v1.html">Random Walk coding practice</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://raw.githubusercontent.com/huichiayu/cmse_202_802/main/MSE590/MSE590400_HW1_v1.pdf">Homework 1</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.dropbox.com/request/w4urBdsmgnrh09diBHlx">Upload HW01 assignment</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Homework 2</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/homework/MSE590/HW2_Simple_MD_Student_v1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>More molecular dynamics coding practice</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#put-your-name-here"><p style="text-align: right;"> ✅ <strong>put your name here</strong> </p></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-a-closed-system">Part 1. A closed system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2">Part 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#great-you-re-done-please-add-your-name-to-the-file-name-and-upload-your-file-to-the-respective-drop-box-this-assignment-is-due-on-10-2">Great! You’re done! Please add your name to the file name and upload your file to the respective drop box. This assignment is due on 10/2.</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="more-molecular-dynamics-coding-practice">
+<h1>More molecular dynamics coding practice<a class="headerlink" href="#more-molecular-dynamics-coding-practice" title="Link to this heading">#</a></h1>
+<section id="put-your-name-here">
+<h2><p style="text-align: right;"> ✅ <strong>put your name here</strong> </p><a class="headerlink" href="#put-your-name-here" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+<p><strong>This homework assignment is due on 10/2.</strong></p>
+<p>This simulation is very similar to Coding Lab 1, but now it has closed boundary conditions on the four walls, instead of periodic boundary conditions.</p>
+</section>
+<section id="part-1-a-closed-system">
+<h2>Part 1. A closed system<a class="headerlink" href="#part-1-a-closed-system" title="Link to this heading">#</a></h2>
+<p>You can follow the procedures below to complete your code.</p>
+<ol class="arabic simple">
+<li><p>When an atom hits a wall, it bounces back. So, using Euler method and west wall as example, the atoms’ x position will be updated using the rule</p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\( x_i(t+\Delta t) = x_i(t) + v_i(t) \Delta t\)</span></p>
+<p><span class="math notranslate nohighlight">\(\text{if}~~x_i(t+\Delta t) &gt; 0,~~x_i(t+\Delta t) = 0 - x_i(t+\Delta t).\)</span></p>
+<p>See the figure for illustation.</p>
+<div align="left">
+<img src="https://i.ibb.co/5g8DnTV6/close-BC-1.jpg" width="300">
+</div>
+<p>You should be able to figure out the bounce-back conditions needed for the other 3 walls.</p>
+<ol class="arabic simple" start="2">
+<li><p>since there is no periodic boundary condition, we no longer need to consider the imaging atoms in the periodically repeated cells when calculating inter-atom distances.</p></li>
+<li><p>Let’s assume that the atoms interacting with walls can also be described by Lennard-Jones Potential, but with a smaller interaction strength (<span class="math notranslate nohighlight">\(\epsilon_W = 0.1\)</span>). The LJ potential will be a function of the distance between the atom and wall. Note that we decrease the cutoff radius to <span class="math notranslate nohighlight">\(2.5\times r_m\)</span> in this work for convenience.</p></li>
+</ol>
+<p><strong>Set up simulation conditions</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">clear_output</span>
+<span class="kn">import</span> <span class="nn">time</span>  
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1"># Material parameters</span>
+<span class="n">ma</span> <span class="o">=</span> <span class="mf">0.5</span>       <span class="c1"># Mass</span>
+<span class="n">rm</span> <span class="o">=</span> <span class="mf">0.1</span>       <span class="c1"># Reference radius</span>
+<span class="n">r0</span> <span class="o">=</span> <span class="mf">1.2246</span><span class="o">*</span><span class="n">rm</span>
+<span class="n">eps</span> <span class="o">=</span> <span class="mf">0.25</span>     <span class="c1"># Strength</span>
+<span class="n">epsW</span> <span class="o">=</span> <span class="mf">0.1</span>
+
+<span class="c1"># Simulation parameters</span>
+<span class="n">nstep</span> <span class="o">=</span> <span class="mi">100001</span>   <span class="c1"># Number of steps</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">0.00005</span>    <span class="c1"># Time step size</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">64</span>         <span class="c1"># Number of atoms</span>
+
+<span class="c1"># Domain size</span>
+<span class="n">Lx</span> <span class="o">=</span> <span class="mf">1.0</span>        <span class="c1"># Domain size in x direction</span>
+<span class="n">Ly</span> <span class="o">=</span> <span class="mf">1.0</span>        <span class="c1"># Domain size in y direction</span>
+<span class="n">r_cut</span> <span class="o">=</span> <span class="mf">2.5</span> <span class="o">*</span> <span class="n">rm</span>  <span class="c1"># Cutoff radius</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Set up arrays to store data</strong></p>
+<p>In addition to the previous in-class Lab assignment, now we need to calculate the inter-atom-wall force of each atom.</p>
+<ul class="simple">
+<li><p>Thus, we shall create a distance to wall array <code class="docutils literal notranslate"><span class="pre">dst2w</span></code> for atoms, which should be a Nx2 array: rows indicate atoms and columns for the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> distance to the wall.</p></li>
+<li><p>We also need to store the atom-wall force of each atom. So, it, <code class="docutils literal notranslate"><span class="pre">Fi_w</span></code>, will be a Nx2 array.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fill ?? to complete the code</span>
+
+
+<span class="c1"># Initializing arrays</span>
+<span class="n">Pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>    <span class="c1"># Position array (N x 2)</span>
+<span class="n">Vel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>    <span class="c1"># Velocity array (N x 2)</span>
+<span class="n">Acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>    <span class="c1"># Acceleration array (N x 2)</span>
+<span class="n">dst</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>   <span class="c1"># Inter-atom distance matrix (N x N)</span>
+
+<span class="n">Fij</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>  <span class="c1"># Interatomic forces (N x N x 2)</span>
+<span class="n">Fi_v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>        <span class="c1"># Total force  (N x 2)</span>
+
+
+<span class="n">dst2w</span> <span class="o">=</span> <span class="o">??</span>
+<span class="n">Fi_w</span> <span class="o">=</span> <span class="o">??</span>  
+
+<span class="c1"># create position, velocity, and acceleration arrays</span>
+<span class="n">Pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">Vel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># &lt;-- random initial velocity</span>
+<span class="n">Vel</span> <span class="o">*=</span> <span class="mf">0.001</span> 
+<span class="n">Acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># &lt;-- random initial acceleration </span>
+<span class="n">Acc</span> <span class="o">*=</span> <span class="mf">0.0001</span> 
+
+<span class="c1"># set up initial atom positions. Let&#39;s make a 8x8 configuration</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>           <span class="c1"># &lt;-- note that default Python loop goes from 0 to n-1</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>       <span class="c1"># &lt;-- note indent is what Python recognizes nest loop</span>
+        <span class="n">Pos</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">8</span><span class="o">+</span><span class="n">j</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span><span class="o">*</span><span class="n">r0</span> <span class="o">+</span> <span class="mf">0.75</span><span class="o">*</span><span class="n">r0</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span> <span class="c1"># &lt;-- add some randomness</span>
+        <span class="n">Pos</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">8</span><span class="o">+</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="n">r0</span> <span class="o">+</span> <span class="mf">0.75</span><span class="o">*</span><span class="n">r0</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+
+<span class="c1"># for i in range(1, N + 1):</span>
+<span class="c1">#     rr = np.floor(i / 9)</span>
+<span class="c1">#     cl = i % 9</span>
+
+<span class="c1">#     Pos[i - 1, 0] = 0.1 + (cl - 1) * 0.1122 + 0.015</span>
+<span class="c1">#     Pos[i - 1, 1] = 0.1 + rr * 0.1122 + 0.015</span>
+
+    
+<span class="c1"># save the initial atomic positions</span>
+<span class="n">Pos_pr</span> <span class="o">=</span> <span class="n">Pos</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">Vel_pr</span> <span class="o">=</span> <span class="n">Vel</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">Acc_pr</span> <span class="o">=</span> <span class="n">Acc</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">Pos</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">Pos</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1990ac890&gt;
+</pre></div>
+</div>
+<img alt="../../_images/b0c3948356792e96caec2fad42ef2a6fa946098918ccaefb4cdd301df1d2b347.png" src="../../_images/b0c3948356792e96caec2fad42ef2a6fa946098918ccaefb4cdd301df1d2b347.png" />
+</div>
+</div>
+<hr class="docutils" />
+<p>In this code,</p>
+<ul class="simple">
+<li><p>Remove periodic conditons and replace the conditions with a closed system when calculating the interatomic distances and interatomic forces.</p></li>
+<li><p>Calculate all interatomic forces and get the total force on each atom imposed by all neighbor atoms within the cutoff radius.</p></li>
+<li><p>The new portion: calculate the force of each atom imposed by the vertical wall (the force in the <span class="math notranslate nohighlight">\(x\)</span> direction). Assuming only the nearest one should be included. Similarly, calculate the force imposed by the horizontal wall (force in the <span class="math notranslate nohighlight">\(y\)</span> direction). Only consider the nearest one. See the figure below for illustration.</p></li>
+</ul>
+<div align="left">
+<img src="https://i.ibb.co/H6Kc0nH/wall-force-1.jpg" width="480">
+</div>
+<ul class="simple">
+<li><p>For each atom, the total force will combine the interatomic and atom-wall forces together.</p></li>
+<li><p>Calculate the acceleration and update atom positions as in the in-class assignment.</p></li>
+<li><p>For simplicity, we can use Euler method although it’s less accurate than Verlet.  If you want to use Verlet method, please feel free to do so.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># FILL ?? TO COMPLETE THE CODE</span>
+
+<span class="c1"># Initialization</span>
+<span class="n">tm</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">cnt</span> <span class="o">=</span> <span class="mi">1</span>
+
+
+<span class="c1"># Initialization before the loop</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Lx</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">Pos</span> <span class="o">=</span> <span class="n">Pos_pr</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">Vel</span> <span class="o">=</span> <span class="n">Vel_pr</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">Acc</span> <span class="o">=</span> <span class="n">Acc_pr</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1"># for iter in range(1, Nstp * 2 + 1):</span>
+<span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nstep</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>    
+
+    
+    <span class="c1"># wall boundary conditions</span>
+    <span class="k">for</span> <span class="n">at</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="c1"># in x direction</span>
+        <span class="k">if</span> <span class="n">Pos</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">Pos</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">-</span> <span class="n">Pos</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">Pos</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">Lx</span><span class="p">:</span>
+            <span class="n">Pos</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">??</span>
+
+        <span class="c1"># in y direction</span>
+        <span class="k">if</span> <span class="n">Pos</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">Pos</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">??</span>
+        <span class="k">if</span> <span class="n">Pos</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">Ly</span><span class="p">:</span>
+            <span class="n">Pos</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">??</span> 
+
+    <span class="c1"># Calculate inter-atom distances without periodic boundaries</span>
+    <span class="k">for</span> <span class="n">at</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">ne</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">at</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+            <span class="n">dx_c</span> <span class="o">=</span> <span class="n">Pos</span><span class="p">[</span><span class="n">ne</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">Pos</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">dy_c</span> <span class="o">=</span> <span class="n">Pos</span><span class="p">[</span><span class="n">ne</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">Pos</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+
+            <span class="c1"># X component</span>
+            <span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">??</span>
+            <span class="n">dst</span><span class="p">[</span><span class="n">ne</span><span class="p">,</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+
+            <span class="c1"># Y component</span>
+            <span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">??</span>
+            <span class="n">dst</span><span class="p">[</span><span class="n">ne</span><span class="p">,</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+
+            <span class="c1"># Inter-atom distance</span>
+            <span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="n">dst</span><span class="p">[</span><span class="n">ne</span><span class="p">,</span><span class="n">at</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> 
+            
+    
+    <span class="c1"># Calculate force</span>
+    <span class="n">Fij</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">at</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">ne</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">at</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+            <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">r_cut</span><span class="p">:</span>
+                <span class="n">dUdr</span> <span class="o">=</span> <span class="mi">24</span> <span class="o">*</span> <span class="p">(</span><span class="n">eps</span><span class="o">/</span><span class="n">rm</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">rm</span><span class="o">/</span><span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span><span class="o">**</span><span class="mi">13</span> <span class="o">-</span> <span class="p">(</span><span class="n">rm</span><span class="o">/</span><span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span><span class="o">**</span><span class="mi">7</span><span class="p">)</span>
+ 
+                <span class="n">Fij</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">dUdr</span>
+                <span class="n">Fij</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">dUdr</span>
+
+                <span class="n">Fij</span><span class="p">[</span><span class="n">ne</span><span class="p">,</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">Fij</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">Fij</span><span class="p">[</span><span class="n">ne</span><span class="p">,</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">Fij</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># Calculate total force of each atom</span>
+    <span class="k">for</span> <span class="n">at</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="n">Fi_v</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">Fij</span><span class="p">[</span><span class="n">at</span><span class="p">,:,</span><span class="mi">0</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">Fi_v</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">Fij</span><span class="p">[</span><span class="n">at</span><span class="p">,:,</span><span class="mi">1</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            
+
+    <span class="c1"># Calculate inter-atom-wall distances </span>
+    <span class="k">for</span> <span class="n">at</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="n">dx_ww</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="o">-</span> <span class="n">Pos</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">dx_ew</span> <span class="o">=</span> <span class="n">Lx</span> <span class="o">-</span> <span class="n">Pos</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">dst2w</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">??</span>
+
+        <span class="n">dy_sw</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="o">-</span> <span class="n">Pos</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">dy_nw</span> <span class="o">=</span> <span class="n">Ly</span> <span class="o">-</span> <span class="n">Pos</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">dst2w</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">??</span>
+
+
+    <span class="c1"># Calculate inter-atom-wall forces</span>
+    <span class="k">for</span> <span class="n">at</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">dst2w</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">r_cut</span><span class="p">:</span>
+            <span class="n">Fi_w</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="err">??</span> <span class="o">/</span> <span class="err">??</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="p">(</span><span class="err">??</span><span class="o">/</span><span class="n">rm</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">rm</span><span class="o">/</span><span class="err">??</span><span class="p">)</span><span class="o">**</span><span class="mi">13</span> <span class="o">-</span> <span class="p">(</span><span class="n">rm</span><span class="o">/</span><span class="err">??</span><span class="p">)</span><span class="o">**</span><span class="mi">7</span><span class="p">)</span> 
+            <span class="n">Fi_w</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="err">??</span> <span class="o">/</span> <span class="err">??</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="p">(</span><span class="err">??</span><span class="o">/</span><span class="n">rm</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">rm</span><span class="o">/</span><span class="err">??</span><span class="p">)</span><span class="o">**</span><span class="mi">13</span> <span class="o">-</span> <span class="p">(</span><span class="n">rm</span><span class="o">/</span><span class="err">??</span><span class="p">)</span><span class="o">**</span><span class="mi">7</span><span class="p">)</span>  
+
+    <span class="c1"># Combine total interatomic force and inter-atomic-wall force</span>
+    <span class="k">for</span> <span class="n">at</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="n">Fi_v</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="n">Fi_w</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">Fi_v</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">Fi_w</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># calculate acceleration of each atom</span>
+    <span class="c1"># Acc = Fi_v/ma</span>
+    <span class="k">for</span> <span class="n">at</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span> 
+        <span class="n">Acc</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">Fi_v</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">ma</span>
+        <span class="n">Acc</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">Fi_v</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">ma</span>          
+
+
+    <span class="c1"># Update positions</span>
+    <span class="k">for</span> <span class="n">at</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span> 
+        <span class="n">Pos</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="n">Vel</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">dt</span>
+        <span class="n">Pos</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">Vel</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">dt</span>
+
+    
+    <span class="c1"># Update velocity</span>
+    <span class="k">for</span> <span class="n">at</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span> 
+        <span class="n">Vel</span><span class="p">[</span><span class="n">at</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="n">Acc</span><span class="p">[</span><span class="n">at</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">dt</span>
+        <span class="n">Vel</span><span class="p">[</span><span class="n">at</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">Acc</span><span class="p">[</span><span class="n">at</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">dt</span>
+
+
+        
+    
+    <span class="c1"># Visualization</span>
+    <span class="k">if</span> <span class="n">it</span> <span class="o">%</span> <span class="mi">50</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Pos</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">Pos</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;bo&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">Lx</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Ly</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+
+   
+        <span class="c1"># Animaiton part (dosn&#39;t change)</span>
+        <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Clear output for dynamic display</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>            <span class="c1"># Reset display</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>             <span class="c1"># Prevent overlapping and layered plots</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.0002</span><span class="p">)</span>         <span class="c1"># Sleep for half a second to slow down the animationtm = 0</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="part-2">
+<h2>Part 2<a class="headerlink" href="#part-2" title="Link to this heading">#</a></h2>
+<p>In this section, we add one more condition to mimic a piston pressure. Copy the functioning code above to the code cell.</p>
+<ul class="simple">
+<li><p>The ceiling will drop down gradually and then slowly move up , i.e., <span class="math notranslate nohighlight">\(L_y\)</span> decreases and then increases during the simulation.</p></li>
+<li><p>Let’s set the ceiling moves 1/50000 per iteration step. Ly decreases during the first 20000 steps and then Ly increases.</p></li>
+<li><p>The total number of time steps is 40001.</p></li>
+<li><p>We can add a bold line to indicate the ceiling by including a line like <code class="docutils literal notranslate"><span class="pre">plt.plot([0,</span> <span class="pre">Lx],</span> <span class="pre">[Ly,</span> <span class="pre">Ly],</span> <span class="pre">'k-',</span> <span class="pre">linewidth=5)</span></code> in the plotting section.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># put your code here.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ Do This –  Describe what you observed in the simulation in this Markdown cell.</p>
+<p>✅ Do This – Finally, if you use any AI, please indicate which one and comment on your experiences.</p>
+<hr class="docutils" />
+<section id="great-you-re-done-please-add-your-name-to-the-file-name-and-upload-your-file-to-the-respective-drop-box-this-assignment-is-due-on-10-2">
+<h3>Great! You’re done! Please add your name to the file name and upload your file to the respective drop box. This assignment is due on 10/2.<a class="headerlink" href="#great-you-re-done-please-add-your-name-to-the-file-name-and-upload-your-file-to-the-respective-drop-box-this-assignment-is-due-on-10-2" title="Link to this heading">#</a></h3>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-base-py"
+        },
+        kernelOptions: {
+            name: "conda-base-py",
+            path: "./homework/MSE590"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-base-py'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../daily/Day-06/RandomWalk_Student_v1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Random Walk coding practice</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#put-your-name-here"><p style="text-align: right;"> ✅ <strong>put your name here</strong> </p></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-a-closed-system">Part 1. A closed system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2">Part 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#great-you-re-done-please-add-your-name-to-the-file-name-and-upload-your-file-to-the-respective-drop-box-this-assignment-is-due-on-10-2">Great! You’re done! Please add your name to the file name and upload your file to the respective drop box. This assignment is due on 10/2.</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Hui-Chia Yu
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
