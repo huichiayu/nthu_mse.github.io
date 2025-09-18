@@ -83,9 +83,9 @@ parts:
 #         - url: https://raw.githubusercontent.com/huichiayu/cmse_202_802/main/MSE590/place_holder.pdf
 #           external: true
 
-#         - file: section_files/HW02     
-#           sections:  
-#           - file: homework/MSE590/HW2_Simple_MD_Student_v1
+        - file: section_files/HW02     
+          sections:  
+          - file: homework/MSE590/HW2_Simple_MD_Student_v1
 #           title: Homework 2      
         
 #         - title: Upload HW02 assignment
