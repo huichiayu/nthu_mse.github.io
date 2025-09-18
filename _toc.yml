@@ -79,10 +79,10 @@ parts:
           
           
 #         - file: homework/MSE590/HW2_Simple_MD_Student_v1.ipynb
-#         - url: https://raw.githubusercontent.com/huichiayu/cmse_202_802/main/MSE590/MSE590400_HW1_v1.pdf 
+        - url: https://raw.githubusercontent.com/huichiayu/cmse_202_802/main/MSE590/MSE590400_HW1_v1.pdf 
 #         - url: https://raw.githubusercontent.com/huichiayu/cmse_202_802/main/MSE590/place_holder.pdf
-#           external: true
-#           title: Homework 2      
+          external: true
+          title: Homework 2      
         
 #         - title: Upload HW02 assignment
                 
