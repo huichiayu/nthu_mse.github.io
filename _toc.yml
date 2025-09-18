@@ -59,8 +59,8 @@ parts:
 
       - file: section_files/day_6
         sections: 
-#         - file: daily/Day-06/RandomWalk_Student_v1.ipynb         
-        - file: placeholder/placeholder.md
+        - file: daily/Day-06/RandomWalk_Student_v1.ipynb         
+#         - file: placeholder/placeholder.md
 
 
 
