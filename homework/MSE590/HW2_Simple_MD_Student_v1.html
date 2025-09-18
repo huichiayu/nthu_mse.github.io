@@ -63,7 +63,7 @@
     <link rel="icon" href="../../_static/Spartan_2.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="HW02" href="../../section_files/HW02.html" />
+    <link rel="prev" title="Homework 2" href="../../section_files/HW02.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -218,7 +218,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference external" href="https://raw.githubusercontent.com/huichiayu/cmse_202_802/main/MSE590/MSE590400_HW1_v1.pdf">Homework 1</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://www.dropbox.com/request/w4urBdsmgnrh09diBHlx">Upload HW01 assignment</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../section_files/HW02.html">HW02</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../section_files/HW02.html">Homework 2</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">More molecular dynamics coding practice</a></li>
 </ul>
 </details></li>
@@ -399,7 +399,7 @@ document.write(`
 <h2>Part 1. A closed system<a class="headerlink" href="#part-1-a-closed-system" title="Link to this heading">#</a></h2>
 <p>You can follow the procedures below to complete your code.</p>
 <ol class="arabic simple">
-<li><p>When an atom hits a wall, it bounces back. So, using Euler method and west wall as example, the atoms’ x position will be updated using the rule</p></li>
+<li><p>When an atom hits a wall, it bounces back. So, using Euler method and west wall as example, the atoms’ <span class="math notranslate nohighlight">\(x\)</span> position will be updated using the rule</p></li>
 </ol>
 <p><span class="math notranslate nohighlight">\( x_i(t+\Delta t) = x_i(t) + v_i(t) \Delta t\)</span></p>
 <p><span class="math notranslate nohighlight">\(\text{if}~~x_i(t+\Delta t) &gt; 0,~~x_i(t+\Delta t) = 0 - x_i(t+\Delta t).\)</span></p>
@@ -495,12 +495,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1990ac890&gt;
-</pre></div>
-</div>
-<img alt="../../_images/b0c3948356792e96caec2fad42ef2a6fa946098918ccaefb4cdd301df1d2b347.png" src="../../_images/b0c3948356792e96caec2fad42ef2a6fa946098918ccaefb4cdd301df1d2b347.png" />
-</div>
 </div>
 <hr class="docutils" />
 <p>In this code,</p>
@@ -573,7 +567,7 @@ document.write(`
             <span class="n">dst</span><span class="p">[</span><span class="n">ne</span><span class="p">,</span><span class="n">at</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">dst</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> 
             
     
-    <span class="c1"># Calculate force</span>
+    <span class="c1"># Calculate interatomic forces</span>
     <span class="n">Fij</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">at</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
@@ -587,7 +581,7 @@ document.write(`
                 <span class="n">Fij</span><span class="p">[</span><span class="n">ne</span><span class="p">,</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">Fij</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
                 <span class="n">Fij</span><span class="p">[</span><span class="n">ne</span><span class="p">,</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">Fij</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="n">ne</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
 
-    <span class="c1"># Calculate total force of each atom</span>
+    <span class="c1"># Calculate total force of each atom imposed by atoms</span>
     <span class="k">for</span> <span class="n">at</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
         <span class="n">Fi_v</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">Fij</span><span class="p">[</span><span class="n">at</span><span class="p">,:,</span><span class="mi">0</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
         <span class="n">Fi_v</span><span class="p">[</span><span class="n">at</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">Fij</span><span class="p">[</span><span class="n">at</span><span class="p">,:,</span><span class="mi">1</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -662,7 +656,11 @@ document.write(`
 <li><p>Let’s set the ceiling moves 1/50000 per iteration step. Ly decreases during the first 20000 steps and then Ly increases.</p></li>
 <li><p>The total number of time steps is 40001.</p></li>
 <li><p>We can add a bold line to indicate the ceiling by including a line like <code class="docutils literal notranslate"><span class="pre">plt.plot([0,</span> <span class="pre">Lx],</span> <span class="pre">[Ly,</span> <span class="pre">Ly],</span> <span class="pre">'k-',</span> <span class="pre">linewidth=5)</span></code> in the plotting section.</p></li>
+<li><p>You should see something like below in your simulation.</p></li>
 </ul>
+<div align="left">
+<img src="https://i.ibb.co/XrFMfDRQ/pistion-1.png" width="400">
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># put your code here.</span>
@@ -715,7 +713,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">HW02</p>
+        <p class="prev-next-title">Homework 2</p>
       </div>
     </a>
 </div>
