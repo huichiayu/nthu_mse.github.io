@@ -82,7 +82,7 @@ parts:
 #         - url: https://raw.githubusercontent.com/huichiayu/cmse_202_802/main/MSE590/MSE590400_HW1_v1.pdf 
        - url: https://raw.githubusercontent.com/huichiayu/cmse_202_802/main/MSE590/place_holder.pdf
           external: true
-        - title: Homework 2      
+          title: Homework 2      
         
 #         - title: Upload HW02 assignment
                 
