@@ -75,6 +75,12 @@ parts:
           
         - title: "Upload HW01 assignment"
           url: https://www.dropbox.com/request/w4urBdsmgnrh09diBHlx
-          nav_order: 99          
+          nav_order: 99   
+          
+          
+        - file: homework/MSE590/HW2_Simple_MD_Student_v1.ipynb
+        - title: Homework 2      
+        
+#         - title: Upload HW02 assignment
                 
 
