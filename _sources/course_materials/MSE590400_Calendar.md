@@ -54,7 +54,7 @@
   </tr>
   <tr style="background-color: #f9f9f9;">
     <td style="border: 1px solid #ddd; padding: 8px;">10 (Oct 2)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;"> Diffusion equation. </td>
+    <td style="border: 1px solid #ddd; padding: 8px;"> Monte Carlo wrap up, diffusion equation. </td>
   </tr>       
   <tr> <!-- week 6 -->
     <td style="border: 1px solid #ddd; padding: 8px;">09 (Oct 6)</td>
