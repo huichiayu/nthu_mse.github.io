@@ -42,36 +42,44 @@
   </tr> 
    <tr> <!-- week 4 -->
     <td style="border: 1px solid #ddd; padding: 8px;">07 (Sep 22)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;"> MC coding: Ising model, diffusion limited aggregation </td>
+    <td style="border: 1px solid #ddd; padding: 8px;"> MC coding: Ising model </td>
   </tr>  
   <tr style="background-color: #f9f9f9;">
     <td style="border: 1px solid #ddd; padding: 8px;">08 (Sep 25)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">Diffusion equation</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">diffusion limited aggregation</td>
   </tr>
   <tr> <!-- week 5 -->
     <td style="border: 1px solid #ddd; padding: 8px;">09 (Sep 29)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">Finite difference method, FDM for diffusion equation. </td>
+    <td style="border: 1px solid #ddd; padding: 8px;"> Teacher's day. Holiday. No class </td>
   </tr>
   <tr style="background-color: #f9f9f9;">
     <td style="border: 1px solid #ddd; padding: 8px;">10 (Oct 2)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
+    <td style="border: 1px solid #ddd; padding: 8px;"> Diffusion equation. </td>
   </tr>       
   <tr> <!-- week 6 -->
     <td style="border: 1px solid #ddd; padding: 8px;">09 (Oct 6)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">TBA </td>
+    <td style="border: 1px solid #ddd; padding: 8px;">Finite difference method, FDM for diffusion equation. </td>
   </tr>
   <tr style="background-color: #f9f9f9;">
     <td style="border: 1px solid #ddd; padding: 8px;">10 (Oct 9)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">Video clips: </td>
   </tr>       
   <tr> <!-- week 7 -->
     <td style="border: 1px solid #ddd; padding: 8px;">09 (Oct 13)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">Remote class: Zoom</td>
   </tr>
   <tr style="background-color: #f9f9f9;">
     <td style="border: 1px solid #ddd; padding: 8px;">10 (Oct 16)</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">Remote class: Zoom</td>
+  </tr>     
+  <tr> <!-- week 8 -->
+    <td style="border: 1px solid #ddd; padding: 8px;">09 (Oct 20)</td>
     <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
-  </tr>       
+  </tr>
+  <tr style="background-color: #f9f9f9;">
+    <td style="border: 1px solid #ddd; padding: 8px;">10 (Oct 23)</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
+  </tr>     
 </table>
 
 
