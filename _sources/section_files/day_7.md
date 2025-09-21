@@ -3,7 +3,7 @@ Day 7
 This section contains the course materials for day 7.
 
 
-Monte_Carlo_Ising_model_Student_v1.ipynb](../daily/Day-07/Monte_Carlo_Ising_model_Student_v1.ipynb)
+[Monte_Carlo_Ising_model_Student_v1.ipynb](../daily/Day-07/Monte_Carlo_Ising_model_Student_v1.ipynb)
 
 {Download}`Monte_Carlo_Ising_model_Student_v1.ipynb<../daily/Day-07/Monte_Carlo_Ising_model_Student_v1.ipynb>`
 
