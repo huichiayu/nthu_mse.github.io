@@ -1,0 +1,812 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>MSE 590400 coding assignment &#8212; MSE 590400 Course Website</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'daily/Day-08/Diffusion_Limited_Aggregation_Student_v1';</script>
+    <link rel="icon" href="../../_static/Spartan_2.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Homework 2" href="../../section_files/HW02.html" />
+    <link rel="prev" title="Day 8" href="../../section_files/day_8.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Spartan_2.png" class="logo__image only-light" alt="MSE 590400 Course Website - Home"/>
+    <script>document.write(`<img src="../../_static/Spartan_2.png" class="logo__image only-dark" alt="MSE 590400 Course Website - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Materials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../course_materials/MSE590400_Syllabus.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course_materials/MSE590400_Calendar.html">Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course_materials/SoftwareSetupGuide_NTHU.html">Software Setup Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course_materials/MSE590400_AI_policy.html">Generative AI Policy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../course_materials/SemesterProjectDetails_NTHU.html">Semester Project Details</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quiz/Exam</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../course_materials/Quiz_NTHU.html">MSE 590400 - Quiz/Exam Details</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Daily Content</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../section_files/day_1.html">Day 1</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_2.html">Day 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Day-02/Demo_EnergyFunctional.html">Demonstration of energy functional</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_3.html">Day 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Day-03/LJ_potent.html">Lennard-Jones potential</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_4.html">Day 4</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Day-04/MolecularDynamics_singlePhase_Student_v3.html">Molecular dynamics hands-on Python coding practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Day-04/MolecularDynamics_twoPhase_Student_v2.html">Molecular dynamics hands-on Python coding practices</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_5.html">Day 5</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Day-05/MonteCarlo_example.html">Monte Carlo demonstration</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_6.html">Day 6</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Day-06/RandomWalk_Student_v1.html">Random Walk coding practice</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_7.html">Day 7</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Day-07/Monte_Carlo_Ising_model_Student_v1.html">Lab 3: Ising model for ferromagnetism</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../section_files/day_8.html">Day 8</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">MSE 590400 coding assignment</a></li>
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://raw.githubusercontent.com/huichiayu/cmse_202_802/main/MSE590/MSE590400_HW1_v1.pdf">Homework 1</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.dropbox.com/request/w4urBdsmgnrh09diBHlx">Upload HW01 assignment</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/HW02.html">Homework 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/MSE590/HW2_Simple_MD_Student_v1.html">More molecular dynamics coding practice</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/daily/Day-08/Diffusion_Limited_Aggregation_Student_v1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>MSE 590400 coding assignment</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">MSE 590400 coding assignment</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-diffusion-limited-aggregation">Monte Carlo: Diffusion limited aggregation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#put-your-name-here"><p style="text-align: right;"> ✅ <strong>put your name here</strong> </p></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1">Part 1.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2">Part 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3">Part 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#great-you-re-done-please-add-your-name-to-the-file-name-and-upload-your-file-to-the-respective-drop-box-this-assignment-is-due-on-10-6">Great! You’re done! Please add your name to the file name and upload your file to the respective drop box. This assignment is due on 10/6.</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="mse-590400-coding-assignment">
+<h1>MSE 590400 coding assignment<a class="headerlink" href="#mse-590400-coding-assignment" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="monte-carlo-diffusion-limited-aggregation">
+<h1>Monte Carlo: Diffusion limited aggregation<a class="headerlink" href="#monte-carlo-diffusion-limited-aggregation" title="Link to this heading">#</a></h1>
+<section id="put-your-name-here">
+<h2><p style="text-align: right;"> ✅ <strong>put your name here</strong> </p><a class="headerlink" href="#put-your-name-here" title="Link to this heading">#</a></h2>
+<div align="left">
+<img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/DLA_Cluster.JPG" width="400">
+</div>
+image from wikipedia
+<hr class="docutils" />
+<p>Diffusion limited aggregation (DLA) is an interesting materials growth phenomena. As indicated by the name, it is a diffusion dominated process; i.e., attaching is a much fast process than diffusion in this case. The diffusers are very easy to attach to the aggregation and stop transport.</p>
+<p>In this Monte Carlo simulation. We’ll combine random walk model and sampling model (in some sophisticated ones). This assignment is built following
+<a href="https://github.com/huichiayu/cmse_202_802/blob/main/MSE590/A_Study_in_Monte_Carlo_Simulation_of_Modified_DLA.pdf"
+   target="_blank" rel="noopener">this paper.</a></p>
+<p>The implementation of a simple DLA MC model can be decomposed to the following steps.</p>
+<ol class="arabic simple">
+<li><p>Create a nucleus in the computational domain.</p></li>
+<li><p>Insert walkers into the system.</p></li>
+<li><p>The walkers randomly move within the domain. In some cases, the walking can be biased assuming it is affected by external field.</p></li>
+<li><p>Impose boundary conditions.</p></li>
+<li><p>Examine the neighboring sites of each walker. If it satisfies the aggregation criteria, attach the walker and stop its future walk.</p></li>
+<li><p>Repeat procedure 2 through 4.</p></li>
+</ol>
+</section>
+<section id="part-1">
+<h2>Part 1.<a class="headerlink" href="#part-1" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Use the code cell below to initiate a 2D grid system. If a grid point is occupied by aggregation, put a value of <code class="docutils literal notranslate"><span class="pre">1</span></code>. Otherwise, set the value to <code class="docutils literal notranslate"><span class="pre">0</span></code>. Let’s place a small cluster of 2x2 grid spacings in the middle of the 2D grid.</p></li>
+<li><p>Create a container array to store the information of walkers. Each walker has 3 values: The 1st one is <span class="math notranslate nohighlight">\(x\)</span> position, the 2nd is <span class="math notranslate nohighlight">\(y\)</span> position, and the 3rd is whether it’s active. We’ll use <code class="docutils literal notranslate"><span class="pre">1</span></code> for active and <code class="docutils literal notranslate"><span class="pre">0</span></code> for inactive.</p></li>
+<li><p>Visualize the walkers on the grid.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">clear_output</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+
+<span class="c1"># fill ?? to complete the code</span>
+
+<span class="c1"># domain size</span>
+<span class="n">Lx</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">Ly</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="c1"># create the 2D domain</span>
+<span class="n">agr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="err">??</span><span class="p">,</span> <span class="err">??</span><span class="p">))</span>
+
+<span class="c1"># if the position is occupied by aggregation, the value will be 1.</span>
+<span class="c1"># place an initial cluster in the middle of the domain</span>
+<span class="n">agr</span><span class="p">[</span><span class="err">??</span><span class="p">,</span> <span class="err">??</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+
+<span class="c1"># initial number of walkers</span>
+<span class="n">N_init</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="c1"># array to store walker information</span>
+<span class="n">wk</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N_init</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="c1"># randomly assign initial position</span>
+<span class="c1"># all walkers are active initially</span>
+<span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">wk</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="n">wk</span><span class="p">[</span><span class="n">w</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">??</span>
+    <span class="n">wk</span><span class="p">[</span><span class="n">w</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">??</span>
+    <span class="n">wk</span><span class="p">[</span><span class="n">w</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+
+
+
+<span class="c1"># visualize walkers and aggregation</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Lx</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Ly</span><span class="p">)</span>
+
+<span class="n">sc</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">wk</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">wk</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">agr</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>  
+
+<span class="n">title</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Step 0&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="part-2">
+<h2>Part 2<a class="headerlink" href="#part-2" title="Link to this heading">#</a></h2>
+<p>The code cell below is a function to supply walkers at random positions. Since walkers will attach to the aggregation and become inactive, we continue to supply walkers to the system. New walkers are injected to the system in the region <span class="math notranslate nohighlight">\(R_{min} &lt; r &lt; R_{max}\)</span>, where <span class="math notranslate nohighlight">\(r\)</span> is the radius from the center of the domain. You may recognize that the function randomly select an angle and randomly select a radius between <span class="math notranslate nohighlight">\(R_{min}\)</span> and <span class="math notranslate nohighlight">\(R_{max}\)</span> for the position of a new walker.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this function is used to supply walkers at a random position</span>
+
+<span class="n">Rmax</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">Rmin</span> <span class="o">=</span> <span class="mi">15</span>
+
+<span class="k">def</span> <span class="nf">sample_in_annulus</span><span class="p">(</span><span class="n">Rmin</span><span class="p">,</span> <span class="n">Rmax</span><span class="p">,</span> <span class="n">cx</span><span class="o">=</span><span class="mf">50.0</span><span class="p">,</span> <span class="n">cy</span><span class="o">=</span><span class="mf">50.0</span><span class="p">,</span> <span class="n">rng</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">rng</span><span class="p">)</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">Rmin</span><span class="o">*</span><span class="n">Rmin</span><span class="p">,</span> <span class="n">Rmax</span><span class="o">*</span><span class="n">Rmax</span><span class="p">))</span>   <span class="c1"># uniform over area</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">cx</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)),</span> <span class="n">cy</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">))])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Monte Carlo step</strong></p>
+<p>Similar to the 2D random walk example code in previous class. We first create 4 sets of jumps on 2D. Then, the random walk step will pick one of the four sets to jump.</p>
+<p>The following code is divided into 6 sections.</p>
+<ol class="arabic simple">
+<li><p>Section 1: We need to set up a stop criterion for the simulation. Here, we use a commonly used Python technique – mask, which returns a bool indicating whether the imposed the condition is satisfied. The code in section 1 does: For <code class="docutils literal notranslate"><span class="pre">agr</span></code>, return <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code> for the column containing nonzeros. <code class="docutils literal notranslate"><span class="pre">axis</span> <span class="pre">=</span> <span class="pre">0</span></code> means a column. Then, find the indices of columns that has <code class="docutils literal notranslate"><span class="pre">true</span></code>: the first one will the westmost column and the last one will be the eastmost column. We stop the simulation if the aggregation reaches the domain box. Thus, when the westmost column reaches 1 or the eastmost column reach Lx-2. Stop the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop using <code class="docutils literal notranslate"><span class="pre">break</span></code>.</p></li>
+<li><p>Section 2: We create a mask to check wether a walker is active. If active, it returns <code class="docutils literal notranslate"><span class="pre">true</span></code>. Otherwise <code class="docutils literal notranslate"><span class="pre">false</span></code>. Then, we keep only active walkers. Next, loop over active walkers and make a random jump.</p></li>
+<li><p>Section 3: Impose periodic boundary condtions. If a walker leaves the box from a boundary, it comes back from the opposite boundary.</p></li>
+<li><p>Section 4: Check whether a walker is adjacent to the aggregation. For example, if a walker’s west side is the aggregation, the walker attaches; the walker becomes inactive and the aggregation grows in the expense of that walker.</p></li>
+<li><p>Section 5: Every once in a while, Check how many walkers are dead. Create an array for new walkers. Calculate the range to supply new walkers. Check whether the new walkers are on the boundaries. Finally, combine the new walker array to the existing walker array using <code class="docutils literal notranslate"><span class="pre">vstack</span></code>.</p></li>
+<li><p>Section 6: visualization.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nstep</span> <span class="o">=</span> <span class="mi">2001</span>
+
+<span class="c1"># random jump in 2D </span>
+<span class="n">dirs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="c1"># Monte Carlo step</span>
+<span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nstep</span><span class="p">):</span>
+
+    <span class="c1"># section 1 -------------------------------------------------</span>
+    <span class="c1"># stopping criteria</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">agr</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  
+    <span class="n">cols</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flatnonzero</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>         <span class="c1"># indices of such columns</span>
+    <span class="k">if</span> <span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">cols</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">Lx</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span>
+        <span class="o">??</span>  <span class="c1"># &lt;-- stop the loop</span>
+    
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">agr</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flatnonzero</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>         <span class="c1"># indices of such row</span>
+    <span class="k">if</span> <span class="n">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">rows</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">Ly</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span>
+        <span class="o">??</span>
+
+    <span class="c1"># section 2 -------------------------------------------------</span>
+    <span class="c1"># create a mask to examine whether a walker is active</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">wk</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span>
+    <span class="c1"># the items satisfy the mask will be labeled true.</span>
+    <span class="c1"># i.e., keep only active ones</span>
+    <span class="n">wk</span> <span class="o">=</span> <span class="n">wk</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+
+    <span class="c1"># number of active walker</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="n">wk</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="c1"># loop over all active walkers</span>
+    <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        
+        <span class="c1"># pick a random direction for each walker and step by 1</span>
+        <span class="n">step_idx</span> <span class="o">=</span> <span class="o">??</span>       
+        <span class="n">wk</span><span class="p">[</span><span class="n">w</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">+=</span> <span class="n">dirs</span><span class="p">[</span><span class="n">step_idx</span><span class="p">]</span>
+
+        <span class="c1"># section 3 --------------------------------------------</span>
+        <span class="c1"># impose boundary conditions</span>
+        <span class="k">if</span> <span class="n">wk</span><span class="p">[</span><span class="n">w</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>     <span class="c1"># reach west boundary</span>
+            <span class="n">wk</span><span class="p">[</span><span class="n">w</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">??</span>
+        <span class="k">if</span> <span class="n">wk</span><span class="p">[</span><span class="n">w</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">Lx</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>  <span class="c1"># reach east boundary</span>
+            <span class="n">wk</span><span class="p">[</span><span class="n">w</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">??</span>
+
+        <span class="k">if</span> <span class="n">wk</span><span class="p">[</span><span class="n">w</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>     <span class="c1"># reach south boundary</span>
+            <span class="n">wk</span><span class="p">[</span><span class="n">w</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">??</span>
+        <span class="k">if</span> <span class="n">wk</span><span class="p">[</span><span class="n">w</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">Ly</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>  <span class="c1"># reach north boundary</span>
+            <span class="n">wk</span><span class="p">[</span><span class="n">w</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">??</span>        
+
+        <span class="c1"># section 4 -------------------------------------------</span>
+        <span class="c1"># the walker position at this jump</span>
+        <span class="n">rw</span> <span class="o">=</span> <span class="n">wk</span><span class="p">[</span><span class="n">w</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> 
+        <span class="n">cl</span> <span class="o">=</span> <span class="n">wk</span><span class="p">[</span><span class="n">w</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> 
+      
+        <span class="c1"># examine whether the walker jump to a site next to the aggregation</span>
+        <span class="c1"># check west of the walker</span>
+        <span class="k">if</span> <span class="n">agr</span><span class="p">[</span><span class="err">??</span><span class="p">,</span><span class="err">??</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">wk</span><span class="p">[</span><span class="n">w</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="o">??</span> 
+            <span class="n">agr</span><span class="p">[</span><span class="n">rw</span><span class="p">,</span><span class="n">cl</span><span class="p">]</span> <span class="o">=</span> <span class="o">??</span>
+
+        <span class="c1"># check east of the walker</span>
+        <span class="o">??</span>
+
+        <span class="c1"># check south </span>
+        <span class="o">??</span>
+                    
+        <span class="c1"># check north</span>
+        <span class="o">??</span>
+            
+    <span class="c1"># section 5 -------------------------------------------</span>
+    <span class="c1"># supply new walkers</span>
+    <span class="k">if</span> <span class="n">it</span><span class="o">%</span><span class="k">100</span> == 0:
+        <span class="c1"># find how many new walkers needed</span>
+        <span class="n">nW</span> <span class="o">=</span> <span class="n">N_init</span> <span class="o">-</span> <span class="n">N</span>
+
+        <span class="c1"># create a new walker array</span>
+        <span class="n">n_wk</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="err">??</span><span class="p">,</span><span class="err">??</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+
+        <span class="c1"># define the minimum radius away from the domain center</span>
+        <span class="n">Rmin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">agr</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="mf">1.2</span>
+        
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nW</span><span class="p">):</span>
+            
+            <span class="n">xi</span><span class="p">,</span> <span class="n">yi</span> <span class="o">=</span> <span class="n">sample_in_annulus</span><span class="p">(</span><span class="n">Rmin</span><span class="p">,</span> <span class="n">Rmax</span><span class="p">,</span> <span class="n">cx</span><span class="o">=</span><span class="mf">50.0</span><span class="p">,</span> <span class="n">cy</span><span class="o">=</span><span class="mf">50.0</span><span class="p">,</span> <span class="n">rng</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+            
+            <span class="c1"># check boundary conditions</span>
+            <span class="k">if</span> <span class="n">xi</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">xi</span> <span class="o">=</span> <span class="o">??</span>
+            <span class="k">if</span> <span class="n">xi</span> <span class="o">==</span> <span class="n">Lx</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">xi</span> <span class="o">=</span> <span class="o">??</span>
+
+            <span class="k">if</span> <span class="n">yi</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">yi</span> <span class="o">=</span> <span class="o">??</span>
+            <span class="k">if</span> <span class="n">yi</span> <span class="o">==</span> <span class="n">Ly</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">yi</span> <span class="o">=</span> <span class="o">??</span>
+            <span class="c1"># define the position of new walkers</span>
+            <span class="n">n_wk</span><span class="p">[</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">xi</span>
+            <span class="n">n_wk</span><span class="p">[</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">yi</span>
+            <span class="n">n_wk</span><span class="p">[</span><span class="n">k</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="o">??</span>        
+
+        <span class="c1"># combine the new walker array to the old one</span>
+        <span class="n">wk</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">wk</span><span class="p">,</span> <span class="n">n_wk</span><span class="p">],</span><span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>     
+
+    <span class="c1"># section 6 --------------------------------------------------------</span>
+    <span class="k">if</span> <span class="n">it</span><span class="o">%</span><span class="k">5</span>==0:
+        <span class="c1"># visualization</span>
+        <span class="n">sc</span><span class="o">.</span><span class="n">set_offsets</span><span class="p">(</span><span class="n">wk</span><span class="p">)</span>  
+        <span class="n">im</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">agr</span><span class="p">)</span>
+        <span class="n">title</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Step </span><span class="si">{</span><span class="n">it</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">)</span>
+        
+        <span class="c1"># Animaiton part (dosn&#39;t change)</span>
+        <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Clear output for dynamic display</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>            <span class="c1"># Reset display</span>
+        <span class="c1"># fig.clear()             # Prevent overlapping and layered plots</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.0002</span><span class="p">)</span>         <span class="c1"># Sleep for half a second to slow down the animation</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="part-3">
+<h2>Part 3<a class="headerlink" href="#part-3" title="Link to this heading">#</a></h2>
+<p>Add a new feature for reaction-limited aggregation. Now you need to count how many times a site is visited. This array <code class="docutils literal notranslate"><span class="pre">nsv</span></code> can be in the same form of <code class="docutils literal notranslate"><span class="pre">agr</span></code>. Starting with all zeros on <code class="docutils literal notranslate"><span class="pre">nsv</span></code>.</p>
+<ul class="simple">
+<li><p>If a site is visited, you add 1 on that position <code class="docutils literal notranslate"><span class="pre">nsv[rw,cl]</span></code>. This check can be implemented when a walker reaches a grid point next to the aggregation.</p></li>
+<li><p>Walker attachment will occur only when a site has been visited more than <code class="docutils literal notranslate"><span class="pre">thres</span></code> times.</p></li>
+</ul>
+<p><strong>A large value of <code class="docutils literal notranslate"><span class="pre">thres</span></code> mimics the process of near equilibrium condition.</strong> In this case, attachement becomes the limiting factor of growth.</p>
+<p>Copy your functioning code above to the code cell below and include the new feature.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create the 2D domain</span>
+<span class="n">nsv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">Ly</span><span class="p">,</span><span class="n">Lx</span><span class="p">))</span>
+
+<span class="n">thres</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="n">nstep</span> <span class="o">=</span> <span class="mi">10001</span>
+
+
+
+<span class="c1"># random jump in 2D </span>
+<span class="n">dirs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="c1"># Monte Carlo step</span>
+<span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nstep</span><span class="p">):</span>
+    <span class="c1"># copy your functioning code here and made necessary modifications </span>
+    
+        
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅ Do This - Describe what you observed in this Markdown cell. Make a comparison between the morphologies from diffusion-limitied and reaction-limited cases.</p>
+<hr class="docutils" />
+</section>
+<section id="great-you-re-done-please-add-your-name-to-the-file-name-and-upload-your-file-to-the-respective-drop-box-this-assignment-is-due-on-10-6">
+<h2>Great! You’re done! Please add your name to the file name and upload your file to the respective drop box. This assignment is due on 10/6.<a class="headerlink" href="#great-you-re-done-please-add-your-name-to-the-file-name-and-upload-your-file-to-the-respective-drop-box-this-assignment-is-due-on-10-6" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-base-py"
+        },
+        kernelOptions: {
+            name: "conda-base-py",
+            path: "./daily/Day-08"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-base-py'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../section_files/day_8.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Day 8</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../section_files/HW02.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Homework 2</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">MSE 590400 coding assignment</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-diffusion-limited-aggregation">Monte Carlo: Diffusion limited aggregation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#put-your-name-here"><p style="text-align: right;"> ✅ <strong>put your name here</strong> </p></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1">Part 1.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2">Part 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3">Part 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#great-you-re-done-please-add-your-name-to-the-file-name-and-upload-your-file-to-the-respective-drop-box-this-assignment-is-due-on-10-6">Great! You’re done! Please add your name to the file name and upload your file to the respective drop box. This assignment is due on 10/6.</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Hui-Chia Yu
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
