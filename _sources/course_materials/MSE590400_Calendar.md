@@ -50,7 +50,7 @@
   </tr>
   <tr> <!-- week 5 -->
     <td style="border: 1px solid #ddd; padding: 8px;">09 (Sep 29)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;"> <span style="color: red;">Teacher's day, Holiday. No class</span></td>
+    <td style="border: 1px solid #ddd; padding: 8px;"><span style="color: red;">Teacher's day, Holiday. No class</span></td>
   </tr>
   <tr style="background-color: #f9f9f9;">
     <td style="border: 1px solid #ddd; padding: 8px;">10 (Oct 2)</td>
@@ -58,11 +58,11 @@
   </tr>       
   <tr> <!-- week 6 -->
     <td style="border: 1px solid #ddd; padding: 8px;">09 (Oct 6)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">Finite difference method, FDM for diffusion equation. </td>
+    <td style="border: 1px solid #ddd; padding: 8px;"><span style="color: red;">Mid-Autumn Festival, Holiday. No class</span> </td>
   </tr>
   <tr style="background-color: #f9f9f9;">
     <td style="border: 1px solid #ddd; padding: 8px;">10 (Oct 9)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">Remote class: Zoom (or video clips) </td>
+    <td style="border: 1px solid #ddd; padding: 8px;">Remote class: Zoom (or video clips) Finite difference method, FDM for diffusion equation. </td>
   </tr>       
   <tr> <!-- week 7 -->
     <td style="border: 1px solid #ddd; padding: 8px;">09 (Oct 13)</td>
