@@ -2,9 +2,5 @@ Day 9
 =======================
 This section contains the course materials for day 9.
 
+<a href="https://raw.githubusercontent.com/huichiayu/cmse_202_802/main/MSE590/Diffusion_equation_derivation.pdf" target="_blank">Diffusion equation</a>
 
-[Day-09_Pre-Class_OOPAntForaging-STUDENT.ipynb](../daily/Day-09/Day-09_Pre-Class_OOPAntForaging-STUDENT.ipynb)
-
-
-
-[Day-09_In-Class_ABMSuperbugs2-STUDENT.ipynb](../daily/Day-09/Day-09_In-Class_ABMSuperbugs2-STUDENT.ipynb )
