@@ -70,7 +70,7 @@
   </tr>
   <tr style="background-color: #f9f9f9;">
     <td style="border: 1px solid #ddd; padding: 8px;">10 (Oct 16)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">Remote class: Zoom. Thermodynamic free energy.</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">Remote class: Zoom. Thermodynamic free energy. Phase diagrams.</td>
   </tr>     
   <tr> <!-- week 8 -->
     <td style="border: 1px solid #ddd; padding: 8px;">09 (Oct 20)</td>
