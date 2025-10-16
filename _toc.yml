@@ -99,7 +99,10 @@ parts:
           sections:  
           - file: homework/MSE590/HW2_Simple_MD_Student_v1
 #           title: Homework 2      
-        
 #         - title: Upload HW02 assignment
+
+        - file: section_files/HW03     
+          sections:  
+          - file: homework/MSE590/HW3_PottsModel_Student_v1
                 
 
