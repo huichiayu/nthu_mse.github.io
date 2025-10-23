@@ -72,6 +72,8 @@ parts:
         
       - file: section_files/day_9
       
+      - file: section_files/day_10
+            
       - file: section_files/day_11
         sections: 
         - file: daily/Day-11/Lab5_FEM_1D_diffusion_Student_v1.ipynb 
