@@ -82,7 +82,7 @@ parts:
 
       - file: section_files/day_12
         sections: 
-        - file: daily/Day-12/gradient_descent_001.ipynb  
+        - file: daily/Day-12/Gradient_descent.ipynb  
         - file: daily/Day-12/AllenCahnEquation_Magnetism.ipynb 
         - file: daily/Day-12/Lab_6_CahnHilliardEquation_SpinodalDecomposition_Student_v1.ipynb                 
 
