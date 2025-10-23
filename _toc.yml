@@ -76,9 +76,9 @@ parts:
         sections: 
         - file: daily/Day-11/Lab5_FEM_1D_diffusion_Student_v1.ipynb 
         
-#       - file: section_files/day_11
-#         sections: 
-#         - file: daily/Day-11/FreeEnergy.ipynb        
+      - file: section_files/day_12
+        sections: 
+        - file: daily/Day-12/FreeEnergy.ipynb        
 # 
 #       - file: section_files/day_12
 #         sections: 
