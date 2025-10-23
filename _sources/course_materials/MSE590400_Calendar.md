@@ -65,21 +65,29 @@
     <td style="border: 1px solid #ddd; padding: 8px;">Remote class: Zoom (or video clips) Diffusion equation. Finite difference method </td>
   </tr>       
   <tr> <!-- week 7 -->
-    <td style="border: 1px solid #ddd; padding: 8px;">09 (Oct 13)</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">11 (Oct 13)</td>
     <td style="border: 1px solid #ddd; padding: 8px;">Remote class: Zoom. Finite difference method. FDM for 1D Diffusion equation</td>
   </tr>
   <tr style="background-color: #f9f9f9;">
-    <td style="border: 1px solid #ddd; padding: 8px;">10 (Oct 16)</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">12 (Oct 16)</td>
     <td style="border: 1px solid #ddd; padding: 8px;">Remote class: Zoom. Thermodynamic free energy. Phase diagrams.</td>
   </tr>     
   <tr> <!-- week 8 -->
-    <td style="border: 1px solid #ddd; padding: 8px;">09 (Oct 20)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">13 (Oct 20)</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">Free energy function, Cahn-Hilliard equation, Allen-Cahn equation.</td>
   </tr>
   <tr style="background-color: #f9f9f9;">
-    <td style="border: 1px solid #ddd; padding: 8px;">10 (Oct 23)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
-  </tr>     
+    <td style="border: 1px solid #ddd; padding: 8px;">14 (Oct 23)</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">Allen-Cahn equation for magnetization, Lab 6 Cahn-Hilliard equation for spinodal decomposition.</td>
+  </tr>    
+  <tr> <!-- week 9 -->
+    <td style="border: 1px solid #ddd; padding: 8px;">15 (Oct 27)</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">Solidification, Lab 7 dendritic growth.</td>
+  </tr>
+  <tr style="background-color: #f9f9f9;">
+    <td style="border: 1px solid #ddd; padding: 8px;">16 (Oct 30)</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">Phase field simulation of grain growth </td>
+  </tr>    
 </table>
 
 
