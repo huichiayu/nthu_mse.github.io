@@ -3,7 +3,7 @@ Day 12
 This section contains the course materials for day 12.
 
 [Gradient_descent.ipynb](../daily//Day-12/Gradient_descent.ipynb)
-{Download}`gradient_descent_001.ipynb<../daily/Day-12/gradient_descent_001.ipynb>`
+{Download}`Gradient_descent.ipynb<../daily/Day-12/Gradient_descent.ipynb>`
 
 [AllenCahnEquation_Magnetism.ipynb](../daily//Day-12/AllenCahnEquation_Magnetism.ipynb)
 {Download}`AllenCahnEquation_Magnetism.ipynb<../daily/Day-12/AllenCahnEquation_Magnetism.ipynb>`
