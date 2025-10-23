@@ -10,3 +10,5 @@ This section contains the course materials for day 12.
 
 [Lab_6_CahnHilliardEquation_SpinodalDecomposition_Student_v1.ipynb](../daily//Day-12/Lab_6_CahnHilliardEquation_SpinodalDecomposition_Student_v1.ipynb)
 {Download}`Lab_6_CahnHilliardEquation_SpinodalDecomposition_Student_v1.ipynb<../daily/Day-12/Lab_6_CahnHilliardEquation_SpinodalDecomposition_Student_v1.ipynb>`
+
+[Upload your completed Lab 6 assignment (Dropbox file request)](https://www.dropbox.com/request/FmZfVagvRzktIdTM3rXd)
