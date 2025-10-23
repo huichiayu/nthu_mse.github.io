@@ -75,6 +75,10 @@ parts:
       - file: section_files/day_10
         sections: 
         - file: daily/Day-10/Lab5_FEM_1D_diffusion_Student_v1.ipynb 
+        
+      - file: section_files/day_11
+        sections: 
+        - file: daily/Day-11/FreeEnergy.ipynb        
 
 ### DO NOT USE THE HOMEWORK ASSIGNMENTS FROM THE PREVIOUS SEMESTER
 ### CREATE NEW ONES THAT ASSESS SIMILAR SKILLS/CONTENT
