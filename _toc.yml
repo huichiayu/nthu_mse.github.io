@@ -72,19 +72,19 @@ parts:
         
       - file: section_files/day_9
       
-      - file: section_files/day_10
-        sections: 
-        - file: daily/Day-10/Lab5_FEM_1D_diffusion_Student_v1.ipynb 
-        
       - file: section_files/day_11
         sections: 
-        - file: daily/Day-11/FreeEnergy.ipynb        
-
-      - file: section_files/day_12
-        sections: 
-        - file: daily/Day-12/Gradient_descent.ipynb  
-        - file: daily/Day-12/AllenCahnEquation_Magnetism.ipynb 
-        - file: daily/Day-12/Lab_6_CahnHilliardEquation_SpinodalDecomposition_Student_v1.ipynb                 
+        - file: daily/Day-11/Lab5_FEM_1D_diffusion_Student_v1.ipynb 
+        
+#       - file: section_files/day_11
+#         sections: 
+#         - file: daily/Day-11/FreeEnergy.ipynb        
+# 
+#       - file: section_files/day_12
+#         sections: 
+#         - file: daily/Day-12/Gradient_descent.ipynb  
+#         - file: daily/Day-12/AllenCahnEquation_Magnetism.ipynb 
+#         - file: daily/Day-12/Lab_6_CahnHilliardEquation_SpinodalDecomposition_Student_v1.ipynb                 
 
 ### DO NOT USE THE HOMEWORK ASSIGNMENTS FROM THE PREVIOUS SEMESTER
 ### CREATE NEW ONES THAT ASSESS SIMILAR SKILLS/CONTENT
