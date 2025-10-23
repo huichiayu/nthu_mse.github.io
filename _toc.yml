@@ -81,12 +81,12 @@ parts:
       - file: section_files/day_12
         sections: 
         - file: daily/Day-12/FreeEnergy.ipynb        
-# 
-#       - file: section_files/day_12
-#         sections: 
-#         - file: daily/Day-12/Gradient_descent.ipynb  
-#         - file: daily/Day-12/AllenCahnEquation_Magnetism.ipynb 
-#         - file: daily/Day-12/Lab_6_CahnHilliardEquation_SpinodalDecomposition_Student_v1.ipynb                 
+
+      - file: section_files/day_13
+        sections: 
+        - file: daily/Day-13/Gradient_descent.ipynb  
+        - file: daily/Day-13/AllenCahnEquation_Magnetism.ipynb 
+        - file: daily/Day-13/Lab_6_CahnHilliardEquation_SpinodalDecomposition_Student_v1.ipynb                 
 
 ### DO NOT USE THE HOMEWORK ASSIGNMENTS FROM THE PREVIOUS SEMESTER
 ### CREATE NEW ONES THAT ASSESS SIMILAR SKILLS/CONTENT
