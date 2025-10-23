@@ -30,7 +30,7 @@
   </tr>  
   <tr style="background-color: #f9f9f9;">
     <td style="border: 1px solid #ddd; padding: 8px;">04 (Sep 11)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">Molecular dynamics basics, MD coding practices. </td>
+    <td style="border: 1px solid #ddd; padding: 8px;">Molecular dynamics basics, Lab 1 MD coding practices. </td>
   </tr>
   <tr> <!-- week 3 -->
     <td style="border: 1px solid #ddd; padding: 8px;">05 (Sep 15)</td>
@@ -38,15 +38,15 @@
   </tr>
   <tr style="background-color: #f9f9f9;">
     <td style="border: 1px solid #ddd; padding: 8px;">06 (Sep 18)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">MC coding practice: random walk. <strong>Homework 2 release</strong></td>
+    <td style="border: 1px solid #ddd; padding: 8px;">MC coding practice: Lab 2 random walk. <strong>Homework 2 release</strong></td>
   </tr> 
    <tr> <!-- week 4 -->
     <td style="border: 1px solid #ddd; padding: 8px;">07 (Sep 22)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;"> MC coding: Ising model </td>
+    <td style="border: 1px solid #ddd; padding: 8px;"> MC coding: Lab 3 Ising model </td>
   </tr>  
   <tr style="background-color: #f9f9f9;">
     <td style="border: 1px solid #ddd; padding: 8px;">08 (Sep 25)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">MC coding: diffusion limited aggregation</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">MC coding: Lab 4 diffusion limited aggregation</td>
   </tr>
   <tr> <!-- week 5 -->
     <td style="border: 1px solid #ddd; padding: 8px;">09 (Sep 29)</td>
