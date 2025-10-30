@@ -88,7 +88,13 @@ parts:
         sections: 
         - file: daily/Day-14/Gradient_descent.ipynb  
         - file: daily/Day-14/AllenCahnEquation_Magnetism.ipynb 
-        - file: daily/Day-14/Lab_6_CahnHilliardEquation_SpinodalDecomposition_Student_v1.ipynb                 
+        - file: daily/Day-14/Lab_6_CahnHilliardEquation_SpinodalDecomposition_Student_v1.ipynb  
+        
+      - file: section_files/day_15     
+      
+      - file: section_files/day_16
+        sections:    
+        - file: daily/Day-16/Surface_orientation.ipynb                 
 
 ### DO NOT USE THE HOMEWORK ASSIGNMENTS FROM THE PREVIOUS SEMESTER
 ### CREATE NEW ONES THAT ASSESS SIMILAR SKILLS/CONTENT
