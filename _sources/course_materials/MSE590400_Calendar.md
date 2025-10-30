@@ -82,7 +82,7 @@
   </tr>    
   <tr> <!-- week 9 -->
     <td style="border: 1px solid #ddd; padding: 8px;">15 (Oct 27)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">Solidification, analytical solution of phase field model, driving force.</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">Analytical solution, interface energy, and interface thickness in phase field model. Driving force for solidification.</td>
   </tr>
   <tr style="background-color: #f9f9f9;">
     <td style="border: 1px solid #ddd; padding: 8px;">16 (Oct 30)</td>
