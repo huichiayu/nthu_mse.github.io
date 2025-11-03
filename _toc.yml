@@ -96,6 +96,11 @@ parts:
         sections:    
         - file: daily/Day-16/Surface_orientation.ipynb                 
 
+      - file: section_files/day_17
+        sections:    
+        - file: daily/Day-17/Lab7_dendritic_growth_Student_v1.ipynb  
+
+
 ### DO NOT USE THE HOMEWORK ASSIGNMENTS FROM THE PREVIOUS SEMESTER
 ### CREATE NEW ONES THAT ASSESS SIMILAR SKILLS/CONTENT
   - caption: Homework
