@@ -98,7 +98,7 @@
   </tr>  
   <tr> <!-- week 11 -->
     <td style="border: 1px solid #ddd; padding: 8px;">17 (Nov 10)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">Phase field sintering model.</td>
   </tr>
   <tr style="background-color: #f9f9f9;">
     <td style="border: 1px solid #ddd; padding: 8px;">18 (Nov 13)</td>
