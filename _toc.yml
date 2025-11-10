@@ -104,7 +104,11 @@ parts:
         sections:    
         - file: daily/Day-18/Lab_8_Grain_growth_student_v1.ipynb  
         
-        
+      - file: section_files/day_19
+        sections:    
+        - file: daily/Day-19/FreeEnergy_PFM_Sintering.ipynb  
+        - file: daily/Day-19/PhaseFieldSinteringSimulation.ipynb  
+                
 ### DO NOT USE THE HOMEWORK ASSIGNMENTS FROM THE PREVIOUS SEMESTER
 ### CREATE NEW ONES THAT ASSESS SIMILAR SKILLS/CONTENT
   - caption: Homework
