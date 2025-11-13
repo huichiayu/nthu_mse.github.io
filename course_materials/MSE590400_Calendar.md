@@ -97,27 +97,27 @@
     <td style="border: 1px solid #ddd; padding: 8px;">Phase field simulation of grain growth </td>
   </tr>  
   <tr> <!-- week 11 -->
-    <td style="border: 1px solid #ddd; padding: 8px;">17 (Nov 10)</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">19 (Nov 10)</td>
     <td style="border: 1px solid #ddd; padding: 8px;">Phase field sintering model.</td>
   </tr>
   <tr style="background-color: #f9f9f9;">
-    <td style="border: 1px solid #ddd; padding: 8px;">18 (Nov 13)</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">20 (Nov 13)</td>
     <td style="border: 1px solid #ddd; padding: 8px;">Phase field model of eutectic growth.</td>
   </tr>    
   <tr> <!-- week 12 -->
-    <td style="border: 1px solid #ddd; padding: 8px;">19 (Nov 17)</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">21 (Nov 17)</td>
     <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
   </tr>
   <tr style="background-color: #f9f9f9;">
-    <td style="border: 1px solid #ddd; padding: 8px;">20 (Nov 20)</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">22 (Nov 20)</td>
     <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
   </tr>    
   <tr> <!-- week 13 -->
-    <td style="border: 1px solid #ddd; padding: 8px;">21 (Nov 24)</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">23 (Nov 24)</td>
     <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
   </tr>
   <tr style="background-color: #f9f9f9;">
-    <td style="border: 1px solid #ddd; padding: 8px;">22 (Nov 27)</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">24 (Nov 27)</td>
     <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
   </tr>      
 </table>
