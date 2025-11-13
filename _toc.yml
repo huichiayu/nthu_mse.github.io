@@ -108,7 +108,12 @@ parts:
         sections:    
         - file: daily/Day-19/FreeEnergy_PFM_Sintering.ipynb  
         - file: daily/Day-19/PhaseFieldSinteringSimulation.ipynb  
-                
+
+      - file: section_files/day_20
+        sections:    
+        - file: daily/Day-20/Lab9_EutecticGorwth_Student_v1.ipynb 
+
+
 ### DO NOT USE THE HOMEWORK ASSIGNMENTS FROM THE PREVIOUS SEMESTER
 ### CREATE NEW ONES THAT ASSESS SIMILAR SKILLS/CONTENT
   - caption: Homework
