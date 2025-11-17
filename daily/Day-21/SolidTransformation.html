@@ -1,0 +1,943 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Solid-solid transformation &#8212; MSE 590400 Course Website</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'daily/Day-21/SolidTransformation';</script>
+    <link rel="icon" href="../../_static/Spartan_2.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Homework 2" href="../../section_files/HW02.html" />
+    <link rel="prev" title="Mechanical anisotropy" href="ZenerRatio.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Spartan_2.png" class="logo__image only-light" alt="MSE 590400 Course Website - Home"/>
+    <script>document.write(`<img src="../../_static/Spartan_2.png" class="logo__image only-dark" alt="MSE 590400 Course Website - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Materials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../course_materials/MSE590400_Syllabus.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course_materials/MSE590400_Calendar.html">Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course_materials/SoftwareSetupGuide_NTHU.html">Software Setup Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course_materials/MSE590400_AI_policy.html">Generative AI Policy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../course_materials/SemesterProjectDetails_NTHU.html">Semester Project Details</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quiz/Exam</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../course_materials/Quiz_NTHU.html">MSE 590400 - Quiz/Exam Details</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Daily Content</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../section_files/day_1.html">Day 1</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_2.html">Day 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Day-02/Demo_EnergyFunctional.html">Demonstration of energy functional</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_3.html">Day 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Day-03/LJ_potent.html">Lennard-Jones potential</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_4.html">Day 4</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Day-04/MolecularDynamics_singlePhase_Student_v3.html">Molecular dynamics hands-on Python coding practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Day-04/MolecularDynamics_twoPhase_Student_v2.html">Molecular dynamics hands-on Python coding practices</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_5.html">Day 5</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Day-05/MonteCarlo_example.html">Monte Carlo demonstration</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_6.html">Day 6</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Day-06/RandomWalk_Student_v1.html">Random Walk coding practice</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_7.html">Day 7</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Day-07/Monte_Carlo_Ising_model_Student_v1.html">Lab 3: Ising model for ferromagnetism</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_8.html">Day 8</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Day-08/Diffusion_Limited_Aggregation_Student_v1.html">MSE 590400 coding assignment</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../section_files/day_9.html">Day 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../section_files/day_10.html">Day 10</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_11.html">Day 11</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_12.html">Day 12</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Day-12/FreeEnergy.html">Helmholtz free energy</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../section_files/day_13.html">Day 13</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_14.html">Day 14</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Day-14/Gradient_descent.html">Gradient descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Day-14/AllenCahnEquation_Magnetism.html">Allen-Cahn equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Day-14/Lab_6_CahnHilliardEquation_SpinodalDecomposition_Student_v1.html">Finite difference method to simulate Spinodal decomposition.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../section_files/day_15.html">Day 15</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_16.html">Day 16</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Day-16/Surface_orientation.html">Quiver plot</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_17.html">Day 17</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Day-17/Lab7_dendritic_growth_Student_v1.html">Lab 7 Phase field simulation of dendritic solidification</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_18.html">Day 18</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Day-18/Lab_8_Grain_growth_student_v1.html">Lab 8 Phase field simulation of grain growth</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_19.html">Day 19</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Day-19/FreeEnergy_PFM_Sintering.html">Free energy of phase field sinteting model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Day-19/PhaseFieldSinteringSimulation.html">Example code for Phase-Field sintering simulation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_20.html">Day 20</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Day-20/Lab9_EutecticGorwth_Student_v1.html">Lab 9 Eutectic growth</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../section_files/day_21.html">Day 21</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ZenerRatio.html">Mechanical anisotropy</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Solid-solid transformation</a></li>
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://raw.githubusercontent.com/huichiayu/cmse_202_802/main/MSE590/MSE590400_HW1_v1.pdf">Homework 1</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.dropbox.com/request/w4urBdsmgnrh09diBHlx">Upload HW01 assignment</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/HW02.html">Homework 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/MSE590/HW2_Simple_MD_Student_v1.html">More molecular dynamics coding practice</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/HW03.html">Homework 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/MSE590/HW3_PottsModel_Student_v1.html">MSE 590400 Homework assignment 03</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/daily/Day-21/SolidTransformation.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Solid-solid transformation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Solid-solid transformation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-elasticity-solver">linear elasticity solver</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functionalized-coding">Functionalized coding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evolution">Evolution</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="solid-solid-transformation">
+<h1>Solid-solid transformation<a class="headerlink" href="#solid-solid-transformation" title="Link to this heading">#</a></h1>
+<p><span class="math notranslate nohighlight">\(\gamma\)</span>-<span class="math notranslate nohighlight">\(\gamma'\)</span> rafting in nickel-based superalloy is a typy of spinodal decomposition under the influence of strain energy. Nickel-based superalloys are used in turbine blades, which are inch-sized single grain alloys.</p>
+<div align="left">
+<img src="https://www.phase-trans.msm.cam.ac.uk/2003/Superalloys/Desktop-Images/0.jpg" width="300">
+</div>
+<p><em>image source:<a class="reference external" href="https://www.phase-trans.msm.cam.ac.uk/2003/Superalloys/Desktop-Images/0.jpg">https://www.phase-trans.msm.cam.ac.uk/2003/Superalloys/Desktop-Images/0.jpg</a></em></p>
+<hr class="docutils" />
+<p>The cell below sets up the simulation parameters and containers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># -----------------------------</span>
+<span class="c1"># discretization</span>
+<span class="c1"># -----------------------------</span>
+<span class="n">Ny</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="n">Nx</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="n">Nstp</span> <span class="o">=</span> <span class="mi">10001</span>
+
+<span class="c1"># -----------------------------</span>
+<span class="c1"># simulation parameters</span>
+<span class="c1"># -----------------------------</span>
+<span class="n">Omg</span> <span class="o">=</span> <span class="mf">2.9</span>
+<span class="n">kap</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">1.0e-2</span>
+<span class="n">Mob</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+<span class="c1"># -----------------------------</span>
+<span class="c1"># elastic constants</span>
+<span class="c1"># -----------------------------</span>
+<span class="c1"># Case 1</span>
+<span class="n">C11</span> <span class="o">=</span> <span class="mf">157.9</span> <span class="o">*</span> <span class="mi">20</span>
+<span class="n">C12</span> <span class="o">=</span> <span class="mf">113.7</span> <span class="o">*</span> <span class="mi">20</span>
+<span class="n">C44</span> <span class="o">=</span> <span class="mf">70.5</span>  <span class="o">*</span> <span class="mi">20</span>
+
+<span class="c1"># Case 2 </span>
+<span class="c1"># C11 = 347.6 * 10</span>
+<span class="c1"># C12 = 121.8 * 10</span>
+<span class="c1"># C44 = 81.5  * 10</span>
+
+<span class="c1"># Case 3</span>
+<span class="c1"># C11 = 250 * 8</span>
+<span class="c1"># C12 = 50 * 8</span>
+<span class="c1"># C44 = 100  * 8</span>
+
+<span class="c1"># anisotropic factor</span>
+<span class="n">aniso_factor</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">C44</span> <span class="o">/</span> <span class="p">(</span><span class="n">C11</span> <span class="o">-</span> <span class="n">C12</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;anisotropic factor =&quot;</span><span class="p">,</span> <span class="n">aniso_factor</span><span class="p">)</span>
+
+<span class="c1"># -----------------------------</span>
+<span class="c1"># arrays</span>
+<span class="c1"># -----------------------------</span>
+<span class="n">phi</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">Ny</span><span class="p">,</span> <span class="n">Nx</span><span class="p">))</span>
+<span class="n">df_dp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">Ny</span><span class="p">,</span> <span class="n">Nx</span><span class="p">))</span>
+<span class="n">Lap</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">Ny</span><span class="p">,</span> <span class="n">Nx</span><span class="p">))</span>
+<span class="n">mu</span>    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">Ny</span><span class="p">,</span> <span class="n">Nx</span><span class="p">))</span>
+
+<span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">Ny</span><span class="p">,</span> <span class="n">Nx</span><span class="p">))</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">Ny</span><span class="p">,</span> <span class="n">Nx</span><span class="p">))</span>
+
+<span class="n">eps0_xx</span> <span class="o">=</span> <span class="mf">0.02</span>
+<span class="n">eps0_yy</span> <span class="o">=</span> <span class="mf">0.02</span>
+
+<span class="n">eps_xx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">Ny</span><span class="p">,</span> <span class="n">Nx</span><span class="p">))</span>
+<span class="n">eps_yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">Ny</span><span class="p">,</span> <span class="n">Nx</span><span class="p">))</span>
+
+<span class="n">b_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">Ny</span><span class="p">,</span> <span class="n">Nx</span><span class="p">))</span>
+<span class="n">b_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">Ny</span><span class="p">,</span> <span class="n">Nx</span><span class="p">))</span>
+
+<span class="n">RHS_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">Ny</span><span class="p">,</span> <span class="n">Nx</span><span class="p">))</span>
+<span class="n">RHS_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">Ny</span><span class="p">,</span> <span class="n">Nx</span><span class="p">))</span>
+
+<span class="n">ResU</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">Ny</span><span class="p">,</span> <span class="n">Nx</span><span class="p">))</span>
+<span class="n">ResV</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">Ny</span><span class="p">,</span> <span class="n">Nx</span><span class="p">))</span>
+
+<span class="n">dW_dp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">Ny</span><span class="p">,</span> <span class="n">Nx</span><span class="p">))</span>
+
+<span class="c1"># -----------------------------</span>
+<span class="c1"># initial condition with periodic BC</span>
+<span class="c1"># -----------------------------</span>
+<span class="n">phi</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">Ny</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">Nx</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.2</span> <span class="o">+</span> <span class="mf">0.4</span>
+
+<span class="n">phi</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span>  <span class="o">=</span> <span class="n">phi</span><span class="p">[</span><span class="n">Ny</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">phi</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">phi</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">phi</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>  <span class="o">=</span> <span class="n">phi</span><span class="p">[:,</span> <span class="n">Nx</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">phi</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">phi</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># -----------------------------</span>
+<span class="c1"># plotting setup (surf(view(2)) -&gt; imshow)</span>
+<span class="c1"># -----------------------------</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;phi&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="linear-elasticity-solver">
+<h1>linear elasticity solver<a class="headerlink" href="#linear-elasticity-solver" title="Link to this heading">#</a></h1>
+<section id="functionalized-coding">
+<h2>Functionalized coding<a class="headerlink" href="#functionalized-coding" title="Link to this heading">#</a></h2>
+<p>Instead of a linear sequential code, standard software engineering requires functionalize and object-oriented coding.</p>
+<p>The cell below builds a solver for 2D linear elasticity problems. It uses an iterative method to solve for <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> in the 2D mechanical equilibrium equations:</p>
+<div class="math notranslate nohighlight">
+\[C_{11} \frac{\partial^2 u}{\partial x^2} + C_{44} \frac{\partial^2 u}{\partial y^2} + \big( C_{12} + C_{44} \big) \frac{\partial^2 v}{\partial x \partial y}= \big(C_{11}\varepsilon_{11}^0 + C_{12} \varepsilon_{22}^0 \big)\frac{\partial \phi}{\partial x},\]</div>
+<div class="math notranslate nohighlight">
+\[C_{44} \frac{\partial^2 v}{\partial x^2} + C_{11} \frac{\partial^2 v}{\partial y^2} + \big( C_{12} + C_{44} \big) \frac{\partial^2 u}{\partial x \partial y}= \big(C_{12}\varepsilon_{11}^0 + C_{11} \varepsilon_{22}^0 \big)\frac{\partial \phi}{\partial y}.\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">solve_elasticity</span><span class="p">(</span>
+    <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span>
+    <span class="n">b_x</span><span class="p">,</span> <span class="n">b_y</span><span class="p">,</span>
+    <span class="n">RHS_x</span><span class="p">,</span> <span class="n">RHS_y</span><span class="p">,</span>
+    <span class="n">ResU</span><span class="p">,</span> <span class="n">ResV</span><span class="p">,</span>
+    <span class="n">C11</span><span class="p">,</span> <span class="n">C12</span><span class="p">,</span> <span class="n">C44</span><span class="p">,</span>
+    <span class="n">dx</span><span class="p">,</span>
+    <span class="n">tol</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span>
+    <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Jacobi-like iterative solver for 2D elasticity with periodic BC.</span>
+
+<span class="sd">    All arrays are Ny x Nx:</span>
+<span class="sd">        u, v    : displacement fields (updated in place)</span>
+<span class="sd">        b_x, b_y: body forces</span>
+<span class="sd">        RHS_x,y : workspaces</span>
+<span class="sd">        ResU,V  : residual workspaces</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">Ny</span><span class="p">,</span> <span class="n">Nx</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">shape</span>
+
+    <span class="c1"># interior and neighbor slices</span>
+    <span class="n">ii</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ip</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>   <span class="c1"># +1</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>     <span class="c1"># -1</span>
+
+    <span class="n">norm_U</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="n">norm_V</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="n">cnt</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="n">dv_dxdy</span> <span class="o">=</span> <span class="p">((</span><span class="n">v</span><span class="p">[</span><span class="n">ip</span><span class="p">,</span> <span class="n">ip</span><span class="p">]</span> <span class="o">-</span> <span class="n">v</span><span class="p">[</span><span class="n">im</span><span class="p">,</span> <span class="n">ip</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">dx</span><span class="p">)</span>
+            <span class="o">-</span>  <span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">ip</span><span class="p">,</span> <span class="n">im</span><span class="p">]</span> <span class="o">-</span> <span class="n">v</span><span class="p">[</span><span class="n">im</span><span class="p">,</span> <span class="n">im</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">dx</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">dx</span><span class="p">)</span>
+
+    <span class="n">du_dxdy</span> <span class="o">=</span> <span class="p">((</span><span class="n">u</span><span class="p">[</span><span class="n">ip</span><span class="p">,</span> <span class="n">ip</span><span class="p">]</span> <span class="o">-</span> <span class="n">u</span><span class="p">[</span><span class="n">im</span><span class="p">,</span> <span class="n">ip</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">dx</span><span class="p">)</span>
+             <span class="o">-</span> <span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="n">ip</span><span class="p">,</span> <span class="n">im</span><span class="p">]</span> <span class="o">-</span> <span class="n">u</span><span class="p">[</span><span class="n">im</span><span class="p">,</span> <span class="n">im</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">dx</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">dx</span><span class="p">)</span>    
+
+    <span class="c1"># --------------------</span>
+    <span class="c1"># RHS for u</span>
+    <span class="c1"># --------------------</span>
+    <span class="n">RHS_x</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">ii</span><span class="p">]</span> <span class="o">=</span> <span class="n">b_x</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">ii</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">C12</span> <span class="o">+</span> <span class="n">C44</span><span class="p">)</span> <span class="o">*</span> <span class="n">dv_dxdy</span>
+
+    <span class="c1"># --------------------</span>
+    <span class="c1"># RHS for v</span>
+    <span class="c1"># --------------------</span>
+    <span class="n">RHS_y</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">ii</span><span class="p">]</span> <span class="o">=</span> <span class="n">b_y</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">ii</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">C12</span> <span class="o">+</span> <span class="n">C44</span><span class="p">)</span> <span class="o">*</span> <span class="n">du_dxdy</span>
+
+    <span class="c1"># iterative solver for linear elastic problem</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">norm_U</span> <span class="o">&gt;</span> <span class="n">tol</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">norm_V</span> <span class="o">&gt;</span> <span class="n">tol</span><span class="p">):</span>
+
+        <span class="c1"># --------------------</span>
+        <span class="c1"># update u</span>
+        <span class="c1"># --------------------</span>
+        <span class="n">u</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">ii</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">RHS_x</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">ii</span><span class="p">]</span> <span class="o">*</span> <span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">C11</span> <span class="o">*</span> <span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">ip</span><span class="p">]</span> <span class="o">+</span> <span class="n">u</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">im</span><span class="p">])</span>
+            <span class="o">-</span> <span class="n">C44</span> <span class="o">*</span> <span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="n">ip</span><span class="p">,</span> <span class="n">ii</span><span class="p">]</span> <span class="o">+</span> <span class="n">u</span><span class="p">[</span><span class="n">im</span><span class="p">,</span> <span class="n">ii</span><span class="p">]))</span> <span class="o">/</span> <span class="p">(</span><span class="o">-</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">C11</span> <span class="o">-</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">C44</span><span class="p">)</span>
+
+        <span class="c1"># --------------------</span>
+        <span class="c1"># update v</span>
+        <span class="c1"># --------------------</span>
+        <span class="n">v</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">ii</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">RHS_y</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">ii</span><span class="p">]</span> <span class="o">*</span> <span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">C44</span> <span class="o">*</span> <span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">ip</span><span class="p">]</span> <span class="o">+</span> <span class="n">v</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">im</span><span class="p">])</span>
+            <span class="o">-</span> <span class="n">C11</span> <span class="o">*</span> <span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">ip</span><span class="p">,</span> <span class="n">ii</span><span class="p">]</span> <span class="o">+</span> <span class="n">v</span><span class="p">[</span><span class="n">im</span><span class="p">,</span> <span class="n">ii</span><span class="p">]))</span> <span class="o">/</span> <span class="p">(</span><span class="o">-</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">C44</span> <span class="o">-</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">C11</span><span class="p">)</span>
+
+        <span class="c1"># --------------------</span>
+        <span class="c1"># periodic BC for u</span>
+        <span class="c1"># --------------------</span>
+        <span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span>  <span class="o">=</span> <span class="n">u</span><span class="p">[</span><span class="n">Ny</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="p">:]</span>
+        <span class="n">u</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+        <span class="n">u</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>  <span class="o">=</span> <span class="n">u</span><span class="p">[:,</span> <span class="n">Nx</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span>
+        <span class="n">u</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+
+        <span class="c1"># periodic BC for v</span>
+        <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span>  <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">Ny</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="p">:]</span>
+        <span class="n">v</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+        <span class="n">v</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>  <span class="o">=</span> <span class="n">v</span><span class="p">[:,</span> <span class="n">Nx</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span>
+        <span class="n">v</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+
+        <span class="n">dv_dxdy</span> <span class="o">=</span> <span class="p">((</span><span class="n">v</span><span class="p">[</span><span class="n">ip</span><span class="p">,</span> <span class="n">ip</span><span class="p">]</span> <span class="o">-</span> <span class="n">v</span><span class="p">[</span><span class="n">im</span><span class="p">,</span> <span class="n">ip</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">dx</span><span class="p">)</span>
+                <span class="o">-</span>  <span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">ip</span><span class="p">,</span> <span class="n">im</span><span class="p">]</span> <span class="o">-</span> <span class="n">v</span><span class="p">[</span><span class="n">im</span><span class="p">,</span> <span class="n">im</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">dx</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">dx</span><span class="p">)</span>
+
+        <span class="n">du_dxdy</span> <span class="o">=</span> <span class="p">((</span><span class="n">u</span><span class="p">[</span><span class="n">ip</span><span class="p">,</span> <span class="n">ip</span><span class="p">]</span> <span class="o">-</span> <span class="n">u</span><span class="p">[</span><span class="n">im</span><span class="p">,</span> <span class="n">ip</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">dx</span><span class="p">)</span>
+                 <span class="o">-</span> <span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="n">ip</span><span class="p">,</span> <span class="n">im</span><span class="p">]</span> <span class="o">-</span> <span class="n">u</span><span class="p">[</span><span class="n">im</span><span class="p">,</span> <span class="n">im</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">dx</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">dx</span><span class="p">)</span>
+        
+        <span class="c1"># --------------------</span>
+        <span class="c1"># RHS for u</span>
+        <span class="c1"># --------------------</span>
+        <span class="n">RHS_x</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">ii</span><span class="p">]</span> <span class="o">=</span> <span class="n">b_x</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">ii</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">C12</span> <span class="o">+</span> <span class="n">C44</span><span class="p">)</span> <span class="o">*</span> <span class="n">dv_dxdy</span>
+
+        <span class="c1"># --------------------</span>
+        <span class="c1"># RHS for v</span>
+        <span class="c1"># --------------------</span>
+        <span class="n">RHS_y</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">ii</span><span class="p">]</span> <span class="o">=</span> <span class="n">b_y</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">ii</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">C12</span> <span class="o">+</span> <span class="n">C44</span><span class="p">)</span> <span class="o">*</span> <span class="n">du_dxdy</span>
+        
+        <span class="c1"># --------------------</span>
+        <span class="c1"># residuals</span>
+        <span class="c1"># --------------------</span>
+        <span class="n">ResU</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">ii</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">C11</span> <span class="o">*</span> <span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">ip</span><span class="p">]</span> <span class="o">-</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">u</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">ii</span><span class="p">]</span> <span class="o">+</span> <span class="n">u</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">im</span><span class="p">])</span> <span class="o">/</span> <span class="n">dx</span><span class="o">**</span><span class="mi">2</span>
+            <span class="o">+</span> <span class="n">C44</span> <span class="o">*</span> <span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="n">ip</span><span class="p">,</span> <span class="n">ii</span><span class="p">]</span> <span class="o">-</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">u</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">ii</span><span class="p">]</span> <span class="o">+</span> <span class="n">u</span><span class="p">[</span><span class="n">im</span><span class="p">,</span> <span class="n">ii</span><span class="p">])</span> <span class="o">/</span> <span class="n">dx</span><span class="o">**</span><span class="mi">2</span>
+            <span class="o">-</span> <span class="n">RHS_x</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">ii</span><span class="p">])</span>
+
+        <span class="n">ResV</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">ii</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">C44</span> <span class="o">*</span> <span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">ip</span><span class="p">]</span> <span class="o">-</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">v</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">ii</span><span class="p">]</span> <span class="o">+</span> <span class="n">v</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">im</span><span class="p">])</span> <span class="o">/</span> <span class="n">dx</span><span class="o">**</span><span class="mi">2</span>
+            <span class="o">+</span> <span class="n">C11</span> <span class="o">*</span> <span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">ip</span><span class="p">,</span> <span class="n">ii</span><span class="p">]</span> <span class="o">-</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">v</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">ii</span><span class="p">]</span> <span class="o">+</span> <span class="n">v</span><span class="p">[</span><span class="n">im</span><span class="p">,</span> <span class="n">ii</span><span class="p">])</span> <span class="o">/</span> <span class="n">dx</span><span class="o">**</span><span class="mi">2</span>
+            <span class="o">-</span> <span class="n">RHS_y</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">ii</span><span class="p">])</span>
+
+        <span class="n">norm_U</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">ResU</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">ii</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">((</span><span class="n">Ny</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">Nx</span> <span class="o">-</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="n">norm_V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">ResV</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">ii</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">((</span><span class="n">Ny</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">Nx</span> <span class="o">-</span> <span class="mi">2</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">cnt</span> <span class="o">&gt;</span> <span class="n">max_iter</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="n">cnt</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The cells below calculates Laplace and imposes periodic boundary conditions of a 2D array.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Laplace2d</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="n">dx</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    2D Laplace calculation using 5-point stencil.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="n">LapF</span> <span class="o">=</span> <span class="p">(</span><span class="n">F</span><span class="p">[</span><span class="mi">2</span><span class="p">:,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">:]</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+        <span class="o">-</span> <span class="mf">4.0</span> <span class="o">*</span> <span class="n">F</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="n">dx</span><span class="o">**</span><span class="mi">2</span>
+
+    <span class="k">return</span> <span class="n">LapF</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">PeriodicBC</span><span class="p">(</span><span class="n">F</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    This function imposes periodic BC on a 2d grid system.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="n">F</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span>  <span class="o">=</span> <span class="n">F</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="n">F</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">F</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="n">F</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>  <span class="o">=</span> <span class="n">F</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">F</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">F</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">F</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="evolution">
+<h2>Evolution<a class="headerlink" href="#evolution" title="Link to this heading">#</a></h2>
+<p>The cell below implements the rafting simulaiton.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">clear_output</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="c1"># visualization</span>
+<span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span>   <span class="c1"># set to what you want</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;upper&#39;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">,</span>
+               <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>   <span class="c1"># &lt;- caxis via vmin/vmax</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;phi&#39;</span><span class="p">)</span>            <span class="c1"># &lt;- colorbar once</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Nx</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Ny</span><span class="p">)</span>
+
+
+<span class="c1"># -----------------------------</span>
+<span class="c1"># time evolution</span>
+<span class="c1"># -----------------------------</span>
+<span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">Nstp</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+
+    <span class="c1"># --- chemical potential df/dphi ---</span>
+    <span class="n">phi_in</span> <span class="o">=</span> <span class="n">phi</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">df_dp</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">Omg</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">phi_in</span><span class="p">)</span><span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">phi_in</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">phi_in</span><span class="p">)))</span>
+
+    <span class="c1"># --- Laplace of phi ---</span>
+    <span class="n">Lap</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">Laplace2d</span><span class="p">(</span><span class="n">phi</span><span class="p">[:,:],</span><span class="n">dx</span><span class="p">)</span>
+
+    <span class="c1"># --- body force (misfit) in x direction ---</span>
+    <span class="n">b_x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">C11</span> <span class="o">*</span> <span class="n">eps0_xx</span> <span class="o">+</span> <span class="n">C12</span> <span class="o">*</span> <span class="n">eps0_yy</span><span class="p">)</span>
+        <span class="o">*</span> <span class="p">(</span><span class="n">phi</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">:]</span> <span class="o">-</span> <span class="n">phi</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">dx</span><span class="p">))</span>
+
+    <span class="c1"># --- body force (misfit) in y direction ---</span>
+    <span class="n">b_y</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">C12</span> <span class="o">*</span> <span class="n">eps0_xx</span> <span class="o">+</span> <span class="n">C11</span> <span class="o">*</span> <span class="n">eps0_yy</span><span class="p">)</span>
+        <span class="o">*</span> <span class="p">(</span><span class="n">phi</span><span class="p">[</span><span class="mi">2</span><span class="p">:,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">phi</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">dx</span><span class="p">))</span>
+
+    <span class="c1"># --- solving for displacements</span>
+    <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">solve_elasticity</span><span class="p">(</span>
+        <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span>
+        <span class="n">b_x</span><span class="p">,</span> <span class="n">b_y</span><span class="p">,</span>
+        <span class="n">RHS_x</span><span class="p">,</span> <span class="n">RHS_y</span><span class="p">,</span>
+        <span class="n">ResU</span><span class="p">,</span> <span class="n">ResV</span><span class="p">,</span>
+        <span class="n">C11</span><span class="p">,</span> <span class="n">C12</span><span class="p">,</span> <span class="n">C44</span><span class="p">,</span>
+        <span class="n">dx</span><span class="p">,</span>
+        <span class="n">tol</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span>
+        <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+
+    <span class="c1"># -------------------------</span>
+    <span class="c1"># strains</span>
+    <span class="c1"># -------------------------</span>
+    <span class="n">eps_xx</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">:]</span> <span class="o">-</span> <span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">dx</span><span class="p">)</span>
+    <span class="n">eps_yy</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">2</span><span class="p">:,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">dx</span><span class="p">)</span>
+
+    <span class="c1"># strain potential derivative dW/dphi</span>
+    <span class="n">eps_xx_in</span> <span class="o">=</span> <span class="n">eps_xx</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">eps_yy_in</span> <span class="o">=</span> <span class="n">eps_yy</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">dW_dp</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="o">-</span><span class="p">(</span><span class="n">C11</span> <span class="o">*</span> <span class="p">(</span><span class="n">eps_xx_in</span> <span class="o">*</span> <span class="n">eps0_xx</span> <span class="o">+</span> <span class="n">eps_yy_in</span> <span class="o">*</span> <span class="n">eps0_yy</span><span class="p">)</span>
+        <span class="o">+</span> <span class="n">C12</span> <span class="o">*</span> <span class="p">(</span><span class="n">eps_yy_in</span> <span class="o">*</span> <span class="n">eps0_xx</span> <span class="o">+</span> <span class="n">eps_xx_in</span> <span class="o">*</span> <span class="n">eps0_yy</span><span class="p">))</span>
+        <span class="o">+</span> <span class="n">phi_in</span> <span class="o">*</span> <span class="p">(</span><span class="n">C11</span> <span class="o">*</span> <span class="p">(</span><span class="n">eps0_xx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">eps0_yy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">C12</span> <span class="o">*</span> <span class="n">eps0_yy</span> <span class="o">*</span> <span class="n">eps0_xx</span><span class="p">))</span>
+
+    <span class="c1"># total chemical potential</span>
+    <span class="n">mu</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_dp</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">kap</span> <span class="o">*</span> <span class="n">Lap</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dW_dp</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># periodic BC for mu</span>
+    <span class="n">mu</span><span class="p">[:,:]</span> <span class="o">=</span> <span class="n">PeriodicBC</span><span class="p">(</span><span class="n">mu</span><span class="p">[:,:])</span>
+
+    <span class="c1"># Laplace of mu for Cahn–Hilliard equation</span>
+    <span class="n">Lap</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">Laplace2d</span><span class="p">(</span><span class="n">mu</span><span class="p">[:,:],</span><span class="n">dx</span><span class="p">)</span>
+
+
+    <span class="c1"># time update</span>
+    <span class="n">phi</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">phi</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">Mob</span> <span class="o">*</span> <span class="n">Lap</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># periodic BC for phi</span>
+    <span class="n">phi</span><span class="p">[:,:]</span> <span class="o">=</span> <span class="n">PeriodicBC</span><span class="p">(</span><span class="n">phi</span><span class="p">[:,:])</span>
+
+    <span class="c1"># visualization</span>
+    <span class="k">if</span> <span class="n">it</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">im</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>                 <span class="c1"># update image only</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">it</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Animaiton part (dosn&#39;t change)</span>
+        <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Clear output for dynamic display</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>            <span class="c1"># Reset display</span>
+        <span class="c1"># fig.clear()             # Prevent overlapping and layered plots</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.0002</span><span class="p">)</span>         <span class="c1"># Sleep for half a second to slow down the animation  </span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-base-py"
+        },
+        kernelOptions: {
+            name: "conda-base-py",
+            path: "./daily/Day-21"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-base-py'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ZenerRatio.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Mechanical anisotropy</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../section_files/HW02.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Homework 2</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Solid-solid transformation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-elasticity-solver">linear elasticity solver</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functionalized-coding">Functionalized coding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evolution">Evolution</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Hui-Chia Yu
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
