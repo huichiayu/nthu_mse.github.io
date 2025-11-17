@@ -106,7 +106,7 @@
   </tr>    
   <tr> <!-- week 12 -->
     <td style="border: 1px solid #ddd; padding: 8px;">21 (Nov 17)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">Solid-transformation.</td>
   </tr>
   <tr style="background-color: #f9f9f9;">
     <td style="border: 1px solid #ddd; padding: 8px;">22 (Nov 20)</td>
