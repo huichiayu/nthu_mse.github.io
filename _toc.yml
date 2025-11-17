@@ -113,6 +113,10 @@ parts:
         sections:    
         - file: daily/Day-20/Lab9_EutecticGorwth_Student_v1.ipynb 
 
+      - file: section_files/day_21
+        sections:    
+        - file: daily/Day-21/ZenerRatio.ipynb  
+        - file: daily/Day-21/SolidTransformation.ipynb 
 
 ### DO NOT USE THE HOMEWORK ASSIGNMENTS FROM THE PREVIOUS SEMESTER
 ### CREATE NEW ONES THAT ASSESS SIMILAR SKILLS/CONTENT
