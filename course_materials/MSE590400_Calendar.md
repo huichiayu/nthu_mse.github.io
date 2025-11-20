@@ -106,20 +106,36 @@
   </tr>    
   <tr> <!-- week 12 -->
     <td style="border: 1px solid #ddd; padding: 8px;">21 (Nov 17)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">Solid-transformation.</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">Solid-transformation. Fourier series.</td>
   </tr>
   <tr style="background-color: #f9f9f9;">
     <td style="border: 1px solid #ddd; padding: 8px;">22 (Nov 20)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">Fourier tranform, discrete Fourier transform, fft and ifft.</td>
   </tr>    
   <tr> <!-- week 13 -->
     <td style="border: 1px solid #ddd; padding: 8px;">23 (Nov 24)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">Lab 10 Fourer spectral method.</td>
   </tr>
   <tr style="background-color: #f9f9f9;">
     <td style="border: 1px solid #ddd; padding: 8px;">24 (Nov 27)</td>
     <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
-  </tr>      
+  </tr> 
+  <tr> <!-- week 14 -->
+    <td style="border: 1px solid #ddd; padding: 8px;">25 (Dec 1)</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
+  </tr>
+  <tr style="background-color: #f9f9f9;">
+    <td style="border: 1px solid #ddd; padding: 8px;">26 (Dec 4)</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
+  </tr> 
+  <tr> <!-- week 15 -->
+    <td style="border: 1px solid #ddd; padding: 8px;">26 (Dec 8)</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
+  </tr>
+  <tr style="background-color: #f9f9f9;">
+    <td style="border: 1px solid #ddd; padding: 8px;">27 (Dec 11)</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
+  </tr>   
 </table>
 
 
