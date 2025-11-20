@@ -64,7 +64,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Homework 2" href="../../section_files/HW02.html" />
-    <link rel="prev" title="Day 21" href="../../section_files/day_22.html" />
+    <link rel="prev" title="Discrete Fourier transform" href="FourierTransform_Derviative.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -268,7 +268,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../Day-21/FourierCoefficient.html">Fourier series, coefficient</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../section_files/day_22.html">Day 21</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../section_files/day_22.html">Day 22</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="FourierTransform_Derviative.html">Discrete Fourier transform</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Lab 11 Fourier spectral method</a></li>
 
 </ul>
@@ -284,6 +285,9 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/HW03.html">Homework 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../homework/MSE590/HW3_PottsModel_Student_v1.html">MSE 590400 Homework assignment 03</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/HW04.html">Homework 4</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
 </ul>
 </details></li>
 </ul>
@@ -471,7 +475,7 @@ document.write(`
 \[\frac{\partial C}{\partial t} = D \bigg(\frac{\partial^2 C}{\partial x^2} + \frac{\partial^2 C}{\partial y^2}\bigg).\]</div>
 <p>The 5-point stencil is given as</p>
 <div class="math notranslate nohighlight">
-\[\frac{C^{(n+1)}-C^{(n)}}{\Delta t} = D\frac{C_{i,j-1}^{(n)}+C_{i,j+1}^{(n)}+C_{i-1,j}^{(n)}+C_{i+1,j}^{(n)}-4C_{i,j}^{(n)}}{\Delta x^2}.\]</div>
+\[\frac{C_{i,j}^{(n+1)}-C_{i,j}^{(n)}}{\Delta t} = D\frac{C_{i,j-1}^{(n)}+C_{i,j+1}^{(n)}+C_{i-1,j}^{(n)}+C_{i+1,j}^{(n)}-4C_{i,j}^{(n)}}{\Delta x^2}.\]</div>
 <p>Run the cell below for setting up the simulation initial condition.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -634,6 +638,12 @@ document.write(`
 </div>
 <hr class="docutils" />
 <p>Simulation of diffusion using Fourier spectral method. For 2D FFT, we use <code class="docutils literal notranslate"><span class="pre">fft2</span></code> function. Note that we can use vectorized computing as in the case of finite difference method. We will need to use a 2D array of the square of 2D wave numbers, which is the W2 in the cell eariler.</p>
+<p>Take discrete Fourier transform of the diffusion equation:</p>
+<div class="math notranslate nohighlight">
+\[F\bigg[\frac{C^{(n+1)}-C^{(n)}}{\Delta t} \bigg] = F\big[ D \nabla^2 C^{(n)} \big] \Longrightarrow \frac{F\big[C^{(n+1)}\big]-F\big[C^{(n)}\big]}{\Delta t}= -\omega^2 D F\big[C^{(n)} \big].\]</div>
+<p>The time step becomes</p>
+<div class="math notranslate nohighlight">
+\[F\big[C^{(n+1)} \big] = F\big[C^{(n)} \big] + \Delta t \times \big\{-\omega^2 D F\big[ C^{(n)} \big]\big\} = F\big[C^{(n)} \big] - \Delta t \omega^2 D F\big[ C^{(n)} \big].\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># container for C in Fourier space</span>
@@ -713,12 +723,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../../section_files/day_22.html"
+       href="FourierTransform_Derviative.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Day 21</p>
+        <p class="prev-next-title">Discrete Fourier transform</p>
       </div>
     </a>
     <a class="right-next"
