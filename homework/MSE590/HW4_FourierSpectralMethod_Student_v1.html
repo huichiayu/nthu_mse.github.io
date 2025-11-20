@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>MSE 590400 Homework assignment 03 &#8212; MSE 590400 Course Website</title>
+    <title>MSE 590400 Homework assignment 04 &#8212; MSE 590400 Course Website</title>
   
   
   
@@ -59,12 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'homework/MSE590/HW3_PottsModel_Student_v1';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'homework/MSE590/HW4_FourierSpectralMethod_Student_v1';</script>
     <link rel="icon" href="../../_static/Spartan_2.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Homework 4" href="../../section_files/HW04.html" />
-    <link rel="prev" title="Homework 3" href="../../section_files/HW03.html" />
+    <link rel="prev" title="Homework 4" href="../../section_files/HW04.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -283,12 +282,12 @@
 <li class="toctree-l2"><a class="reference internal" href="HW2_Simple_MD_Student_v1.html">More molecular dynamics coding practice</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../section_files/HW03.html">Homework 3</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">MSE 590400 Homework assignment 03</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/HW03.html">Homework 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="HW3_PottsModel_Student_v1.html">MSE 590400 Homework assignment 03</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/HW04.html">Homework 4</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="HW4_FourierSpectralMethod_Student_v1.html">MSE 590400 Homework assignment 04</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../section_files/HW04.html">Homework 4</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">MSE 590400 Homework assignment 04</a></li>
 </ul>
 </details></li>
 </ul>
@@ -345,7 +344,7 @@
       
       
       
-      <li><a href="../../_sources/homework/MSE590/HW3_PottsModel_Student_v1.ipynb" target="_blank"
+      <li><a href="../../_sources/homework/MSE590/HW4_FourierSpectralMethod_Student_v1.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -429,7 +428,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>MSE 590400 Homework assignment 03</h1>
+    <h1>MSE 590400 Homework assignment 04</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -439,20 +438,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-simulation-potts-model-of-grain-growth">Monte Carlo simulation: Potts model of grain growth</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#put-your-name-here"><p style="text-align: right;"> ✅ <strong>put your name here</strong> </p></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-potts-model">Part 1. Potts model</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-1-initial-condition">Part 1.1. Initial condition</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-2-monte-carlo-stepping">Part 1.2. Monte Carlo stepping</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-track-grain-sizes">Part 2. Track grain sizes</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-1">Part 2.1</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-2">Part 2.2</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-anisotropic-grain-boundaries">Part 3. Anisotropic grain boundaries</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#great-you-re-done-please-add-your-name-to-the-file-name-and-upload-your-file-to-the-respective-drop-box-this-assignment-is-due-on-10-27">Great! You’re done! Please add your name to the file name and upload your file to the respective drop box. This assignment is due on 10/27.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#put-your-name-here"><p style="text-align: right;"> ✅ <strong>put your name here</strong> </p></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#due-12-4">Due 12/4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fourier-spectral-method-for-cahn-hilliard-equation">Fourier spectral method for Cahn-Hilliard equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#great-you-re-done-please-upload-your-completed-file-to-the-drop-box-on-the-course-webpage">Great! You’re done. Please upload your completed file to the drop box on the course webpage.</a></li>
 </ul>
 </li>
 </ul>
@@ -466,137 +455,154 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="mse-590400-homework-assignment-03">
-<h1>MSE 590400 Homework assignment 03<a class="headerlink" href="#mse-590400-homework-assignment-03" title="Link to this heading">#</a></h1>
-<section id="monte-carlo-simulation-potts-model-of-grain-growth">
-<h2>Monte Carlo simulation: Potts model of grain growth<a class="headerlink" href="#monte-carlo-simulation-potts-model-of-grain-growth" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="mse-590400-homework-assignment-04">
+<h1>MSE 590400 Homework assignment 04<a class="headerlink" href="#mse-590400-homework-assignment-04" title="Link to this heading">#</a></h1>
 <section id="put-your-name-here">
-<h3><p style="text-align: right;"> ✅ <strong>put your name here</strong> </p><a class="headerlink" href="#put-your-name-here" title="Link to this heading">#</a></h3>
-<hr class="docutils" />
-<p>Potts model (named after Renfrey Potts) is a generalized Ising model. Instead of only 2 states (<code class="docutils literal notranslate"><span class="pre">+1</span></code> or <code class="docutils literal notranslate"><span class="pre">-1</span></code>) at each lattice site, Potts model allows an arbitrary state (any integer number) at each site: <span class="math notranslate nohighlight">\(s_i\)</span>, state value at site <span class="math notranslate nohighlight">\(i\)</span>. The value of “state” acts as grain ID. In this homework, you will write a Potts model code to simulate the process of grain growth. As in the Ising model, you need to calculate the energy at each site and calculate the energy difference before and after a trial flip. Each trial flip is choosing between the possible states. The energy needs to consider here will be grain boundary energy at each site. For example, at site <span class="math notranslate nohighlight">\(i\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[E_i = J \sum_{j\neq i} \big(1-\delta_{s_i s_j} \big),\]</div>
-<p>where <span class="math notranslate nohighlight">\(J\)</span> is the interaction constant, the index <span class="math notranslate nohighlight">\(j\)</span> indicates the nearest neighbor sites to site <span class="math notranslate nohighlight">\(i\)</span>, and <span class="math notranslate nohighlight">\(\delta_{s_i s_j}\)</span> is the Kronecker delta. Mathematically, the Krknecker delta is defined as</p>
-<div class="math notranslate nohighlight">
-\[\delta_{s_i s_j} = 1 ~~\text{if}~~ s_i = s_j\]</div>
-<div class="math notranslate nohighlight">
-\[\delta_{s_i s_j} = 0 ~~\text{if}~~ s_i \neq s_j.\]</div>
-<p>The summation indicates that, for site <span class="math notranslate nohighlight">\(i\)</span>, the grain boundary energy is determined by examining the states at the 8 neighboring sites (<span class="math notranslate nohighlight">\(j\)</span>). If the states between the neighbor <span class="math notranslate nohighlight">\(j\)</span> and site <span class="math notranslate nohighlight">\(i\)</span> are different, that contributes to 1 <span class="math notranslate nohighlight">\(J\)</span> of energy. Conversely, if the states are the same, no energy contribution to site <span class="math notranslate nohighlight">\(i\)</span>. Simply speaking, if <span class="math notranslate nohighlight">\(j\neq i,\)</span> there is a grain boundary between the two sites.</p>
-<p>The acceptance or rejection of trial flip is similar to that in Ising model. The system will evolve towards reduction of total grain boundary energy, and thus the grain size increases.</p>
+<h2><p style="text-align: right;"> ✅ <strong>put your name here</strong> </p><a class="headerlink" href="#put-your-name-here" title="Link to this heading">#</a></h2>
+</section>
+<section id="due-12-4">
+<h2>Due 12/4<a class="headerlink" href="#due-12-4" title="Link to this heading">#</a></h2>
 </section>
 <hr class="docutils" />
-<section id="part-1-potts-model">
-<h3>Part 1. Potts model<a class="headerlink" href="#part-1-potts-model" title="Link to this heading">#</a></h3>
-<p>Write a 2D Potts model code with domain size <span class="math notranslate nohighlight">\(L = 64\)</span>, <span class="math notranslate nohighlight">\(k_B = 1\)</span>, and <span class="math notranslate nohighlight">\(T = 0.01\)</span>. Set possible state (grain) to 36 with 2,000,001 Monte Carlo iteration steps. We will consider the first (west, east, south, and north) and second (southwest, southeast, northwest, and northeast) nearest neighbor sites in the calculation. We can use <span class="math notranslate nohighlight">\(J_1=1\)</span> for the nearest neighbors, and <span class="math notranslate nohighlight">\(J_2=1\)</span> for the second nearest neighbors. We should use periodic boundary conditions.</p>
-<p><strong>You can see a clip of example Potts model simulation in the cell below.</strong></p>
+<section id="fourier-spectral-method-for-cahn-hilliard-equation">
+<h2>Fourier spectral method for Cahn-Hilliard equation<a class="headerlink" href="#fourier-spectral-method-for-cahn-hilliard-equation" title="Link to this heading">#</a></h2>
+<p>In this assignment, we will use FFT to simulation spinodal decomposition.  The giverning equation is Cahn-Hilliard equation, which we have learned in Lab 6:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \phi}{\partial t} = M \nabla^2 \mu = M \nabla^2 \bigg( \frac{\partial f}{\partial \phi} - \varepsilon^2 \nabla^2 \phi \bigg),\]</div>
+<p>where the chemical potential for the bulk phase  is</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial f}{\partial \phi} = f'(\phi) = \Omega \big(1-2\phi \big) + \ln \phi - \ln \big(1-\phi \big).\]</div>
+<p>The simulation is set up as in Lab 6. The cell below will set the relevant conditions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
-
-<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;yuUjx1IGSAs&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">360</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="part-1-1-initial-condition">
-<h4>Part 1.1. Initial condition<a class="headerlink" href="#part-1-1-initial-condition" title="Link to this heading">#</a></h4>
-<p>Write a Python code to show the initial configuration in the 2D domain. The initial state at a site is randomly selected for 0 through 35.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># put your code here</span>
-
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">clear_output</span>
+<span class="kn">import</span> <span class="nn">time</span>
 
-<span class="c1"># domain size</span>
-<span class="n">L</span> <span class="o">=</span> <span class="mi">64</span>
+<span class="c1"># --- params ---</span>
+<span class="n">Nx</span> <span class="o">=</span> <span class="mi">256</span>
+<span class="n">Ny</span> <span class="o">=</span> <span class="n">Nx</span>
 
-<span class="c1"># initial states (each integer label = a grain)</span>
-<span class="n">ng</span> <span class="o">=</span> <span class="mi">36</span>
-<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>
-<span class="n">S_ini</span> <span class="o">=</span> <span class="o">??</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">0.002</span>
+<span class="n">Nstep</span> <span class="o">=</span> <span class="mi">10002</span>
 
+<span class="n">eps</span> <span class="o">=</span> <span class="mf">1.2</span><span class="p">;</span>
+<span class="n">M</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">Omg</span> <span class="o">=</span> <span class="mi">3</span>
 
-<span class="c1"># visualization (MATLAB pcolor equivalent)</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">pc</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">S_ini</span><span class="p">,</span> <span class="n">shading</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>  <span class="c1"># or: ax.imshow(S, origin=&#39;lower&#39;, interpolation=&#39;nearest&#39;)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">pc</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1"># --- arrays / ICs ---</span>
+<span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">Nx</span><span class="p">,</span> <span class="n">Ny</span><span class="p">))</span>  
+<span class="n">Lap</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">mu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">clear_output</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span>   <span class="c1"># set to what you want</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;upper&#39;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">,</span>
+               <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>   <span class="c1"># &lt;- caxis via vmin/vmax</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;phi&#39;</span><span class="p">)</span>            <span class="c1"># &lt;- colorbar once</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Nx</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Ny</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="part-1-2-monte-carlo-stepping">
-<h4>Part 1.2. Monte Carlo stepping<a class="headerlink" href="#part-1-2-monte-carlo-stepping" title="Link to this heading">#</a></h4>
-<p>Write a Potts model code to simulate grain growth process. Show the images every 1000 steps.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># put your code here</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
 <hr class="docutils" />
-<section id="part-2-track-grain-sizes">
-<h3>Part 2. Track grain sizes<a class="headerlink" href="#part-2-track-grain-sizes" title="Link to this heading">#</a></h3>
-<p>Track the grain size (effective radius) evolution of each grain and plot the results. A quikc-and-dirty method is simply summing up the number of pixels of state <span class="math notranslate nohighlight">\(i\)</span> for the area (<span class="math notranslate nohighlight">\(A_i\)</span>) of the <span class="math notranslate nohighlight">\(i\)</span>-th grain. The radius is approximately</p>
+<p>The Fourier transform of Cahn-Hilliard equation is</p>
 <div class="math notranslate nohighlight">
-\[r_i = \sqrt{ \bigg(\frac{A_i}{\pi}\bigg)}.\]</div>
-<p>As some grain grow in the expense of other grains, we should count only those grow larger. Let’s track those grains becoming bigger.</p>
-<section id="part-2-1">
-<h4>Part 2.1<a class="headerlink" href="#part-2-1" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p>Copy your functioning Potts model code to the code cell below. Add some snippets to track the numbers of sites with the same state values over time. Let’s record the radii every 1000 steps.</p></li>
-<li><p>In this cell, you do not need to plot the grain growth image.</p></li>
-<li><p>Plot the grain radii versus time (iteration step) for those grains having a final radii greater than 6.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># put your code here</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="part-2-2">
-<h4>Part 2.2<a class="headerlink" href="#part-2-2" title="Link to this heading">#</a></h4>
-<p>Plot the average grain radius versus time for those grains having a final radius greater than 5.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># put your code here.</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>How does your result compare to the analytical form,</p>
+\[F\bigg[\frac{\phi^{(n+1)}-\phi^{(n)}}{\Delta t} \bigg]= M F\big[\nabla^2 \mu\big]= M F \big[ \nabla^2 \big(f'(\phi^{(n)}) - \varepsilon^2 \nabla^2 \phi^{(n)} \big) \big] \Longrightarrow F\big[\phi^{(n+1)}\big] = F\big[\phi^{(n)}\big] - \Delta t M \omega^2 F \big[ f'(\phi^{(n)}) - \varepsilon^2 
+\nabla^2 \phi^{(n)} \big],\]</div>
+<p>which can be rewritten to</p>
 <div class="math notranslate nohighlight">
-\[&lt;r&gt; = K t^n,\]</div>
-<p>where, a typical value of <span class="math notranslate nohighlight">\(n\)</span> is 0.5.  Draw a curve of</p>
-<p>$<span class="math notranslate nohighlight">\(r = \sqrt{t}\)</span>$.</p>
+\[ F\big[\phi^{(n+1)}\big] = F\big[\phi^{(n)}\big] - \Delta t M \omega^2 \big\{F \big[ f'(\phi^{(n)}) \big] + \varepsilon^2 \omega^2 F\big[ \phi^{(n)} \big] \big\}.\]</div>
+<p>So, the workflow will be</p>
+<ol class="arabic simple">
+<li><p>Set up reciprocal basis, <span class="math notranslate nohighlight">\(\omega\)</span>.</p></li>
+<li><p>Take <code class="docutils literal notranslate"><span class="pre">fft2</span></code> of <span class="math notranslate nohighlight">\(\phi\)</span> to get <span class="math notranslate nohighlight">\(F[\phi]\)</span>, multiply with <span class="math notranslate nohighlight">\(-\omega^2\)</span>.</p></li>
+<li><p>Calculate the value of <span class="math notranslate nohighlight">\(f'(\phi)\)</span>.</p></li>
+<li><p>Take <code class="docutils literal notranslate"><span class="pre">fft2</span></code> of <span class="math notranslate nohighlight">\(f'\)</span> to get <span class="math notranslate nohighlight">\(F[f']\)</span>,</p></li>
+<li><p>Compute <span class="math notranslate nohighlight">\(F[\mu]\)</span> by <span class="math notranslate nohighlight">\(F[f']-\varepsilon^2(-\omega^2F[\phi])\)</span>, where <span class="math notranslate nohighlight">\(\mu = f' - \varepsilon^2 \nabla^2 \phi\)</span>.</p></li>
+<li><p>Muliply <span class="math notranslate nohighlight">\(-\omega^2\)</span> to obtain <span class="math notranslate nohighlight">\(-\omega^2 F[\mu]\)</span>, which is essentially <span class="math notranslate nohighlight">\(F[\nabla^2 \mu]\)</span>.</p></li>
+<li><p>Time stepping with quantities in the reciprocal space: <span class="math notranslate nohighlight">\(F[\phi^{(n+1)}] = F[\phi^{(n)}] -\Delta t M \omega^2 F[\mu^{(n)}]\)</span>.</p></li>
+<li><p>After <span class="math notranslate nohighlight">\(\phi\)</span> in Fourier space is updated, use <code class="docutils literal notranslate"><span class="pre">ifft</span></code> to get its values in the real space because it’s needed for computing the values of <span class="math notranslate nohighlight">\(f'(\phi)\)</span>.</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># put your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># complete this code </span>
+
+<span class="c1"># -----------------------</span>
+<span class="c1"># reciprocal basis in x and y direction</span>
+<span class="c1"># -----------------------</span>
+<span class="n">wiy</span> <span class="o">=</span> 
+<span class="n">wix</span> <span class="o">=</span> 
+
+<span class="c1"># fftshift</span>
+<span class="n">wy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftshift</span><span class="p">(</span><span class="err">??</span><span class="p">)</span>
+<span class="n">wx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftshift</span><span class="p">(</span><span class="err">??</span><span class="p">)</span>
+
+<span class="c1"># squares of wave numbers</span>
+<span class="n">wy2</span> <span class="o">=</span> <span class="n">wy</span><span class="o">**</span><span class="mi">2</span>          
+<span class="n">wx2</span> <span class="o">=</span> <span class="n">wx</span><span class="o">**</span><span class="mi">2</span>          
+
+<span class="c1"># build W^2 array using basis after fftshift</span>
+<span class="n">W2</span> <span class="o">=</span> <span class="n">wx2</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:]</span> <span class="o">+</span> <span class="n">wy2</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span> <span class="c1"># shape: (py, px)</span>
+
+<span class="c1"># --- arrays / ICs ---</span>
+<span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">Nx</span><span class="p">,</span> <span class="n">Ny</span><span class="p">))</span>  
+
+<span class="n">phiFt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft2</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="c1"># pre-allocate container for quantities in Fourier space</span>
+<span class="n">LpFt</span> <span class="o">=</span> <span class="o">??</span>
+<span class="n">dfFt</span> <span class="o">=</span> <span class="o">??</span>
+<span class="n">muFt</span> <span class="o">=</span> <span class="o">??</span>
+
+<span class="c1"># -- time evolution</span>
+<span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Nstep</span><span class="p">):</span>
+
+    <span class="c1"># # fft2 of phi</span>
+    <span class="n">phiFt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft2</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+    
+    <span class="c1"># vectorized Laplacian in Fourier space</span>
+    <span class="n">LpFt</span> <span class="o">=</span> <span class="o">??</span>
+
+    <span class="c1"># mu in Fourier space</span>
+    <span class="n">dfdp</span> <span class="o">=</span> <span class="o">??</span>
+    <span class="n">dfFt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft2</span><span class="p">(</span><span class="n">dfdp</span><span class="p">)</span>
+    <span class="n">muFt</span> <span class="o">=</span> <span class="o">??</span>
+
+    <span class="c1"># Lap of mu in Fourier space</span>
+    <span class="n">LpFt</span> <span class="o">=</span> <span class="o">-</span><span class="n">W2</span> <span class="o">*</span> <span class="n">muFt</span>
+
+    <span class="c1"># update values</span>
+    <span class="n">phiFt</span> <span class="o">=</span> <span class="n">phiFt</span> <span class="o">+</span> <span class="o">??</span>
+
+    <span class="c1"># real space value of phi</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="o">??</span>
+
+    <span class="c1"># visualization</span>
+    <span class="k">if</span> <span class="n">it</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifft2</span><span class="p">(</span><span class="n">phiFt</span><span class="p">))</span>
+        <span class="n">im</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>                 <span class="c1"># update image only</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">it</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Animaiton part (dosn&#39;t change)</span>
+        <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Clear output for dynamic display</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>            <span class="c1"># Reset display</span>
+        <span class="c1"># fig.clear()             # Prevent overlapping and layered plots</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.0002</span><span class="p">)</span>         <span class="c1"># Sleep for half a second to slow down the animation </span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>✅ Do This –  Describe what you observed in the shape of theoretical curve and the result from your simulation in this Markdown cell.</p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="part-3-anisotropic-grain-boundaries">
-<h3>Part 3. Anisotropic grain boundaries<a class="headerlink" href="#part-3-anisotropic-grain-boundaries" title="Link to this heading">#</a></h3>
-<p>Now, let’s change the value of <span class="math notranslate nohighlight">\(J_2\)</span>. You will run two sets of Potts model simulations: 1) <span class="math notranslate nohighlight">\(J_2 = 1.5\)</span> and 2) <span class="math notranslate nohighlight">\(J_2 = 0.25\)</span>.</p>
-<p>Embed your screenshots in this cell.</p>
-<p>✅ Do This –  Describe what you observed in the grain morphologies in these two cases. Explain the cause.</p>
-</section>
-<hr class="docutils" />
-<section id="great-you-re-done-please-add-your-name-to-the-file-name-and-upload-your-file-to-the-respective-drop-box-this-assignment-is-due-on-10-27">
-<h3>Great! You’re done! Please add your name to the file name and upload your file to the respective drop box. This assignment is due on 10/27.<a class="headerlink" href="#great-you-re-done-please-add-your-name-to-the-file-name-and-upload-your-file-to-the-respective-drop-box-this-assignment-is-due-on-10-27" title="Link to this heading">#</a></h3>
+<p>✅ Do This - Describe the result and make a comparison with the result obtained using finite difference method.</p>
+<section id="great-you-re-done-please-upload-your-completed-file-to-the-drop-box-on-the-course-webpage">
+<h3>Great! You’re done. Please upload your completed file to the drop box on the course webpage.<a class="headerlink" href="#great-you-re-done-please-upload-your-completed-file-to-the-drop-box-on-the-course-webpage" title="Link to this heading">#</a></h3>
 </section>
 </section>
 </section>
@@ -632,22 +638,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../../section_files/HW03.html"
+       href="../../section_files/HW04.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Homework 3</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../../section_files/HW04.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Homework 4</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -665,20 +662,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-simulation-potts-model-of-grain-growth">Monte Carlo simulation: Potts model of grain growth</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#put-your-name-here"><p style="text-align: right;"> ✅ <strong>put your name here</strong> </p></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-potts-model">Part 1. Potts model</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-1-initial-condition">Part 1.1. Initial condition</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-2-monte-carlo-stepping">Part 1.2. Monte Carlo stepping</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-track-grain-sizes">Part 2. Track grain sizes</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-1">Part 2.1</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-2">Part 2.2</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-anisotropic-grain-boundaries">Part 3. Anisotropic grain boundaries</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#great-you-re-done-please-add-your-name-to-the-file-name-and-upload-your-file-to-the-respective-drop-box-this-assignment-is-due-on-10-27">Great! You’re done! Please add your name to the file name and upload your file to the respective drop box. This assignment is due on 10/27.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#put-your-name-here"><p style="text-align: right;"> ✅ <strong>put your name here</strong> </p></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#due-12-4">Due 12/4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fourier-spectral-method-for-cahn-hilliard-equation">Fourier spectral method for Cahn-Hilliard equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#great-you-re-done-please-upload-your-completed-file-to-the-drop-box-on-the-course-webpage">Great! You’re done. Please upload your completed file to the drop box on the course webpage.</a></li>
 </ul>
 </li>
 </ul>
