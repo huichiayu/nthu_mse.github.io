@@ -94,7 +94,7 @@
   </tr>
   <tr style="background-color: #f9f9f9;">
     <td style="border: 1px solid #ddd; padding: 8px;">18 (Nov 6)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">Phase field simulation of grain growth </td>
+    <td style="border: 1px solid #ddd; padding: 8px;">Phase field simulation of grain growth, Lab 8. </td>
   </tr>  
   <tr> <!-- week 11 -->
     <td style="border: 1px solid #ddd; padding: 8px;">19 (Nov 10)</td>
@@ -102,7 +102,7 @@
   </tr>
   <tr style="background-color: #f9f9f9;">
     <td style="border: 1px solid #ddd; padding: 8px;">20 (Nov 13)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">Phase field model of eutectic growth.</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">Phase field model of eutectic growth. Lab 9. </td>
   </tr>    
   <tr> <!-- week 12 -->
     <td style="border: 1px solid #ddd; padding: 8px;">21 (Nov 17)</td>
@@ -135,7 +135,15 @@
   <tr style="background-color: #f9f9f9;">
     <td style="border: 1px solid #ddd; padding: 8px;">27 (Dec 11)</td>
     <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
-  </tr>   
+  </tr> 
+  <tr> <!-- week 16 -->
+    <td style="border: 1px solid #ddd; padding: 8px;">26 (Dec 15)</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">Project presentation.</td>
+  </tr>
+  <tr style="background-color: #f9f9f9;">
+    <td style="border: 1px solid #ddd; padding: 8px;">27 (Dec 18)</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">Project presentation.</td>
+  </tr>     
 </table>
 
 
