@@ -121,6 +121,7 @@ parts:
 
       - file: section_files/day_22
         sections:    
+        - file: daily/Day-22/FourierTransform_Derviative.ipynb 
         - file: daily/Day-22/Lab10_FourierSpectalMethod_Student_v1.ipynb  
         
 ### DO NOT USE THE HOMEWORK ASSIGNMENTS FROM THE PREVIOUS SEMESTER
@@ -152,4 +153,6 @@ parts:
           sections:  
           - file: homework/MSE590/HW3_PottsModel_Student_v1
                 
-
+        - file: section_files/HW04     
+          sections:  
+          - file: homework/MSE590/
