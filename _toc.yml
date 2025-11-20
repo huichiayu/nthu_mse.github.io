@@ -119,6 +119,10 @@ parts:
         - file: daily/Day-21/SolidTransformation.ipynb 
         - file: daily/Day-21/FourierCoefficient.ipynb
 
+      - file: section_files/day_22
+        sections:    
+        - file: daily/Day-22/Lab10_FourierSpectalMethod_Student_v1.ipynb  
+        
 ### DO NOT USE THE HOMEWORK ASSIGNMENTS FROM THE PREVIOUS SEMESTER
 ### CREATE NEW ONES THAT ASSESS SIMILAR SKILLS/CONTENT
   - caption: Homework
