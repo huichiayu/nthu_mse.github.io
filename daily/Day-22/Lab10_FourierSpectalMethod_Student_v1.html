@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Lab 8 Phase field simulation of grain growth &#8212; MSE 590400 Course Website</title>
+    <title>Lab 11 Fourier spectral method &#8212; MSE 590400 Course Website</title>
   
   
   
@@ -59,12 +59,12 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'daily/Day-18/Lab_8_Grain_growth_student_v1';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'daily/Day-22/Lab10_FourierSpectalMethod_Student_v1';</script>
     <link rel="icon" href="../../_static/Spartan_2.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Day 19" href="../../section_files/day_19.html" />
-    <link rel="prev" title="Day 18" href="../../section_files/day_18.html" />
+    <link rel="next" title="Homework 2" href="../../section_files/HW02.html" />
+    <link rel="prev" title="Day 21" href="../../section_files/day_22.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -248,8 +248,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../Day-17/Lab7_dendritic_growth_Student_v1.html">Lab 7 Phase field simulation of dendritic solidification</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../section_files/day_18.html">Day 18</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Lab 8 Phase field simulation of grain growth</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_18.html">Day 18</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Day-18/Lab_8_Grain_growth_student_v1.html">Lab 8 Phase field simulation of grain growth</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_19.html">Day 19</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -268,8 +268,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../Day-21/FourierCoefficient.html">Fourier series, coefficient</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_22.html">Day 21</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Day-22/Lab10_FourierSpectalMethod_Student_v1.html">Lab 11 Fourier spectral method</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../section_files/day_22.html">Day 21</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Lab 11 Fourier spectral method</a></li>
 
 </ul>
 </details></li>
@@ -340,7 +340,7 @@
       
       
       
-      <li><a href="../../_sources/daily/Day-18/Lab_8_Grain_growth_student_v1.ipynb" target="_blank"
+      <li><a href="../../_sources/daily/Day-22/Lab10_FourierSpectalMethod_Student_v1.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -424,7 +424,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Lab 8 Phase field simulation of grain growth</h1>
+    <h1>Lab 11 Fourier spectral method</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -434,16 +434,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Lab 11 Fourier spectral method</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#put-your-name-here"><p style="text-align: right;"> ✅ <strong>put your name here</strong> </p></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-grain-grwoth-simulation">Part 1. Grain grwoth simulation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-simulation">Set up simulation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-analysis">Part 2. Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#due-12-1">Due 12/1</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fourier-spectral-method">Fourier spectral method</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#great-you-re-done-please-upload-your-completed-file-to-the-drop-box-on-the-course-webpage">Great! You’re done. Please upload your completed file to the drop box on the course webpage.</a></li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -454,157 +457,225 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="lab-8-phase-field-simulation-of-grain-growth">
-<h1>Lab 8 Phase field simulation of grain growth<a class="headerlink" href="#lab-8-phase-field-simulation-of-grain-growth" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-11-fourier-spectral-method">
+<h1>Lab 11 Fourier spectral method<a class="headerlink" href="#lab-11-fourier-spectral-method" title="Link to this heading">#</a></h1>
 <section id="put-your-name-here">
 <h2><p style="text-align: right;"> ✅ <strong>put your name here</strong> </p><a class="headerlink" href="#put-your-name-here" title="Link to this heading">#</a></h2>
-<p><strong>Due on 11/17</strong></p>
-<hr class="docutils" />
-<p>This assignment is built based on the phase-field grain growth model developed by D. Fan and L.-Q. Chen (<em>Acta mater.</em> <strong>Vol. 45</strong>, No. 2, pp. 611-622, 1997). The simulation will look like the video below.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
-
-<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;f-gnqvdxX7w&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">360</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
-<section id="part-1-grain-grwoth-simulation">
-<h2>Part 1. Grain grwoth simulation<a class="headerlink" href="#part-1-grain-grwoth-simulation" title="Link to this heading">#</a></h2>
-<p>The governing equations are</p>
-<ol class="arabic simple">
-<li><p>free energy:</p></li>
-</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="due-12-1">
+<h1>Due 12/1<a class="headerlink" href="#due-12-1" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<p>In this coding assignment, we will use Fourier spectal method to simulate diffusion in a 2D domain. First we will solve a 2D diffusion equation using finite difference method.</p>
 <div class="math notranslate nohighlight">
-\[f(\eta_1,\eta_2, ...,\eta_p) = -\frac{\alpha}{2}\sum_{i=1}^p \eta_i^2 + \frac{\beta}{4}\bigg(\sum_{i=1}^p\eta_i^2\bigg)^2 + \bigg(\gamma-\frac{\beta}{2}\bigg)\sum_{i=1}^p \sum_{j\neq i}^p \eta_i^2 \eta_j^2\]</div>
-<ol class="arabic simple" start="2">
-<li><p>kinetics:</p></li>
-</ol>
+\[\frac{\partial C}{\partial t} = D \bigg(\frac{\partial^2 C}{\partial x^2} + \frac{\partial^2 C}{\partial y^2}\bigg).\]</div>
+<p>The 5-point stencil is given as</p>
 <div class="math notranslate nohighlight">
-\[\frac{\partial \eta_i}{\partial t} = -L \bigg(\frac{\partial f}{\partial \eta_i} - \kappa^2 \nabla^2 \eta_i \bigg),\]</div>
-<p>where</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{split}\frac{\partial f}{\partial \eta_i} &amp; = -\alpha \eta_i + \frac{\beta}{4}\cdot 2 \cdot \bigg(\sum_{i=1}^p \eta_i^2\bigg) \cdot 2 \eta_i + \bigg( \gamma - \frac{\beta}{2}\bigg) 2 \eta_i \sum_{j\neq i}^p \eta_j^2 \\ &amp; = -\alpha \eta_i + \beta \eta_i \bigg(\sum_{i=1}^p \eta_i^2 - \sum_{j\neq i}^p \eta_i^2 \bigg) + 2 \gamma \eta_i \sum_{j \neq i}^p \eta_j^2 \\ &amp; = -\alpha \eta_i + \beta \eta_i^3 + 2 \gamma \eta_i \sum_{j \neq i}^p \eta_j^2 = -\alpha \eta_i + \beta \eta_i^3 + 2 \gamma \eta_i \bigg(\sum_{i=1}^p \eta_i^2 - \eta_i^2 \bigg).  \end{split}\end{split}\]</div>
-<section id="set-up-simulation">
-<h3>Set up simulation<a class="headerlink" href="#set-up-simulation" title="Link to this heading">#</a></h3>
-<p>The cell below sets up the simulation parameters.</p>
+\[\frac{C^{(n+1)}-C^{(n)}}{\Delta t} = D\frac{C_{i,j-1}^{(n)}+C_{i,j+1}^{(n)}+C_{i-1,j}^{(n)}+C_{i+1,j}^{(n)}-4C_{i,j}^{(n)}}{\Delta x^2}.\]</div>
+<p>Run the cell below for setting up the simulation initial condition.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set up simulation</span>
-
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">clear_output</span>
 <span class="kn">import</span> <span class="nn">time</span>
 
-<span class="n">Lx</span> <span class="o">=</span> <span class="mi">200</span>
-<span class="n">Ly</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="c1"># -----------------------</span>
+<span class="c1"># define domain and discretization</span>
+<span class="c1"># -----------------------</span>
+<span class="n">Ly</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="n">py</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Ly</span> <span class="p">,</span> <span class="n">py</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
-<span class="n">alpha</span> <span class="o">=</span> <span class="mf">1.0</span>
-<span class="n">beta</span> <span class="o">=</span> <span class="mf">1.0</span>
-<span class="n">gamma</span> <span class="o">=</span> <span class="mf">1.0</span>
-<span class="n">kappa</span> <span class="o">=</span> <span class="mf">2.0</span>
+<span class="n">Lx</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="n">px</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Lx</span><span class="p">,</span> <span class="n">px</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
-<span class="n">L</span> <span class="o">=</span> <span class="mf">1.0</span>
-<span class="n">dx</span> <span class="o">=</span> <span class="mf">2.0</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="mf">0.04</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="n">Lx</span><span class="o">/</span><span class="n">px</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">Nstep</span> <span class="o">=</span> <span class="mi">5001</span> 
 
-<span class="c1"># number of grain labels</span>
-<span class="n">noG</span> <span class="o">=</span> <span class="mi">36</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># optional for reproducibility</span>
+<span class="n">D</span> <span class="o">=</span> <span class="mf">1.0</span>
 
-<span class="c1"># --- fields ---</span>
-<span class="n">eta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">Ly</span><span class="p">,</span> <span class="n">Lx</span><span class="p">,</span> <span class="n">noG</span><span class="p">)</span>          
-<span class="n">muE</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">Ly</span><span class="p">,</span> <span class="n">Lx</span><span class="p">,</span> <span class="n">noG</span><span class="p">))</span>
-<span class="n">LpE</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">Ly</span><span class="p">,</span> <span class="n">Lx</span><span class="p">,</span> <span class="n">noG</span><span class="p">))</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">py</span><span class="p">,</span><span class="n">px</span><span class="p">))</span>
+<span class="n">Lap</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">py</span><span class="p">,</span><span class="n">px</span><span class="p">))</span>
 
-<span class="n">SoE2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">Ly</span><span class="p">,</span> <span class="n">Lx</span><span class="p">))</span>
-<span class="n">val</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">Ly</span><span class="p">,</span> <span class="n">Lx</span><span class="p">))</span>
+<span class="c1"># -- initial condition</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">py</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">px</span><span class="p">):</span>
+        <span class="c1"># rad = np.sqrt((i-py/2)**2 + (j-px/2)**2)</span>
+        <span class="c1"># C[i,j] = np.exp(-0.005*rad**2)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">38</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">90</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">j</span> <span class="o">&gt;</span> <span class="mi">32</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">96</span><span class="p">):</span>
+            <span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
 
-
-<span class="c1"># val = np.sum(eta[:,:,:]**2,axis=2)</span>
-<span class="n">val</span> <span class="o">=</span> <span class="n">eta</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">1.02</span>   <span class="c1"># set to what you want</span>
-
+<span class="c1"># -- visualization</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;upper&#39;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">,</span>
-               <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>   <span class="c1"># &lt;- caxis via vmin/vmax</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;upper&#39;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>  
 <span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;phi&#39;</span><span class="p">)</span>            <span class="c1"># &lt;- colorbar once</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Lx</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Ly</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Ly</span><span class="p">)</span>        
 </pre></div>
 </div>
 </div>
 </div>
-<p>In Fan and Chen’s paper, they used a 9-point stencil for Laplacian, which has a higher accuracy than 5-point stencil we used before. The 9-point stencil is given as</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{split}\nabla^2 u = &amp; \frac{1}{2\Delta x^2}\bigg[
-\big(u_{i,j+1}-u_{i,j}\big) + \big(u_{i,j-1}-u_{i,j}\big) + \big(u_{i+1,j}-u_{i,j}\big) + \big(u_{i-1,j}-u_{i,j}\big) \bigg] + \\ &amp; \frac{1}{4\Delta x^2} \bigg[ \big(u_{i+1,j+1}-u_{i,j} \big) + \big(u_{i+1,j-1}-u_{i,j} \big) + \big(u_{i-1,j+1}-u_{i,j} \big) + \big(u_{i-1,j-1}-u_{i,j} \big) \bigg] .\end{split}\end{split}\]</div>
-<p>Ues the cell below to run the simulation.</p>
+<p>The cell below runs the simulation of 2D diffusion.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># time evoluation</span>
-<span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7002</span><span class="p">):</span>  
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## -- time evolution</span>
+<span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Nstep</span><span class="p">):</span>
 
-    <span class="c1"># SoE2 on interior: sum of squares over groups</span>
-    <span class="n">SoE2</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">eta</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="err">??</span><span class="p">)</span>    
+    <span class="c1"># Laplace on the RHS (nest loop)</span>
+    <span class="c1"># for i in range(1,py-1):</span>
+    <span class="c1">#     for j in range(1,px-1):</span>
+    <span class="c1">#         Lap[i,j] = (C[i,j-1] + C[i,j+1] + C[i-1,j] + C[i+1,j] - 4*C[i,j])/dx**2</span>
+        
+    <span class="c1"># vectorized calcualtion of Laplace (vectorized)</span>
+    <span class="n">Lap</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">:]</span> <span class="o">+</span> <span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">C</span><span class="p">[</span><span class="mi">2</span><span class="p">:,</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> 
+                      <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span>
 
-    <span class="c1"># chemical potential</span>
-    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">noG</span><span class="p">):</span>
-        <span class="n">muE</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="p">]</span> <span class="o">=</span> 
-
-    <span class="c1"># 9-point stencil for the Laplacian</span>
-    <span class="n">LpE</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="p">(</span><span class="err">??</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>   
-
-    <span class="c1"># total chemical potential (driving force)</span>
-    <span class="n">muE</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">muE</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">-</span> <span class="n">kappa</span> <span class="o">*</span> <span class="n">LpE</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
-
-    <span class="c1"># update eta (Euler method)</span>
-    <span class="n">eta</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">eta</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">-</span><span class="n">dt</span> <span class="o">*</span> <span class="n">L</span> <span class="o">*</span> <span class="n">muE</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="c1">#Euler time method</span>
+    <span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dt</span><span class="o">*</span><span class="n">D</span><span class="o">*</span><span class="n">Lap</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
     <span class="c1"># periodic boundary conditions</span>
-    <span class="n">eta</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">eta</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
-    <span class="n">eta</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">eta</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
-    <span class="n">eta</span><span class="p">[:,</span>  <span class="mi">0</span><span class="p">,</span>    <span class="p">:]</span> <span class="o">=</span> <span class="n">eta</span><span class="p">[:,</span>  <span class="o">-</span><span class="mi">2</span><span class="p">,</span>   <span class="p">:]</span>
-    <span class="n">eta</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>    <span class="p">:]</span> <span class="o">=</span> <span class="n">eta</span><span class="p">[:,</span>  <span class="mi">1</span><span class="p">,</span>    <span class="p">:]</span>
-
+    <span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">C</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">C</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">C</span><span class="p">[:,</span>  <span class="mi">0</span>   <span class="p">]</span> <span class="o">=</span> <span class="n">C</span><span class="p">[:,</span>  <span class="o">-</span><span class="mi">2</span>  <span class="p">]</span>
+    <span class="n">C</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span>   <span class="p">]</span> <span class="o">=</span> <span class="n">C</span><span class="p">[:,</span>  <span class="mi">1</span>   <span class="p">]</span>
 
     <span class="c1"># visualization</span>
-    <span class="k">if</span> <span class="n">it</span> <span class="o">%</span> <span class="mi">50</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">eta</span><span class="p">[:,:,:]</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-        <span class="n">im</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>                 <span class="c1"># update image only</span>
+    <span class="k">if</span> <span class="n">it</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">im</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>                 <span class="c1"># update image only</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">it</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         
         <span class="c1"># Animaiton part (dosn&#39;t change)</span>
         <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Clear output for dynamic display</span>
         <span class="n">display</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>            <span class="c1"># Reset display</span>
         <span class="c1"># fig.clear()             # Prevent overlapping and layered plots</span>
-        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.0002</span><span class="p">)</span>         <span class="c1"># Sleep for half a second to slow down the animation      </span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.0002</span><span class="p">)</span>         <span class="c1"># Sleep for half a second to slow down the animation     </span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-</section>
 <hr class="docutils" />
-<section id="part-2-analysis">
-<h2>Part 2. Analysis<a class="headerlink" href="#part-2-analysis" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>As in the Potts model homework, write a code to track the effective grain radii of each grain label. Track the radii betweem steps 1501 and 7001, for every 100 steps.</p></li>
-</ul>
+<section id="fourier-spectral-method">
+<h2>Fourier spectral method<a class="headerlink" href="#fourier-spectral-method" title="Link to this heading">#</a></h2>
+<p>In the 1D example of Fourier transform of a 2nd derivative, we had</p>
+<div class="math notranslate nohighlight">
+\[F(f''(x)) = - \omega^2 F(f(x)).\]</div>
+<p>In 2D, the Fourier transform of 2nd order derivative is</p>
+<div class="math notranslate nohighlight">
+\[F(\nabla^2 f(x,y)) = -\big(w_x^2 + w_y^2 \big) F(f(x,y)).\]</div>
+<p>Note that we have wave numbers in the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> directions. We will use the cell below to set up the reciprocal basis for 2D problems.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># put your code here.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># -----------------------</span>
+<span class="c1"># reciprocal basis in x and y direction</span>
+<span class="c1"># -----------------------</span>
+<span class="n">wiy</span> <span class="o">=</span> <span class="o">??</span>
+<span class="n">wix</span> <span class="o">=</span> <span class="o">??</span>
+<span class="c1"># squares of wave numbers</span>
+<span class="n">wix2</span> <span class="o">=</span> <span class="n">wix</span><span class="o">**</span><span class="mi">2</span>       <span class="c1"># shape: (px,)</span>
+<span class="n">wiy2</span> <span class="o">=</span> <span class="n">wiy</span><span class="o">**</span><span class="mi">2</span>       <span class="c1"># shape: (py,)</span>
+<span class="c1"># build k^2 = ky^2 + kx^2 on the 2D grid using broadcasting</span>
+<span class="n">Wi2</span> <span class="o">=</span> <span class="n">wix2</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:]</span> <span class="o">+</span> <span class="n">kwi2</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span>
 
-    
+
+<span class="c1"># fftshift</span>
+<span class="n">wy</span> <span class="o">=</span> <span class="o">??</span>
+<span class="n">wx</span> <span class="o">=</span> <span class="o">??</span>
+
+<span class="c1"># squares of wave numbers</span>
+<span class="n">wy2</span> <span class="o">=</span> <span class="n">wy</span><span class="o">**</span><span class="mi">2</span>          
+<span class="n">wx2</span> <span class="o">=</span> <span class="n">wx</span><span class="o">**</span><span class="mi">2</span>          
+
+<span class="c1"># build k^2 = ky^2 + kx^2 on the 2D grid using broadcasting</span>
+<span class="n">W2</span> <span class="o">=</span> <span class="err">??</span>  <span class="c1"># shape: (py, px)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="c1"># --- Left subplot ---</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">kox</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:],</span> <span class="n">koy</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">],</span> <span class="n">Ko2</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;using original reciprocal basis&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- Right subplot ---</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">kox</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:],</span> <span class="n">koy</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">],</span> <span class="n">K2</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;plasma&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;after fftshift&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>✅  Do This - Based on your observation of the <span class="math notranslate nohighlight">\(w^2\)</span>, how the reciprocal bases are swapped in terms of the 4 quadrons on the <span class="math notranslate nohighlight">\(x\)</span>-<span class="math notranslate nohighlight">\(y\)</span> plane?</p>
+<hr class="docutils" />
+<p>Set up the initial condition</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># -- initial condition</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">py</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">px</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">38</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">90</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">j</span> <span class="o">&gt;</span> <span class="mi">32</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">96</span><span class="p">):</span>
+            <span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+<span class="c1"># -- visualization</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;upper&#39;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>  
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;phi&#39;</span><span class="p">)</span>            <span class="c1"># &lt;- colorbar once</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Lx</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Ly</span><span class="p">)</span>              
 </pre></div>
 </div>
 </div>
 </div>
 <hr class="docutils" />
+<p>Simulation of diffusion using Fourier spectral method. For 2D FFT, we use <code class="docutils literal notranslate"><span class="pre">fft2</span></code> function. Note that we can use vectorized computing as in the case of finite difference method. We will need to use a 2D array of the square of 2D wave numbers, which is the W2 in the cell eariler.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># container for C in Fourier space</span>
+<span class="n">CnFt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft2</span><span class="p">(</span><span class="err">??</span><span class="p">)</span>
+
+<span class="c1"># pre-allocate container for Laplace of C in Fourier space</span>
+<span class="n">LpFt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">CnFt</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
+
+<span class="c1"># -- time evolution</span>
+<span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Nstep</span><span class="p">):</span>
+
+    <span class="c1"># compute Laplacian in Fourier space</span>
+    <span class="c1"># for p in range(py):</span>
+    <span class="c1">#     for q in range(px):</span>
+    <span class="c1">#         LpFt[p, q] = -(wy[p]**2 + wx[q]**2) * CnFt[p, q]</span>
+
+    <span class="c1"># vectorized Laplacian in Fourier space</span>
+    <span class="n">LpFt</span> <span class="o">=</span> <span class="o">??</span>
+
+    <span class="c1"># time update</span>
+    <span class="n">CnFt</span> <span class="o">=</span> <span class="o">??</span>
+
+
+    <span class="c1"># visualization</span>
+    <span class="k">if</span> <span class="n">it</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifft2</span><span class="p">(</span><span class="n">CnFt</span><span class="p">)</span>
+        <span class="n">im</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">C</span><span class="p">))</span>                 <span class="c1"># update image only</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">it</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Animaiton part (dosn&#39;t change)</span>
+        <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Clear output for dynamic display</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>            <span class="c1"># Reset display</span>
+        <span class="c1"># fig.clear()             # Prevent overlapping and layered plots</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.0002</span><span class="p">)</span>         <span class="c1"># Sleep for half a second to slow down the animation </span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p>✅ Do This - Do you impose boundary conditions when using Fourier spectral method? What kind of boundary conditions are used in Fourier method?</p>
+<p>✅ Do This - Can you impose Dirichlet or Neumann boundary conditions in Fourier spectral method?</p>
+<p>✅ Do This - List at least one other applications of FFT.</p>
 <section id="great-you-re-done-please-upload-your-completed-file-to-the-drop-box-on-the-course-webpage">
 <h3>Great! You’re done. Please upload your completed file to the drop box on the course webpage.<a class="headerlink" href="#great-you-re-done-please-upload-your-completed-file-to-the-drop-box-on-the-course-webpage" title="Link to this heading">#</a></h3>
 </section>
@@ -624,7 +695,7 @@ document.write(`
         },
         kernelOptions: {
             name: "conda-base-py",
-            path: "./daily/Day-18"
+            path: "./daily/Day-22"
         },
         predefinedOutput: true
     }
@@ -642,20 +713,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../../section_files/day_18.html"
+       href="../../section_files/day_22.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Day 18</p>
+        <p class="prev-next-title">Day 21</p>
       </div>
     </a>
     <a class="right-next"
-       href="../../section_files/day_19.html"
+       href="../../section_files/HW02.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Day 19</p>
+        <p class="prev-next-title">Homework 2</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -675,16 +746,19 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Lab 11 Fourier spectral method</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#put-your-name-here"><p style="text-align: right;"> ✅ <strong>put your name here</strong> </p></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-grain-grwoth-simulation">Part 1. Grain grwoth simulation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-simulation">Set up simulation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-analysis">Part 2. Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#due-12-1">Due 12/1</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fourier-spectral-method">Fourier spectral method</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#great-you-re-done-please-upload-your-completed-file-to-the-drop-box-on-the-course-webpage">Great! You’re done. Please upload your completed file to the drop box on the course webpage.</a></li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
