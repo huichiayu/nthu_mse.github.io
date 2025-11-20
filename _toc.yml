@@ -155,4 +155,4 @@ parts:
                 
         - file: section_files/HW04     
           sections:  
-          - file: homework/MSE590/
+          - file: homework/MSE590/HW04_FourierSpectralMethod_Student_v1.ipynb
