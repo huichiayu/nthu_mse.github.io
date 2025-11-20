@@ -129,19 +129,19 @@
     <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
   </tr> 
   <tr> <!-- week 15 -->
-    <td style="border: 1px solid #ddd; padding: 8px;">26 (Dec 8)</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">27 (Dec 8)</td>
     <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
   </tr>
   <tr style="background-color: #f9f9f9;">
-    <td style="border: 1px solid #ddd; padding: 8px;">27 (Dec 11)</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">28 (Dec 11)</td>
     <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
   </tr> 
   <tr> <!-- week 16 -->
-    <td style="border: 1px solid #ddd; padding: 8px;">26 (Dec 15)</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">29 (Dec 15)</td>
     <td style="border: 1px solid #ddd; padding: 8px;">Project presentation.</td>
   </tr>
   <tr style="background-color: #f9f9f9;">
-    <td style="border: 1px solid #ddd; padding: 8px;">27 (Dec 18)</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">30 (Dec 18)</td>
     <td style="border: 1px solid #ddd; padding: 8px;">Project presentation.</td>
   </tr>     
 </table>
