@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Mechanical anisotropy &#8212; MSE 590400 Course Website</title>
+    <title>Example of SVM classifier using Iris data. &#8212; MSE 590400 Course Website</title>
   
   
   
@@ -59,12 +59,12 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'daily/Day-21/ZenerRatio';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'daily/Day-23/SVM_Iris_data';</script>
     <link rel="icon" href="../../_static/Spartan_2.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Solid-solid transformation" href="SolidTransformation.html" />
-    <link rel="prev" title="Day 21" href="../../section_files/day_21.html" />
+    <link rel="next" title="Homework 2" href="../../section_files/HW02.html" />
+    <link rel="prev" title="SVM example using a 2D dataset." href="SVM_explained_2D_data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -261,11 +261,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../Day-20/Lab9_EutecticGorwth_Student_v1.html">Lab 9 Eutectic growth</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../section_files/day_21.html">Day 21</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Mechanical anisotropy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SolidTransformation.html">Solid-solid transformation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_21.html">Day 21</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Day-21/ZenerRatio.html">Mechanical anisotropy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Day-21/SolidTransformation.html">Solid-solid transformation</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="FourierCoefficient.html">Fourier series, coefficient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Day-21/FourierCoefficient.html">Fourier series, coefficient</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_22.html">Day 22</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -274,12 +274,12 @@
 
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../section_files/day_23.html">Day 23</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Day-23/SVM_explained_2D_data.html">SVM example using a 2D dataset.</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../section_files/day_23.html">Day 23</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="SVM_explained_2D_data.html">SVM example using a 2D dataset.</a></li>
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="../Day-23/SVM_Iris_data.html">Example of SVM classifier using Iris data.</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Example of SVM classifier using Iris data.</a></li>
 
 
 
@@ -357,7 +357,7 @@
       
       
       
-      <li><a href="../../_sources/daily/Day-21/ZenerRatio.ipynb" target="_blank"
+      <li><a href="../../_sources/daily/Day-23/SVM_Iris_data.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -428,7 +428,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -439,11 +441,24 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Mechanical anisotropy</h1>
+    <h1>Example of SVM classifier using Iris data.</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Example of SVM classifier using Iris data.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-dataset">Visualize dataset.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-precision">Definition of precision</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-recall">Definition of Recall</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#f1-score">F1 score</a></li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -453,81 +468,196 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="mechanical-anisotropy">
-<h1>Mechanical anisotropy<a class="headerlink" href="#mechanical-anisotropy" title="Link to this heading">#</a></h1>
-<p>Zener ratio is an indicator of mehcanil anisotopy:</p>
-<div class="math notranslate nohighlight">
-\[A = \frac{2C_{44}}{C_{11}-C_{12}}.\]</div>
-<p>General Hooke’s law for 2D orthotropic materials:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{bmatrix} \sigma_{11} \\ \sigma_{22} \\\sigma_{12} \end{bmatrix} = \begin{bmatrix} C_{11} &amp; C_{12} &amp; 0 \\ C_{12} &amp; C11 &amp; 0 \\ 0 &amp; 0 &amp; C_{44}  \end{bmatrix} \begin{bmatrix} \varepsilon_{11} \\ \varepsilon_{22} \\ 2 \varepsilon_{12} \end{bmatrix} = \frac{E}{\big( 1+ \nu \big) \big( 1-2\nu\big)}\begin{bmatrix} 1-\nu &amp; \nu &amp; 0 \\ \nu &amp; 1-\nu &amp; 0 \\ 0 &amp; 0 &amp; \frac{1-2\nu}{2}  \end{bmatrix} \begin{bmatrix} \varepsilon_{11} \\ \varepsilon_{22} \\ 2 \varepsilon_{12} \end{bmatrix}, \end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(E\)</span> is Young modulus and <span class="math notranslate nohighlight">\(\nu\)</span> is Poisson’s ratio.</p>
+  <section id="example-of-svm-classifier-using-iris-data">
+<h1>Example of SVM classifier using Iris data.<a class="headerlink" href="#example-of-svm-classifier-using-iris-data" title="Link to this heading">#</a></h1>
+<p>The three classes in the Iris dataset are represented by numbers in the ‘target’ vector:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1. Iris-setosa (n=50)
+2. Iris-versicolor (n=50)
+3. Iris-virginica (n=50)
+</pre></div>
+</div>
+<p>There are four measurements (features) for each flower in the  ‘data’ matrix:<br />
+1. sepal length in cm
+2. sepal width in cm
+3. petal length in cm
+4. petal width in cm</p>
+<p>Example:
+<img alt="Image of flower" src="http://nbviewer.jupyter.org/github/rasbt/pattern_classification/blob/master/Images/iris_petal_sepal.png" /></p>
+<p>Most of the data and code are adopted from internet resources and ChatGPT.</p>
+<ul class="simple">
+<li><p>Load Iris data.</p></li>
+<li><p>Use Pandas dataframe.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
 
-<span class="k">def</span> <span class="nf">zener_ratio</span><span class="p">(</span><span class="n">C11</span><span class="p">,</span> <span class="n">C12</span><span class="p">,</span> <span class="n">C44</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Zener anisotropy ratio A = 2*C44 / (C11 - C12).&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">C44</span> <span class="o">/</span> <span class="p">(</span><span class="n">C11</span> <span class="o">-</span> <span class="n">C12</span><span class="p">)</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
+
+<span class="c1"># Optional: convert numeric species → string labels</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">iris</span><span class="o">.</span><span class="n">target_names</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="c1"># print(df.shape)     # (150, 4)</span>
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="visualize-dataset">
+<h1>Visualize dataset.<a class="headerlink" href="#visualize-dataset" title="Link to this heading">#</a></h1>
+<p>Here we use the first 3 features to make a 3D scatter plot. The species (labels) are used to color the data points. We should observe that the same species are clustered together.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="o">%</span><span class="k">matplotlib</span> ipympl
 
-<span class="k">def</span> <span class="nf">youngs_modulus_cubic</span><span class="p">(</span><span class="n">C11</span><span class="p">,</span> <span class="n">C12</span><span class="p">,</span> <span class="n">C44</span><span class="p">,</span> <span class="n">num_points</span><span class="o">=</span><span class="mi">360</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Returns theta (0..2pi) and directional Young&#39;s modulus E(theta)</span>
-<span class="sd">    for a cubic crystal in the xy-plane.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="c1"># Suppose df already exists with a &quot;species&quot; column</span>
+<span class="c1"># Convert species names → 0,1,2</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;species_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;species_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
 
-    <span class="c1"># Compliance matrix components</span>
-    <span class="n">S11</span> <span class="o">=</span> <span class="p">(</span><span class="n">C11</span> <span class="o">+</span> <span class="n">C12</span><span class="p">)</span> <span class="o">/</span> <span class="p">((</span><span class="n">C11</span> <span class="o">-</span> <span class="n">C12</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">C11</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">C12</span><span class="p">))</span>
-    <span class="n">S12</span> <span class="o">=</span> <span class="o">-</span><span class="n">C12</span> <span class="o">/</span> <span class="p">((</span><span class="n">C11</span> <span class="o">-</span> <span class="n">C12</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">C11</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">C12</span><span class="p">))</span>
-    <span class="n">S44</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">C44</span>
+<span class="c1"># Save list of species names in the correct numeric order</span>
+<span class="n">names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">categories</span><span class="p">)</span>
 
-    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">num_points</span><span class="p">)</span>
-    <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="c1"># Convert first 3 columns to numpy</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
 
-    <span class="c1"># cos^2 * sin^2 = (1/4) sin^2(2θ)</span>
-    <span class="n">cs2</span> <span class="o">=</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">]</span>
 
-    <span class="c1"># 1/E(θ) formula</span>
-    <span class="n">invE</span> <span class="o">=</span> <span class="n">S11</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">S11</span> <span class="o">-</span> <span class="n">S12</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">S44</span><span class="p">)</span> <span class="o">*</span> <span class="n">cs2</span>
-    <span class="n">E</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">invE</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">theta</span><span class="p">,</span> <span class="n">E</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your cases</span>
-<span class="n">C11_cases</span> <span class="o">=</span> <span class="p">[</span><span class="mf">157.9</span><span class="o">*</span><span class="mi">20</span><span class="p">,</span> <span class="mf">347.6</span><span class="o">*</span><span class="mi">8</span><span class="p">,</span> <span class="mi">250</span><span class="o">*</span><span class="mi">8</span><span class="p">]</span>
-<span class="n">C12_cases</span> <span class="o">=</span> <span class="p">[</span><span class="mf">113.7</span><span class="o">*</span><span class="mi">20</span><span class="p">,</span> <span class="mf">121.8</span><span class="o">*</span><span class="mi">8</span><span class="p">,</span> <span class="mi">50</span><span class="o">*</span><span class="mi">8</span><span class="p">]</span>
-<span class="n">C44_cases</span> <span class="o">=</span> <span class="p">[</span><span class="mf">70.5</span><span class="o">*</span><span class="mi">20</span><span class="p">,</span>  <span class="mf">81.5</span><span class="o">*</span><span class="mi">8</span><span class="p">,</span>  <span class="mi">100</span><span class="o">*</span><span class="mi">8</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+        <span class="n">x1</span><span class="p">[</span><span class="n">y</span> <span class="o">==</span> <span class="n">species</span><span class="p">],</span>
+        <span class="n">x2</span><span class="p">[</span><span class="n">y</span> <span class="o">==</span> <span class="n">species</span><span class="p">],</span>
+        <span class="n">x3</span><span class="p">[</span><span class="n">y</span> <span class="o">==</span> <span class="n">species</span><span class="p">],</span>
+        <span class="n">label</span><span class="o">=</span><span class="n">names</span><span class="p">[</span><span class="n">species</span><span class="p">],</span>    <span class="c1"># ✔ now names is defined</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">species</span><span class="p">],</span>
+        <span class="n">s</span><span class="o">=</span><span class="mi">50</span>
+    <span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">120</span><span class="p">)</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;polar&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Sepal length&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Sepal width&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s1">&#39;Petal length&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Iris Dataset (3D Visualization)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">C11</span><span class="p">,</span> <span class="n">C12</span><span class="p">,</span> <span class="n">C44</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">C11_cases</span><span class="p">,</span> <span class="n">C12_cases</span><span class="p">,</span> <span class="n">C44_cases</span><span class="p">),</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">th</span><span class="p">,</span> <span class="n">E</span> <span class="o">=</span> <span class="n">youngs_modulus_cubic</span><span class="p">(</span><span class="n">C11</span><span class="p">,</span> <span class="n">C12</span><span class="p">,</span> <span class="n">C44</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">th</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Case </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Directional Young&#39;s Modulus vs Angle</span><span class="se">\n</span><span class="s2">(Polar Plot)&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Load select vector machine classifier.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">confusion_matrix</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Below we split the available data to training and test sets using <code class="docutils literal notranslate"><span class="pre">train_test_split</span></code>.</p></li>
+<li><p>Scale data (optional).</p></li>
+<li><p>Train the SVC model.</p></li>
+<li><p>Evaluate the model.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># svm_iris.py</span>
 
-<span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-    <span class="n">Zr</span> <span class="o">=</span> <span class="n">zener_ratio</span><span class="p">(</span><span class="n">C11_cases</span><span class="p">[</span><span class="n">z</span><span class="p">],</span> <span class="n">C12_cases</span><span class="p">[</span><span class="n">z</span><span class="p">],</span> <span class="n">C44_cases</span><span class="p">[</span><span class="n">z</span><span class="p">])</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Zener = &quot;</span><span class="p">,</span> <span class="n">Zr</span><span class="p">)</span>
+<span class="c1"># 1. Load the Iris dataset</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>        <span class="c1"># features: sepal length, sepal width, petal length, petal width</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>      <span class="c1"># labels: 0, 1, 2 (setosa, versicolor, virginica)</span>
+
+<span class="c1"># 2. Train–test split</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># 3. (Optional but common) Feature scaling</span>
+<span class="c1"># scaled to have a mean of 0</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">X_train_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">X_test_scaled</span>  <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># 4. Define SVM classifier</span>
+<span class="c1"># You can try different kernels: &quot;linear&quot;, &quot;rbf&quot;, &quot;poly&quot;, etc.</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s2">&quot;rbf&quot;</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="s2">&quot;scale&quot;</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># 5. Train the model</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># 6. Make predictions</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">)</span>
+
+<span class="c1"># 7. Evaluate</span>
+<span class="n">acc</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Accuracy: </span><span class="si">{</span><span class="n">acc</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Confusion matrix:&quot;</span><span class="p">)</span>
+<span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Confusion Matrix:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">cm</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Classification report:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">target_names</span><span class="o">=</span><span class="n">iris</span><span class="o">.</span><span class="n">target_names</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="definition-of-precision">
+<h1>Definition of precision<a class="headerlink" href="#definition-of-precision" title="Link to this heading">#</a></h1>
+<div class="math notranslate nohighlight">
+\[\text{Precision}= \frac{\text{True Positives}}{\text{True Positives}+\text{False Positives}}\]</div>
+<p>It answers: “Out of everything the model said is positive, how many are truly positive?”</p>
+</section>
+<section id="definition-of-recall">
+<h1>Definition of Recall<a class="headerlink" href="#definition-of-recall" title="Link to this heading">#</a></h1>
+<div class="math notranslate nohighlight">
+\[\text{Recall}= \frac{\text{True Positives}}{\text{True Positives}+\text{False Negatives}}\]</div>
+<p>It answers: “Out of all real positive cases, how many did the model correctly detect?</p>
+</section>
+<section id="f1-score">
+<h1>F1 score<a class="headerlink" href="#f1-score" title="Link to this heading">#</a></h1>
+<div class="math notranslate nohighlight">
+\[\text{F1} = 2 \frac{\text{precision}\cdot \text{recall}}{\text{precision} + \text{recall}}\]</div>
+<p>The F1-score is a classification metric that combines precision and recall into a single number. It is the harmonic mean of precision and recall. F1 is only high when both precision and recall are high.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">target_names</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target_names</span>
+<span class="c1"># -------------------------</span>
+<span class="c1"># 8. Heatmap Visualization</span>
+<span class="c1"># -------------------------</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span>
+            <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;d&quot;</span><span class="p">,</span>
+            <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Blues&quot;</span><span class="p">,</span>
+            <span class="n">xticklabels</span><span class="o">=</span><span class="n">target_names</span><span class="p">,</span>
+            <span class="n">yticklabels</span><span class="o">=</span><span class="n">target_names</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Predicted Label&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;True Label&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Confusion Matrix Heatmap (Iris Classification)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -547,7 +677,7 @@ document.write(`
         },
         kernelOptions: {
             name: "conda-base-py",
-            path: "./daily/Day-21"
+            path: "./daily/Day-23"
         },
         predefinedOutput: true
     }
@@ -565,20 +695,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../../section_files/day_21.html"
+       href="SVM_explained_2D_data.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Day 21</p>
+        <p class="prev-next-title">SVM example using a 2D dataset.</p>
       </div>
     </a>
     <a class="right-next"
-       href="SolidTransformation.html"
+       href="../../section_files/HW02.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Solid-solid transformation</p>
+        <p class="prev-next-title">Homework 2</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -588,6 +718,26 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Example of SVM classifier using Iris data.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-dataset">Visualize dataset.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-precision">Definition of precision</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-recall">Definition of Recall</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#f1-score">F1 score</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
