@@ -1,1 +1,0 @@
-Day 18 for S24 is a combination of the usual Day 18 & Day 19 (Perceptron Models). This combination is because S24 is one week shorter than usual semesters.
