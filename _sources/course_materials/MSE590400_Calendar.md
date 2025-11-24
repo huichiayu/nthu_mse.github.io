@@ -114,15 +114,15 @@
   </tr>    
   <tr> <!-- week 13 -->
     <td style="border: 1px solid #ddd; padding: 8px;">23 (Nov 24)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">Lab 10 Fourer spectral method.</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">Lab 10 Fourer spectral method. Machine Learning intro. SVM classifier.</td>
   </tr>
   <tr style="background-color: #f9f9f9;">
     <td style="border: 1px solid #ddd; padding: 8px;">24 (Nov 27)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">Lab11 SVM.</td>
   </tr> 
   <tr> <!-- week 14 -->
     <td style="border: 1px solid #ddd; padding: 8px;">25 (Dec 1)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">Regression.</td>
   </tr>
   <tr style="background-color: #f9f9f9;">
     <td style="border: 1px solid #ddd; padding: 8px;">26 (Dec 4)</td>
