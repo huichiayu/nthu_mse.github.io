@@ -123,7 +123,14 @@ parts:
         sections:    
         - file: daily/Day-22/FourierTransform_Derviative.ipynb 
         - file: daily/Day-22/Lab10_FourierSpectalMethod_Student_v1.ipynb  
-        
+
+      - file: section_files/day_23
+        sections:    
+        - file: daily/Day-23/SVM_explained_2D_data.ipynb 
+        - file: daily/Day-23/SVM_Iris_data.ipynb.ipynb  
+
+
+      
 ### DO NOT USE THE HOMEWORK ASSIGNMENTS FROM THE PREVIOUS SEMESTER
 ### CREATE NEW ONES THAT ASSESS SIMILAR SKILLS/CONTENT
   - caption: Homework
