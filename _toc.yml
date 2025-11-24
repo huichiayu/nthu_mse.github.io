@@ -127,7 +127,7 @@ parts:
       - file: section_files/day_23
         sections:    
         - file: daily/Day-23/SVM_explained_2D_data.ipynb 
-        - file: daily/Day-23/SVM_Iris_data.ipynb.ipynb  
+        - file: daily/Day-23/SVM_Iris_data.ipynb 
 
 
       
