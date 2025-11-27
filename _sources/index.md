@@ -30,7 +30,7 @@ Department of Computational Mathematics, Science and Engineering<br>
 Department of Chemical Engineering and Materials Sciences<br>
 Michigan State University, East Lansing, MI 48824<br><br>
 Adjunct Associate Professor<br>
-Department of Computational Mathematics, Science and Engineering<br>
+Department of Materials Science and Engineering<br>
 National Tsing Hua University, Hsinchu, Taiwan
 
 
