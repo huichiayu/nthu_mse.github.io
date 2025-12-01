@@ -134,7 +134,12 @@ parts:
         - file: daily/Day-24/Lab11_SVM_elemental_data_Student_v1.ipynb 
         - file: daily/Day-24/Image_classification_v1.ipynb 
         
-      
+      - file: section_files/day_25
+        sections:    
+        - file: daily/Day-25/Artificial_Neuron_Network_explained.ipynb 
+        - file: daily/Day-25/ImageRgression_NN.ipynb 
+        
+              
 ### DO NOT USE THE HOMEWORK ASSIGNMENTS FROM THE PREVIOUS SEMESTER
 ### CREATE NEW ONES THAT ASSESS SIMILAR SKILLS/CONTENT
   - caption: Homework
