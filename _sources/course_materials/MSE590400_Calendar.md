@@ -126,15 +126,15 @@
   </tr>
   <tr style="background-color: #f9f9f9;">
     <td style="border: 1px solid #ddd; padding: 8px;">26 (Dec 4)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">Principal component analysis, Image regressor.</td>
   </tr> 
   <tr> <!-- week 15 -->
     <td style="border: 1px solid #ddd; padding: 8px;">27 (Dec 8)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">Physics informed neural network (PINN)</td>
   </tr>
   <tr style="background-color: #f9f9f9;">
     <td style="border: 1px solid #ddd; padding: 8px;">28 (Dec 11)</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">TBA</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">Wrapping up of the course.</td>
   </tr> 
   <tr> <!-- week 16 -->
     <td style="border: 1px solid #ddd; padding: 8px;">29 (Dec 15)</td>
