@@ -139,7 +139,10 @@ parts:
         - file: daily/Day-25/Artificial_Neuron_Network_explained.ipynb 
         - file: daily/Day-25/ImageRgression_NN.ipynb 
         
-              
+      - file: section_files/day_26
+        sections:    
+        - file: daily/Day-26/Lab12_PrincipalComponentAnalysis_Student_v1.ipynb
+        
 ### DO NOT USE THE HOMEWORK ASSIGNMENTS FROM THE PREVIOUS SEMESTER
 ### CREATE NEW ONES THAT ASSESS SIMILAR SKILLS/CONTENT
   - caption: Homework
