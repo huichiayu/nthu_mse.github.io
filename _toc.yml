@@ -152,7 +152,7 @@ parts:
       - file: section_files/day_28
         sections:    
         - file: daily/Day-28/mini_tokenizer_transformer_demo.ipynb     
-        - file: daily/Day-28/LLM_demo_v2.ipynb            
+        - file: daily/Day-28/LLM_demo_v2.ipynb
         
         
 ### DO NOT USE THE HOMEWORK ASSIGNMENTS FROM THE PREVIOUS SEMESTER
