@@ -1,6 +1,6 @@
-Day 27
+Day 28
 =======================
-This section contains the course materials for day 27.
+This section contains the course materials for day 28.
 
 [mini_tokenizer_transformer_demo.ipynb](../daily/Day-28/mini_tokenizer_transformer_demo.ipynb)
 {Download}`mini_tokenizer_transformer_demo.ipynb<../daily/Day-28/mini_tokenizer_transformer_demo.ipynb>`
