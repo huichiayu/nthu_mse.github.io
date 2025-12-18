@@ -187,3 +187,7 @@ parts:
         - file: section_files/HW04     
           sections:  
           - file: homework/MSE590/HW4_FourierSpectralMethod_Student_v1
+          
+        - file: section_files/final_report     
+          sections:  
+          - file: homework/MSE590/HW4_FourierSpectralMethod_Student_v1
