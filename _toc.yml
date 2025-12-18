@@ -188,6 +188,7 @@ parts:
           sections:  
           - file: homework/MSE590/HW4_FourierSpectralMethod_Student_v1
           
-        - file: section_files/final_report     
-          sections:  
           
+        - title: "Upload final report"
+          url: https://www.dropbox.com/request/3jIFFpTufRDdK4tNKJzK
+          nav_order: 99      
